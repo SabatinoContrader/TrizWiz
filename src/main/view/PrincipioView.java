@@ -41,8 +41,9 @@ public class PrincipioView implements View {
 				// TODO: handle exception
 			}
             System.out.format("+----------+-----------------------+------------+------------+------------+------------+-------------------------------+--------------------+----------------+%n");
-
+            
 		}
+		MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
 
 }
 
