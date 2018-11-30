@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VisualizzaPararmetriView implements View {
-
+//ciao
     
     private int choice;
     private Request request;
