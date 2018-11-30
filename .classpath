@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="lib/spring-webmvc-portlet-4.3.12.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-websocket-4.3.12.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Public/jxl-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Valerio/Desktop/JAVA/mysql-connector-java-5.1.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -25,6 +25,7 @@ public class ConnectionSingleton {
     public static Connection getInstance() {
         if (connection == null) {
             try {
+            	
                 Properties properties = new Properties();
                 InputStream inputStream = new FileInputStream("config.properties");
                 properties.load(inputStream);

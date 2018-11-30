@@ -9,7 +9,7 @@ import main.model.BadgeReader;
 import java.util.List;
 import java.util.Scanner;
 
-public class AssetBadgeReaderHomeView implements View {
+public class VisualizzaPararmetriView implements View {
 
     
     private int choice;

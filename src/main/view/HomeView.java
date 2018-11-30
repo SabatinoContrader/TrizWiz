@@ -26,41 +26,42 @@ public class HomeView implements View {
     			System.out.println("Benvenuto/a " + username);
     		}
     	}	
-        System.out.println("");
+    	System.out.println("");
         System.out.println("");
         System.out.println("-------MENU-------");
         System.out.println("");
-        System.out.println("1) My Assets");
-        System.out.println("2) Customers");
-        System.out.println("3) Bookings");
-        System.out.println("4) Logs");
-        System.out.println("5) Logout");
-        
+        System.out.println("1) Visualizza i parametri");
+        System.out.println("2) Visualizza i principi");
+        System.out.println("3) Consulta Contraddiction Matrix");
+        System.out.println("4) Inserisci esperienza parametro");
+        System.out.println("5) Inserisci esperienza principio");
+        System.out.println("6) Esci");
         this.choice = Integer.parseInt(getInput());
     }
 
     public void submit() {
     	this.request = new Request();
-        if (choice < 1 || choice > 5) {
-        	MainDispatcher.getInstance().callAction("Home", "doControl", null);
-        }
-        else if (choice == 5) {
-            MainDispatcher.getInstance().callAction("Login", "doControl", null);
+        if (choice < 1 || choice > 6) {
+        	MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
         }
         else if (choice == 1) {
-        	this.request.put("choice", "myAssets");
+        	this.request.put("choice", "Vparametri");
             MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
         }
         else if (choice == 2) {
-        	this.request.put("choice", "customers");
+        	this.request.put("choice", "Vprincipi");
         	MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
         }
         else if (choice == 3) {
-        	this.request.put("choice", "bookings");
+        	this.request.put("choice", "matrix");
         	MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
         }
         else if (choice == 4) {
-        	this.request.put("choice", "logs");
+        	this.request.put("choice", "expe");
+        	MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
+        }
+        else if (choice == 5) {
+        	this.request.put("choice", "expr");
         	MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
         }
       
