@@ -7,6 +7,8 @@ import main.model.Principio;
 import java.util.List;
 import java.util.Scanner;
 
+//ciao
+
 public class PrincipioView implements View {
 
     private List<Principio> listPrincipio;
