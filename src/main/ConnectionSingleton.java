@@ -35,6 +35,7 @@ public class ConnectionSingleton {
                 Class c = Class.forName(driver);
                 System.out.println("Ho caricato: " + c.getName());
                 String myUrl = "jdbc:" + vendor + "://" + host + ":" + port + "/" + dbName;
+                //String myUrl="jdbc:mysql://localhost:3306/Trizwiz?autoReconnect=true&useSSL=false";
                 DriverManagerDataSource dataSource = new DriverManagerDataSource(myUrl, username, password);
                 dataSource.setDriverClassName(driver);
                 connection = dataSource.getConnection();

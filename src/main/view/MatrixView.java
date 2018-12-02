@@ -8,7 +8,7 @@ import java.util.List;
 
 //ciao
 
-public class PrincipioView implements View {
+public class MatrixView implements View {
 
     private List<Principio> listPrincipio;
 	private Request request;
@@ -19,14 +19,14 @@ public class PrincipioView implements View {
 			System.out.println(this.request.get("message"));
 		}
 
-    	this.listPrincipio= (List<Principio>) ((Request) this.request).get("visualizzaPrincipi");
+    	this.listPrincipio= (List<Principio>) this.request.get("visualizzaMatrix");
     	System.out.println();
     	System.out.println();
-        System.out.println("----- LISTA Principi -----");
+        System.out.println("----- LISTA Principi da utilizzare-----");
         System.out.println();
-        System.out.format("+----------+-----------------------+-----------------+-----------------+-------------------+---------+%n");
-        System.out.format("| ID       | nomePrincipio         | nomePrincipioIta| domande         | steps             | esempi  |%n");
-        System.out.format("+----------+-----------------------+-----------------+-----------------+-------------------+---------+%n");
+        System.out.format("+-----------------------+-----------------+-----------------+-------------------+---------+%n");
+        System.out.format("| nomePrincipio         | nomePrincipioIta| domande         | steps             | esempi  |%n");
+        System.out.format("+-----------------------+-----------------+-----------------+-------------------+---------+%n");
 		String leftAlignFormat2 ="| %-8s | %-21s | %-10s | %-10s | %-10s |%n";
 		for (Principio report : this.listPrincipio) {
 			int id = report.getId();
@@ -37,11 +37,11 @@ public class PrincipioView implements View {
 			String ic = report.getEsempi();
             
             try{
-            	System.out.format(leftAlignFormat2, id ,np,ds,npt,di,ic);
+            	System.out.format(leftAlignFormat2 ,np,ds,npt,di,ic);
             }catch (Exception e) {
 				// TODO: handle exception
 			}
-            System.out.format("+----------+-----------------------+------------+------------+------------+------------+-------------------------------+--------------------+----------------+%n");
+            System.out.format("+----------+-----------------------+------------+------------+------------+%n");
             
 		}
 		MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);

@@ -17,7 +17,7 @@ public class VprincipioDAO {
     private final String QUERY_principio = "select * from principi";
     
 	public List<Principio> getAllPrincipio() {
-	    List<Principio>  listPrincipio= new ArrayList<>();
+	    List<Principio>  listPrincipio= new ArrayList<Principio>();
         Connection connection = ConnectionSingleton.getInstance();
        
 		try {

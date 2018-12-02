@@ -54,7 +54,7 @@ public class HomeView implements View {
         }
         else if (choice == 3) {
         	this.request.put("choice", "matrix");
-        	MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("MatrixM", "doControl", this.request);
         }
         else if (choice == 4) {
         	this.request.put("choice", "expe");

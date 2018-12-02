@@ -2,7 +2,6 @@ package main.dao;
 
 import main.ConnectionSingleton;
 import main.model.Parametro;
-import main.model.Principio;
 
 
 import java.sql.Connection;
@@ -18,7 +17,7 @@ public class VparametroDAO {
     private final String QUERY_parametro = "select * from parametri";
     
 	public List<Parametro> getAllParametro() {
-	    List<Parametro>  listParametro= new ArrayList<>();
+	    List<Parametro>  listParametro= new ArrayList<Parametro>();
         Connection connection = ConnectionSingleton.getInstance();
        
 		try {
@@ -41,10 +40,4 @@ public class VparametroDAO {
 		
 		return listParametro;
     }
-
-
-	
-
-
-	
 	}
