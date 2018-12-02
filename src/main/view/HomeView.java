@@ -46,7 +46,7 @@ public class HomeView implements View {
         }
         else if (choice == 1) {
         	this.request.put("choice", "Vparametri");
-            MainDispatcher.getInstance().callAction("Menu", "doControl", this.request);
+            MainDispatcher.getInstance().callAction("Parametri", "doControl", this.request);
         }
         else if (choice == 2) {
         	this.request.put("choice", "Vprincipi");
