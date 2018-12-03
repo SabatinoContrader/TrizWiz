@@ -30,8 +30,8 @@ public class HomeView implements View {
         System.out.println("");
         System.out.println("-------MENU-------");
         System.out.println("");
-        System.out.println("1) Visualizza i parametri");
-        System.out.println("2) Visualizza i principi");
+        System.out.println("1) Impostazioni parametri");
+        System.out.println("2) Impostazioni principi");
         System.out.println("3) Consulta Contraddiction Matrix");
         System.out.println("4) Inserisci esperienza parametro");
         System.out.println("5) Inserisci esperienza principio");
@@ -46,11 +46,11 @@ public class HomeView implements View {
         }
         else if (choice == 1) {
         	this.request.put("choice", "Vparametri");
-            MainDispatcher.getInstance().callAction("Parametri", "doControl", this.request);
+            MainDispatcher.getInstance().callAction("ParametriMenu", "doControl", this.request);
         }
         else if (choice == 2) {
         	this.request.put("choice", "Vprincipi");
-        	MainDispatcher.getInstance().callAction("Principi", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("PrincipiMenu", "doControl", this.request);
         }
         else if (choice == 3) {
         	this.request.put("choice", "matrix");

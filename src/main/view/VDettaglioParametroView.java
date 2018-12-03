@@ -12,7 +12,6 @@ public class VDettaglioParametroView implements View{
 	private Parametro parametro;
 	private Request request;
 	
-	@Override
 	public void showResults(Request request) {
 		parametro=new Parametro();
 		System.out.println("PAGINA VISUALIZZA DETTAGLIO PARAMETRO");
@@ -57,19 +56,15 @@ public class VDettaglioParametroView implements View{
 		
 	}
 
-	@Override
 	public void showOptions() {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
 	public String getInput() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public void submit() {
 		// TODO Auto-generated method stub
 		

@@ -14,7 +14,6 @@ public class SelezionaParametroView implements View{
 		private int choice;
 		private int idParametro;
 		
-		@Override
 		public void showResults(Request request) {
 			// TODO Auto-generated method stub
 			
@@ -24,7 +23,6 @@ public class SelezionaParametroView implements View{
 			
 			
 		}
-		@Override
 		public void showOptions() {
 			this.listParametro= (List<Parametro>) ((Request) this.request).get("visualizzaParametri");
 	    	System.out.println();
@@ -52,14 +50,12 @@ public class SelezionaParametroView implements View{
 			this.idParametro = Integer.parseInt(getInput());
 			
 		}
-		@Override
 		public String getInput() {
 			
 			Scanner scanner = new Scanner(System.in);
 	        return scanner.nextLine();
 			
 		}
-		@Override
 		public void submit() {
 			if ( idParametro>=1 || idParametro <= 39) {
 				String idParam= Integer.toString(idParametro);
