@@ -14,6 +14,7 @@ public class ParametroView implements View {
 
     private List<Parametro> listParametro;
 	private Request request;
+	private int choice;
 	
 	public void showResults(Request request){
 		this.request=request;
@@ -51,7 +52,7 @@ public class ParametroView implements View {
             System.out.format("+----------+-----------------------+------------+%n");
             
 		}
-		MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
+		//MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
 		
 		//System.out.println("Pagina Parametri");
 
@@ -62,19 +63,34 @@ public class ParametroView implements View {
 
 
 	public void showOptions() {
-		// TODO Auto-generated method stub
+		System.out.println("");
+        System.out.println("");
+        System.out.println("-------MENU PARAMETRI-------");
+        System.out.println("");
+        System.out.println("1) Visualizza dettaglio parametro");
+        System.out.println("2) Torna al menu");
+        
+        this.choice = Integer.parseInt(getInput());
 		
 	}
 
 
 	public String getInput() {
-		// TODO Auto-generated method stub
-		return null;
+		Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
 	}
 
 
 	public void submit() {
-		// TODO Auto-generated method stub
+		this.request = new Request();
+        if (choice < 1 || choice > 1) {
+        	MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
+        }
+        
+         if (choice == 1) {
+        	this.request.put("choice", "SelParametro");
+            MainDispatcher.getInstance().callAction("Parametri", "doControl", this.request);
+        }
 		
 	}
 }

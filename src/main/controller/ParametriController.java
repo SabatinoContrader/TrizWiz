@@ -17,12 +17,36 @@ public class ParametriController implements Controller {
     	this.message= "";
     	String choice = request.get("choice").toString();
         if (choice != null ) {//se problemi da verificare
+        	switch (choice) {//se problemi da verificare
             
-            	request.put("visualizzaParametri",this.VparametroService.getAllParametro());
-            	MainDispatcher.getInstance().callView("Parametro", request);   
+    		case "Vparametri":
+    		
+    			request.put("visualizzaParametri",this.VparametroService.getAllParametro());
+    			MainDispatcher.getInstance().callView("Parametro", request); 
+    			break;
+        	
+    		case "SelParametro":
+    			request.put("visualizzaParametri",this.VparametroService.getAllParametro());
+            	MainDispatcher.getInstance().callView("SelezionaParametro", request); 
+            	break;
+            
+    		case "VParametro":
+    			String id = request.get("idParametro").toString();
+    			//int id=	(Integer) request.get("idParametro");
+    			System.out.println(id);
+    			request.put("valoriParametro", this.VparametroService.getParametroID(id));
+    			MainDispatcher.getInstance().callView("VDettaglioParametro", request);
+    			
+    			break;
+    		
+    		
+    	}
+            	
         }
         
-       // else 
-      // MainDispatcher.getInstance().callView("Home", null);
+      else {
+    	  MainDispatcher.getInstance().callView("Home", null);
+      }
+      
     }
 }

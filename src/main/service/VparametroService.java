@@ -15,5 +15,10 @@ public class VparametroService {
 	}
 	  public List<Parametro> getAllParametro () {
 	        return this.VparametroDAO.getAllParametro();
-	    }    
+	    }
+	  
+	  public Parametro getParametroID(String id) {
+		  
+		  return this.VparametroDAO.getParametroID(id);
+	  }
 }

@@ -1,5 +1,7 @@
 package main.model;
 
+import java.util.List;
+
 public class Parametro {
 	private int id;
 	private String nomeParametro;
@@ -7,9 +9,12 @@ public class Parametro {
 	private String descrizione;
 	private String descrizioneIta;
 	private String icona;
+	
 
 //costruttore
-	public Parametro(){}
+	public Parametro(){
+		
+	}
 
 	public Parametro(int id, String nomeParametro,String nomeParametroIta, String descrizione, String descrizioneIta, String icona) {
 	this.id=id;
