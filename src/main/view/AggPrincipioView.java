@@ -6,7 +6,7 @@ import main.MainDispatcher;
 import main.controller.Request;
 import main.model.Principio;
 
-public class InsertPrincipioView implements View{
+public class AggPrincipioView implements View{
 	
 	private Request request;
 
@@ -18,21 +18,23 @@ public class InsertPrincipioView implements View{
 
 	@Override
 	public void showOptions() {
-		System.out.println("Inserire nome principio in inglese:");
+		System.out.println("Inserire id principio da modificare:");
+		int Id = Integer.parseInt(getInput());
+		System.out.println("Inserire modifica nome principio in inglese:");
 		String NomePrincipio = getInput();
-		System.out.println("Inserire nome principio in italiano:");
+		System.out.println("Inserire modifica nome principio in italiano:");
     	String NomePrincipioIta = getInput();
-		System.out.println("Inserire domande:");
+		System.out.println("Inserire modifica domande:");
 		String Domande = getInput();
-		System.out.println("Inserire steps:");
+		System.out.println("Inserire modifica steps:");
 		String Steps = getInput();
-		System.out.println("Inserire esempi:");
+		System.out.println("Inserire modifica esempi:");
 		String Esempi = getInput();
     	
-    	Principio insertPrincipio = new Principio(99,NomePrincipio,NomePrincipioIta,Domande,Steps,Esempi);
+    	Principio updatePrincipi = new Principio(Id,NomePrincipio,NomePrincipioIta,Domande,Steps,Esempi);
     	request = new Request();
-        this.request.put("insertPrincipio", insertPrincipio);
-        this.request.put("choice", "insertPrincipio");
+        this.request.put("updatePrincipi", updatePrincipi);
+        this.request.put("choice", "updatePrincipi");
 	}
 
 	@Override

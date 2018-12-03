@@ -36,40 +36,39 @@ public class CrudPrincipiController implements Controller{
 	            	request.put("message", this.message);
 	            	MainDispatcher.getInstance().callView("PrincipiMenu", request);
 	            	break;
+	            	
 		/////////////////////// --- UPDATE --- /////////////////////////////
-	    /*        case "AggPrincipi":
-	            	List<Sintomo> sintomo2 = sintomoService.getAllSympthom();
-	            	request.put("listaSintomi", sintomo2);
-	            	MainDispatcher.getInstance().callView("UpdateSintomo", request);
+	            	
+	            case "AggPrincipi":
+	            	MainDispatcher.getInstance().callView("AggPrincipio", request);
 	            	break;
 	            case "updatePrincipi":
-	            	if (sintomoService.updateSypthom(request)) {
-	            		this.message = "Sintomo modificato con successo..."; 
+	            	if (this.CrudPrincipiService.updatePrincipi((Principio)request.get("updatePrincipi"))) {
+	            		this.message = "Principio modificato con successo..."; 
 	            	}
 	            	else {
-	            		this.message = "Errore durante la modifica del Sintomo...!!!";
+	            		this.message = "Errore durante la modifica del Principio...!!!";
 	            	}
 	            	request.put("message", this.message);
-	        		MainDispatcher.getInstance().callView("Sintomo", request);
+	        		MainDispatcher.getInstance().callView("PrincipiMenu", request);
 	            	break;
-	    */
+	    
 	    /////////////////////// --- DELETE --- /////////////////////////////	
-	    /*        case "CanPrincipi":
-	            	List<Sintomo> sintomo3 = sintomoService.getAllSympthom();
-	            	request.put("listaSintomi", sintomo3);
-	            	MainDispatcher.getInstance().callView("DeleteSintomo", request);
+	    
+	            case "CanPrincipi":
+	            	MainDispatcher.getInstance().callView("DelPrincipio", request);
 	            	break;
-	            case "deletePrincipi":
-	            	if (this.sintomoService.DeleteSintomo((Integer) request.get("deleteSintomo"))) {
-	            		this.message = "Cancellazione sintomo avvenuta correttamente";
+	            case "deletePrincipio":
+	            	if (this.CrudPrincipiService.deletePrincipio((Integer) request.get("deletePrincipio"))) {
+	            		this.message = "Cancellazione principio avvenuta correttamente";
 	            	}
 	            	else {
-	            		this.message = "Errore durante la procedura di cancellazione sintomo";
+	            		this.message = "Errore durante la procedura di cancellazione principio";
 	            	}
 	            	request.put("message", this.message);
-	            	MainDispatcher.getInstance().callView("Sintomo", request);
+	            	MainDispatcher.getInstance().callView("PrincipiMenu", request);
 	            	break;
-	      */
+	      
 	            
 	        }
         

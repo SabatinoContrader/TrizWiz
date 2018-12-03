@@ -18,7 +18,8 @@ public class CrudPrincipiDAO {
 	
 	//private final String QUERY_ALL = "SELECT * FROM sympthom";
 	private final String QUERY_INSERT = "INSERT INTO principi (nomePrincipio,nomePrincipioIta,domande,steps,esempi) VALUES (?,?,?,?,?)";
-	//private final String QUERY_DELETE = "delete from sympthom where idSympthom = ?";
+	private final String QUERY_DELETE = "delete from principi where id = ?";
+	
 	
 	public CrudPrincipiDAO() {		
 	}
@@ -52,6 +53,7 @@ public class CrudPrincipiDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
+			//id da togliere
 			//preparedStatement.setInt(1, Principio.getId());
 			preparedStatement.setString(1, Principio.getNomePrincipio());
             preparedStatement.setString(2, Principio.getNomePrincipioIta());
@@ -67,14 +69,22 @@ public class CrudPrincipiDAO {
 		}		
 		
 	}
-/*
-	public boolean updateSypthom(Request request) {
+
+	public boolean updatePrincipi(Principio Principio) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-			campo=(String)request.get("campo");
-        	PreparedStatement preparedStatement = connection.prepareStatement("update sympthom set " + campo + "=? where idsympthom =?");
-            preparedStatement.setString(1, (String)request.get("newCampo"));
-            preparedStatement.setInt(2, (Integer)request.get("idSintomo"));
+			//simile all'insert
+			//campo=(String)request.get("campo");
+        	PreparedStatement preparedStatement = connection.prepareStatement("update principi set nomePrincipio =?, nomePrincipioIta=?, domande=? , steps=?, esempi=?  where id =?");
+
+			preparedStatement.setInt(6, Principio.getId());
+			preparedStatement.setString(1, Principio.getNomePrincipio());
+            preparedStatement.setString(2, Principio.getNomePrincipioIta());
+            preparedStatement.setString(3, Principio.getDomande());
+            preparedStatement.setString(4, Principio.getSteps());
+            preparedStatement.setString(5, Principio.getEsempi());
+        	//preparedStatement.setString(1, (String)request.get("nomePrincipio"));
+            //preparedStatement.setInt(2, (Integer)request.get("id"));
             preparedStatement.execute();
             return true;
 		}
@@ -84,11 +94,11 @@ public class CrudPrincipiDAO {
 		}	
 	}
 	
-	public boolean DeleteSintomo(int idSintomo) {
+	public boolean deletePrincipio(int id) {
     	Connection connection = ConnectionSingleton.getInstance();
     	try {
     		PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
-            preparedStatement.setInt(1,idSintomo);
+            preparedStatement.setInt(1,id);
             preparedStatement.execute();
             return true;
     }
@@ -97,7 +107,7 @@ public class CrudPrincipiDAO {
             return false;
         }	
     }
-	*/
+
 	
 				
 	}

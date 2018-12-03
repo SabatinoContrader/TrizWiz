@@ -21,12 +21,12 @@ public class CrudPrincipiService {
 	public boolean insertPrincipio(Principio principio) {
 		return this.CrudPrincipiDAO.insertPrincipio(principio);
 	}
-	/*
-	public boolean updateSypthom(Request request) {
-		return this.sintomoDAO.updateSypthom(request); 
+	
+	public boolean updatePrincipi(Principio principio) {
+		return this.CrudPrincipiDAO.updatePrincipi(principio); 
 	}
 	
-	public boolean DeleteSintomo(int idSintomo) {
-		return this.sintomoDAO.DeleteSintomo(idSintomo);
-	}*/
+	public boolean deletePrincipio(int id) {
+		return this.CrudPrincipiDAO.deletePrincipio(id);
+	}
 }
