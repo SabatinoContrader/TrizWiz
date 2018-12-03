@@ -11,5 +11,10 @@ public class VprincipioService {
 	}
 	  public List<Principio> getAllPrincipio () {
 	        return this.VprincipioDAO.getAllPrincipio();
-	    }    
+	    }
+	  
+	  public Principio getPrincipioID(String id) {
+		  
+		  return this.VprincipioDAO.getPrincipioID(id);
+	  }
 }
