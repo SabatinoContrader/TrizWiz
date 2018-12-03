@@ -41,15 +41,15 @@ public class ParametriMenuView implements View {
         }
         else if (choice == 2) {
         	this.request.put("choice", "InsParametri");
-        	MainDispatcher.getInstance().callAction("InsParametri", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("GestoreParametri", "doControl", this.request);
         }
         else if (choice == 3) {
         	this.request.put("choice", "CanParametri");
-        	MainDispatcher.getInstance().callAction("CanParametri", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("GestoreParametri", "doControl", this.request);
         }
         else if (choice == 4) {
         	this.request.put("choice", "AggParametri");
-        	MainDispatcher.getInstance().callAction("AggParametri", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("GestoreParametri", "doControl", this.request);
         }
         else if (choice == 5) {
         	MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);

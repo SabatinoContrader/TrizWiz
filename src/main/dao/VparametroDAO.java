@@ -1,6 +1,7 @@
 package main.dao;
 
 import main.ConnectionSingleton;
+import main.controller.GestoreEccezioni;
 import main.model.Parametro;
 
 
@@ -17,6 +18,7 @@ public class VparametroDAO {
 
     private final String QUERY_parametro = "select * from parametri";
     private final String QUERY_parametroId = "select * from parametri where id=?";
+    private final String QUERY_DELETE="DELETE from parametri where id = ?";
     
 	public List<Parametro> getAllParametro() {
 	    List<Parametro>  listParametro= new ArrayList<Parametro>();
@@ -72,5 +74,21 @@ public class VparametroDAO {
 	     }
 			return newParametro;
 	}
+	
+	public boolean deleteParametro (int idParametro) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+		
+			preparedStatement.setInt(1,idParametro);
+			preparedStatement.execute();
+			return true;
+		}
+			catch (SQLException e){
+			GestoreEccezioni.getInstance().gestisciEccezione(e);
+			return false;
+			}
+	}
+
 	
 	}
