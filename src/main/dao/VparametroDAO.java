@@ -76,6 +76,31 @@ public class VparametroDAO {
 			return newParametro;
 	}
 	
+	public boolean updateParametri(Parametro Parametro) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			//simile all'insert
+			//campo=(String)request.get("campo");
+        	PreparedStatement preparedStatement = connection.prepareStatement("update parametri set nomeParametro =?, nomeParametroIta=?, descrizione=?, descrizioneIta=?, icona=?  where id =?");
+
+			preparedStatement.setInt(6, Parametro.getId());
+			preparedStatement.setString(1, Parametro.getNomeParametro());
+            preparedStatement.setString(2, Parametro.getNomeParametroIta());
+            preparedStatement.setString(3, Parametro.getDescrizione());
+            preparedStatement.setString(4, Parametro.getDescrizioneIta());
+            preparedStatement.setString(5, Parametro.getIcona());
+        	//preparedStatement.setString(1, (String)request.get("nomePrincipio"));
+            //preparedStatement.setInt(2, (Integer)request.get("id"));
+            preparedStatement.execute();
+            return true;
+		}
+		catch(SQLException e){
+			GestoreEccezioni.getInstance().gestisciEccezione(e);
+			return false;
+		}	
+	}
+	
+	
 	public boolean deleteParametro (int idParametro) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {

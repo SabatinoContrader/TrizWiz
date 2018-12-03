@@ -22,6 +22,10 @@ public class VparametroService {
 		  return this.VparametroDAO.getParametroID(id);
 	  }
 	  
+		public boolean updateParametri(Parametro parametro) {
+			return this.VparametroDAO.updateParametri(parametro); 
+		}
+	  
 	  public boolean deleteParametro (int id) {
 		  return this.VparametroDAO.deleteParametro(id);
 	  }

@@ -54,9 +54,18 @@ public class GestoreParametriController implements Controller{
 	    			MainDispatcher.getInstance().callView("ParametriMenu", request);
 	    			break;
 	    			
-	    		case "AggParametri":
-	    			//Da implementare VIew e controller
-	            	MainDispatcher.getInstance().callView("Home", request); 
+	            case "AggParametri":
+	            	MainDispatcher.getInstance().callView("AggParametro", request);
+	            	break;
+	            case "updateParametri":
+	            	if (this.VparametroService.updateParametri((Parametro)request.get("updateParametri"))) {
+	            		this.message = "Principio modificato con successo..."; 
+	            	}
+	            	else {
+	            		this.message = "Errore durante la modifica del Principio...!!!";
+	            	}
+	            	request.put("message", this.message);
+	        		MainDispatcher.getInstance().callView("ParametriMenu", request);
 	            	break;
 	    		
 	    		
