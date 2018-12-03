@@ -41,15 +41,15 @@ public class PrincipiMenuView implements View {
         }
         else if (choice == 2) {
         	this.request.put("choice", "InsPrincipi");
-        	MainDispatcher.getInstance().callAction("InsPrincipi", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("CrudPrincipi", "doControl", this.request);
         }
         else if (choice == 3) {
         	this.request.put("choice", "CanPrincipi");
-        	MainDispatcher.getInstance().callAction("CanPrincipi", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("CrudPrincipi", "doControl", this.request);
         }
         else if (choice == 4) {
         	this.request.put("choice", "AggPrincipi");
-        	MainDispatcher.getInstance().callAction("AggPrincipi", "doControl", this.request);
+        	MainDispatcher.getInstance().callAction("CrudPrincipi", "doControl", this.request);
         }
         else if (choice == 5) {
         	MainDispatcher.getInstance().callAction("Reindirizza", "doControl", null);
