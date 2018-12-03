@@ -25,4 +25,8 @@ public class VparametroService {
 	  public boolean deleteParametro (int id) {
 		  return this.VparametroDAO.deleteParametro(id);
 	  }
+	  
+	  public boolean insertParametro(Parametro parametro) {
+			return this.VparametroDAO.insertParametro(parametro);
+		}
 }

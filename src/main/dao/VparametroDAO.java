@@ -3,7 +3,7 @@ package main.dao;
 import main.ConnectionSingleton;
 import main.controller.GestoreEccezioni;
 import main.model.Parametro;
-
+import main.model.Principio;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +19,7 @@ public class VparametroDAO {
     private final String QUERY_parametro = "select * from parametri";
     private final String QUERY_parametroId = "select * from parametri where id=?";
     private final String QUERY_DELETE="DELETE from parametri where id = ?";
+    private final String QUERY_INSERT = "INSERT INTO parametri (nomeParametro,descrizione,nomeParametroIta,descrizioneIta,icona) VALUES (?,?,?,?,?)";
     
 	public List<Parametro> getAllParametro() {
 	    List<Parametro>  listParametro= new ArrayList<Parametro>();
@@ -90,5 +91,24 @@ public class VparametroDAO {
 			}
 	}
 
+	public boolean insertParametro(Parametro parametro) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
+			//preparedStatement.setInt(1, Principio.getId());
+			preparedStatement.setString(1, parametro.getNomeParametro());
+            preparedStatement.setString(2, parametro.getDescrizione());
+            preparedStatement.setString(3, parametro.getNomeParametroIta());
+            preparedStatement.setString(4, parametro.getDescrizioneIta());
+            preparedStatement.setString(5, parametro.getIcona());
+            preparedStatement.execute();
+            return true;
+		}
+		catch (SQLException e){
+			GestoreEccezioni.getInstance().gestisciEccezione(e);
+			return false;
+		}		
+		
+	}
 	
 	}

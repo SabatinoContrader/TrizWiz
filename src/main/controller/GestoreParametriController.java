@@ -4,6 +4,7 @@ import java.util.List;
 
 import main.MainDispatcher;
 import main.model.Parametro;
+import main.model.Principio;
 import main.service.VparametroService;
 
 public class GestoreParametriController implements Controller{
@@ -20,8 +21,19 @@ public class GestoreParametriController implements Controller{
 	        	switch (choice) {//se problemi da verificare
 	            
 	    		case "InsParametri":
-	    			//Da implementare VIew e controller
-	            	MainDispatcher.getInstance().callView("Home", request); 
+	    			MainDispatcher.getInstance().callView("InsertParametro", request);
+	            	break;
+	            
+	    		case "insertParametro":
+	    			if (this.VparametroService.insertParametro((Parametro)request.get("insertParametro"))) {
+	            		this.message = "Parametro inserito con successo...";            		
+	            	}
+	            	else {
+	            		this.message = "Errore durante l'inserimento del Parametro...!!!";
+	            	}
+	            	
+	            	request.put("message", this.message);
+	            	MainDispatcher.getInstance().callView("ParametrilMenu", request);
 	            	break;
 	            
 	    		case "CanParametri":
