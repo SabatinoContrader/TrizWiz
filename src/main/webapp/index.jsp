@@ -1,34 +1,15 @@
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
-<title>Login Page</title>
+<title>Login Trader</title>
 </head>
 <body>
-		<div class="login-form">
-			<h2 class="login-text">Login</h2>
-			<p class="insert" >Inserisci i tuoi dati</p>
-			<div>
-				<form action="Login" method="post">
-
-					<div class="form-group">
-
-
-						<input type="text" class="form-control" id="user" name="username"
-							placeholder="Inserisci Username">
-
-					</div>
-					</br>
-					<div class="form-group">
-
-						<input type="password" class="form-control" id="pass"
-							name="password" placeholder="Inserisci Password">
-
-					</div>
-					
-					<button class="loginButton" type="submit" value="Login" name="pulsante">Login</button>
-
-				</form>
-			</div>
-		</div>
+   <div>
+     <form action = "LoginTraderServlet" method= "post">
+     <h3>username: <input type = "text" id = "user" name ="username" placeholder = "inserisci username"></h3>
+     <h3>password: <input type = "password" id = "pass" name ="password" placeholder = "inserisci password"></h3>
+     <button type = "submit" value = "Login" name = "pulsante">Login</button><br>
+     <a href="register.jsp"> Registrati </a>
+     </form>
+   </div>
 </body>
-<html>
+</html>
