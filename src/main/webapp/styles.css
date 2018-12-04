@@ -1,0 +1,356 @@
+body {
+	margin: 0;
+	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+	background: #1d1d1d;
+	color: #fff;
+	background-image:url("http://www.ipvision.it/wp-content/uploads/2016/01/wallpaper-blu-scuro.jpg"); 
+	background-repeat:no-repeat;
+	background-position:center; 
+	padding:10px;
+}
+
+#books {
+	padding: 0px 150px 0px 150px;
+}
+
+#books ul {
+	margin: 0px 0;
+	background: url(background.gif) repeat-y;
+	border: 1px solid #111;
+}
+#books ul li {
+	margin: 0;
+	padding: 0px;
+	color: #ccff77;
+	font-size: 1.7em;
+	font-weight: bold;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #353535;
+	border-right: 1px solid #333;
+	border-left: 1px solid #151515;
+	background: #222;
+}
+
+#books ul li h2 {
+	font-size: 0.9em;
+	padding: 0px 0;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #333;
+	color: #fff;
+}
+
+#books ul li p {
+	color: #ccc;
+	font-size: 0.7em;
+	font-weight: normal;
+	line-height: 1.6em;
+}
+
+#books ul li form {
+	display: inline;
+}
+
+h1 {
+	font: 5em normal Georgia, 'Times New Roman', Times, serif;
+	text-align:center;
+	padding-bottom: 10px;
+}
+h1 span { color: #cbff78; }
+h1 small{
+	font: 0.2em normal Verdana, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing: 1.5em;
+	display: block;
+	color: #666;
+}
+
+/* Menu styling */
+
+#links {
+   border-top:	solid #ffffff 1px;
+   border-bottom: solid #ffffff 1px;
+   text-align: center;
+   margin-left: 100px;
+   margin-right: 100px;
+   margin-bottom: 40px;
+   font-size: 2.0em;
+}
+
+#links ul {
+   margin: 0px;
+   padding: 0px;
+   font-size: 110%;
+   color: #ffffff;
+   line-height: 30px;
+}
+
+#links li {
+   list-style-type:	none;
+   display: inline;
+   white-space: nowrap;
+}
+
+#links li a { 
+   padding: 7px 10px;
+   color: #ffffff;
+   border: none;
+}
+
+#links li a:link {
+   color: #ffffff;
+   text-decoration: none; 
+}
+
+#links li a:visited {
+   color: #ffffff;
+   text-decoration: none; 
+}
+
+#links li a:hover {
+   color:	#000000;
+   background-color: #cbff78;  
+   text-decoration: none; 
+}
+
+#footer {
+margin-left:0px;
+margin-top: 50px;
+border-top: 1px solid;
+text-align: center;
+background:#111111 none repeat scroll 0 0;
+float:left;
+width:100%;
+}
+.login-form {
+	padding-left: 43%;
+	padding-top: 13%;
+	
+}
+.login-form .form-control {
+  border-radius: 4px;
+  height:5%;
+}
+.login-text{
+	font-size: 34px; 
+    padding-left: 5%;
+}
+.insert{
+	padding-left:5%;
+	font-size: small;
+}
+.loginButton{
+	background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 10%;
+    height: 5%;
+    margin-top:2%;
+    margin-left: 6%;
+}
+
+.customerLink{
+	display: block;
+    height: 25%;
+    background: #435261 none repeat scroll 0 0;
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+    border-color: #fefefe;
+    font-weight: bold;
+    font-size: x-large; 
+    text-decoration: none;
+    color:white;
+}
+.insertDiv{
+	display: flex;
+	align-items: center;
+	padding-left:30%;
+	padding-bottom:2%;
+}
+.menuDiv{
+	display: flex;
+	align-items: center;
+	padding-left:35%;
+	padding-bottom:2%;
+}
+.imgSuperUser{
+	width: 5%; 
+	padding-right:2%;
+}
+.imgThing{
+	width: 18%; 
+	padding-right:2%;
+}
+.imgItem{
+	width: 24%; 
+	padding-right:2%;
+}
+.itemDiv{
+	padding-left: 15%;
+    padding-top: 2%;
+}
+a:hover{
+	color:#59b1e5;
+}
+.logout{
+	text-decoration: none;
+    color: #59b1e5;
+    font-size: large;
+}
+.logoutDisplay{
+	text-align: right;
+}
+.customerForm .form-control{
+  border-radius: 4px;
+  height:5%;
+}
+.insertCustomer{
+	padding-left:25%; 
+	display: flex;
+	align-items: center;
+}
+.insertTable{
+	padding-left: 35%;
+}
+.modifyCustomer{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    padding-left:6%;
+    }
+.idCustomer{
+	display: flex;
+    flex-direction: inherit;
+    margin: 0 auto;
+    align-items: center;
+}
+.registerButton{
+	    background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    width: 12%;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+button:hover{
+	color:#59b1e5;
+}
+.readCustomer{
+	padding-left:37%; 
+	display: flex;
+	align-items: center;
+}
+.readThing{
+	padding-left:30%; 
+	display: flex;
+	align-items: center;
+}
+.table {
+     background: #34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+      width: 60%;
+}
+.table tr {
+    border-color: #46637f;
+    font-size:large;
+}
+.table th {
+    color: #dd5;
+}
+.readTable{
+	padding-left:30%;
+}
+.modifyButton{
+	background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 20%;
+    height: 5%;
+    margin-top:2%;
+    margin-left: 40%;
+}
+.deleteCustomer{
+	 padding-left:30%; 
+	display: flex;
+	align-items: center;
+}
+.delete{
+	 display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    margin-right:5%;
+}
+.deleteButton{
+		background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 170%;
+    width: 58%;
+    height: 5%;
+    margin-top:4%;
+    margin-left: 20%;
+}
+.textFont{
+	font: 400 13.3333px Arial;
+}
+.censisciButton{
+	background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 10%;
+    height: 5%;
+    margin-top:2%;
+    margin-left: 40%;
+}
+.itemSizeImg{
+	 width: 13%;
+    padding-right: 2%;	
+}
+.itemForm{
+	padding-left: 40%;
+}
+
+.thingDiv{
+	display:flex;
+	align-items:center;
+    padding-top: 2%;
+}
+.things{
+	font-size: xx-large;
+    font: 3em -webkit-xxx-large Georgia, 'Times New Roman', Times, serif;
+    padding-left: 20%;
+    margin-bottom: -4%;
+}
+.thingTable{
+	width:40%;
+	margin-left:5%;
+}
+.updateThing{
+	padding-left:5%; 
+	display: flex;
+	align-items: center;
+}
+.deleteBuilding{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left:5%;
+}
+.floorText{
+	
+}
+
+
