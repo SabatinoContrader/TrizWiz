@@ -49,12 +49,12 @@ public class BadgeReaderServlet extends HttpServlet {
     	String choice = request.getParameter("richiesta");
         if (choice != null) {
         	switch (choice) {
-            /*case "badgesReaderManagement":
-            	this.allBadgeReader = this.badgeReaderService.getAllBadgeReaders();
-                request.setAttribute("visualizzaBadgeReaders", allBadgeReader);
+            case "badgesReaderManagement":
+            	this.allPrincipio = this.CrudPrincipiService.getAllPrincipio();
+                request.setAttribute("visualizzaBadgeReaders", allPrincipio);
             	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
             	break;
-            	*/
+            	
             	//inserimento principio			//////////////////////
             case "insert":
             	response.sendRedirect("insertBadgeReader.jsp");

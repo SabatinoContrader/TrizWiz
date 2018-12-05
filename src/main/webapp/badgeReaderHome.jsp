@@ -10,7 +10,11 @@
 <form action="BadgeReaderServlet" method="post">
     <input type="submit" value="insert" name="richiesta">
 </form>
-
+ <h3> Indietro</h3>
+     <form action="MenuServlet" method="post">
+     <input type="submit" value="Indietro" name="richiesta">
+     </form>
+    
 
  <table>
      <tr>
