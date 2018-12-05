@@ -14,7 +14,7 @@ public class LoginDAO {
 
     public boolean login (String username, String password) {
 
-        Connection connection = ConnectionSingleton.getInstance();
+        /*Connection connection = ConnectionSingleton.getInstance();
         try {
             PreparedStatement statement = connection.prepareStatement(QUERY_LOGIN);
             statement.setString(1, username);
@@ -25,11 +25,12 @@ public class LoginDAO {
         catch (SQLException e) {
             GestoreEccezioni.getInstance().gestisciEccezione(e);
             return false;
-        }
+        }*/
+    	return true;
     }
     
     public boolean login (String username, String password, String ruolo) {
-
+/*
         Connection connection = ConnectionSingleton.getInstance();
         try {
             PreparedStatement statement = connection.prepareStatement(QUERY_LOGIN_RUOLO);
@@ -41,6 +42,7 @@ public class LoginDAO {
         catch (SQLException e) {
             GestoreEccezioni.getInstance().gestisciEccezione(e);
             return false;
-        }
+        }*/
+    	return true;
     }
 }
