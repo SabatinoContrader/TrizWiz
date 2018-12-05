@@ -20,22 +20,22 @@
     <center>
     <h3> Inserisci parametro</h3>
      <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Asset</button>
+     <button type="submit" value="assetsManagement" name="richiesta">Ins parametro</button>
      </form>
      
      <h3> Visualizza parametri</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Badge Reader</button>
+     <form action="AssetServlet" method="post">
+     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button>
      </form>
      <h2>---------</h2>
      <h3> Inserisci Principio</h3>
-     <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Asset</button>
+     <form action="BadgeReaderServlet" method="post">
+     <button type="submit" value="insert" name="richiesta">Ins principio</button>
      </form>
      
      <h3> Visualizza principi</h3>
      <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Badge Reader</button>
+     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button>
      </form>
     
      </center>

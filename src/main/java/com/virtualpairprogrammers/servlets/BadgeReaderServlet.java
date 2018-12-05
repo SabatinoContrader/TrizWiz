@@ -17,38 +17,51 @@ import com.virtualpairprogrammers.service.RegisterService;
 import com.virtualpairprogrammers.dao.AssetDAO;
 import com.virtualpairprogrammers.model.Asset;
 import com.virtualpairprogrammers.model.BadgeReader;
+
+import com.virtualpairprogrammers.model.Principio; //////////////
 import com.virtualpairprogrammers.service.AssetService;
 import com.virtualpairprogrammers.service.BadgeReaderService;
+import com.virtualpairprogrammers.service.CrudPrincipiService;  ////////////
 
 /**
- * Servlet implementation class ServletAsset
+ * Servlet implementation class PRINCIPI
  */
 public class BadgeReaderServlet extends HttpServlet {
 	
 	private String message;
-	private BadgeReaderService badgeReaderService;
-	private AssetService assetService;
+	//private BadgeReaderService badgeReaderService;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////
+	private CrudPrincipiService CrudPrincipiService;
+	private List<Principio> allPrincipio;
+	/////////////////////////////////////////////////////////////////////////////////////////
+	
+	/*private AssetService assetService;
 	private List<BadgeReader> allBadgeReader;
 	private List<Asset> allAssets;
-	
+	*/
     @Override
     public void service (HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-    	this.assetService = new AssetService();
-    	this.badgeReaderService = new BadgeReaderService();
+    	//this.assetService = new AssetService();
+    	//this.badgeReaderService = new BadgeReaderService();
+    	this.CrudPrincipiService= new CrudPrincipiService();
     	this.message = "";
     	String choice = request.getParameter("richiesta");
         if (choice != null) {
         	switch (choice) {
-            case "badgesReaderManagement":
+            /*case "badgesReaderManagement":
             	this.allBadgeReader = this.badgeReaderService.getAllBadgeReaders();
                 request.setAttribute("visualizzaBadgeReaders", allBadgeReader);
             	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
             	break;
-            	
+            	*/
+            	//inserimento principio			//////////////////////
             case "insert":
             	response.sendRedirect("insertBadgeReader.jsp");
             	//getServletContext().getRequestDispatcher("/inserBadgereader.jsp").forward(request,response);
                 break;
+                /////////////////////////////		////////////
+            /*    
             case "indietro":
             	this.allBadgeReader = this.badgeReaderService.getAllBadgeReaders();
                 request.setAttribute("visualizzaBadgeReaders", allBadgeReader);
@@ -68,15 +81,20 @@ public class BadgeReaderServlet extends HttpServlet {
             case "delete":
             	getServletContext().getRequestDispatcher("/deleteBadgeReader.jsp").forward(request,response);
                 break;
+               */
+            //insert principio						////////////////////////    
             case "insertBadgeReader":
             	if (request != null) {
-                    int idbadgereader = 0;
-                    String descrizione = request.getParameter("descrizione").toString();
-                    String tipologia = request.getParameter("tipologia").toString();
-                    int idasset = Integer.parseInt(request.getParameter("idasset").toString());
-                    if (badgeReaderService.insertBadgeReader(new BadgeReader( idbadgereader,idasset, descrizione, tipologia ))) {
-                   	 this.allBadgeReader = this.badgeReaderService.getAllBadgeReaders();
-                   	 request.setAttribute("visualizzaBadgeReaders", this.allBadgeReader);
+                    int id = 0;
+                    String nomePrincipio = request.getParameter("nomePrincipio").toString();
+                    String nomePrincipioIta = request.getParameter("nomePrincipioIta").toString();
+                    String domande = request.getParameter("domande").toString();
+                    String steps = request.getParameter("steps").toString();
+                    String esempi = request.getParameter("esempi").toString();
+                    //int idasset = Integer.parseInt(request.getParameter("idasset").toString());
+                    if (CrudPrincipiService.insertPrincipio(new Principio( id,nomePrincipio, nomePrincipioIta,domande,steps,esempi ))) {
+                   	 this.allPrincipio = this.CrudPrincipiService.getAllPrincipio();
+                   	 request.setAttribute("visualizzaBadgeReaders", this.allPrincipio);
                    	 getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
                     } 
                     else {
@@ -84,6 +102,9 @@ public class BadgeReaderServlet extends HttpServlet {
                     }
            	}
                break;
+               /////////////////////////				/////////////
+           
+             /*
             case "deleteBadgeReader":
             	if(this.badgeReaderService.deleteBadgeReadear(Integer.parseInt(request.getParameter("delBadgeReader"))))
             		
@@ -97,7 +118,7 @@ public class BadgeReaderServlet extends HttpServlet {
                 request.setAttribute("visualizzaBadgeReaders", this.allBadgeReader);
             	
             	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
-            	break;
+           break;
             	
             	
             	
@@ -121,7 +142,7 @@ public class BadgeReaderServlet extends HttpServlet {
             	request.setAttribute("visualizzaBadgeReaders", this.badgeReaderService.getAllBadgeReaders());
             	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
             	break;
-            }
+            */}
         	
         	
         	

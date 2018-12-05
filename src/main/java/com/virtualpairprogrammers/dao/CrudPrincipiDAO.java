@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 import com.virtualpairprogrammers.utils.ConnectionSingleton;
@@ -17,6 +18,8 @@ public class CrudPrincipiDAO {
 	String campo = "";
 	
 	//private final String QUERY_ALL = "SELECT * FROM sympthom";
+
+    private final String QUERY_principio = "select * from principi";
 	private final String QUERY_INSERT = "INSERT INTO principi (nomePrincipio,nomePrincipioIta,domande,steps,esempi) VALUES (?,?,?,?,?)";
 	private final String QUERY_DELETE = "delete from principi where id = ?";
 	
@@ -24,30 +27,30 @@ public class CrudPrincipiDAO {
 	public CrudPrincipiDAO() {		
 	}
 	
-	/*public List<Principio> getAllPrincipio(){		
-		List<Principio> allPrincipio = new ArrayList<Principio>();
-		Connection connection = ConnectionSingleton.getInstance();
-		
+	public List<Principio> getAllPrincipio() {
+	    List<Principio>  listPrincipio= new ArrayList<Principio>();
+        Connection connection = ConnectionSingleton.getInstance();
+       
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_ALL);
-			ResultSet resultSet = preparedStatement.executeQuery();
-			while(resultSet.next()) {
-				Sintomo newSintomo = new Sintomo();
-				newSintomo.setIdSintomo(resultSet.getInt("idSympthom"));
-				newSintomo.setTipoSintomo(resultSet.getString("sympthom_name"));
-				newSintomo.setDescrizione(resultSet.getString("sympthom_desc"));
-				allSintomi.add(newSintomo);
-				
-			}
-				
-		}catch (SQLException e){
-			GestoreEccezioni.getInstance().gestisciEccezione(e);
-            //System.out.println("Errore nella ricerca dei prodotti!!");
-			}
-			
-	    return allSintomi;
-	    
-	}*/
+           Statement statement = connection.createStatement();
+           ResultSet resultSet = statement.executeQuery(QUERY_principio);
+           while (resultSet.next()) {
+        	   Principio newPrincipio=new Principio();
+        	   newPrincipio.setNomePrincipio(resultSet.getString("nomePrincipio"));
+        	   newPrincipio.setDomande(resultSet.getString("domande"));
+        	   newPrincipio.setEsempi(resultSet.getString("esempi"));
+        	   newPrincipio.setId(resultSet.getInt("id"));
+        	   newPrincipio.setNomePrincipioIta(resultSet.getString("nomePrincipioIta"));
+        	   newPrincipio.setSteps(resultSet.getString("steps"));
+        	   listPrincipio.add(newPrincipio);
+           	}
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+		
+		return listPrincipio;
+    }
 	
 	public boolean insertPrincipio(Principio Principio) {
 		Connection connection = ConnectionSingleton.getInstance();

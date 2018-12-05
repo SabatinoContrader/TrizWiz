@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import com.virtualpairprogrammers.dao.BadgeReaderDAO;
 import com.virtualpairprogrammers.model.BadgeReader;
+import com.virtualpairprogrammers.model.Principio;
 
 public class BadgeReaderService {
 
@@ -25,9 +26,9 @@ public class BadgeReaderService {
     public List<BadgeReader> getBadgeReader (int id) {
         return this.badgeReaderDAO.getBadgeReader(id);
     }
-
-    public boolean insertBadgeReader (BadgeReader badgeReader) {
-        return this.badgeReaderDAO.insertBadgeReader(badgeReader);
+////////////////////// modifica ///////////////////////////////
+    public boolean insertPrincipio (Principio principio) {
+        return this.badgeReaderDAO.insertPrincipio(principio);
     }
     public boolean deleteBadgeReadear (int idBadgeReader) {
     	return this.badgeReaderDAO.deleteBadgeReadear(idBadgeReader);

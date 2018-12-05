@@ -14,10 +14,9 @@ public class CrudPrincipiService {
 	public CrudPrincipiService() {
 		CrudPrincipiDAO = new CrudPrincipiDAO();
     }
-	/*
-	public List<Principio> getAllSympthom () {
-        return this.sintomoDAO.getAllSympthom();
-    }*/
+	public List<Principio> getAllPrincipio () {
+        return this.CrudPrincipiDAO.getAllPrincipio();
+    }
 	
 	public boolean insertPrincipio(Principio principio) {
 		return this.CrudPrincipiDAO.insertPrincipio(principio);
