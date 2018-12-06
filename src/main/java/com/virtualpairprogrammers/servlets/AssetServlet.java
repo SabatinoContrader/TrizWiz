@@ -38,9 +38,9 @@ public class AssetServlet extends HttpServlet {
 	                 getServletContext().getRequestDispatcher("/asset.jsp").forward(request,response);
 	                 break; 
 	                 
-	        	case "vparametri":
-	        		response.sendRedirect("homePrametri.jsp");
-	        		break;
+	        	/*case "vparametri":
+	        		response.sendRedirect("homeParametri.jsp");
+	        		break; */
 	                 
 	                 
 	            case "insert":

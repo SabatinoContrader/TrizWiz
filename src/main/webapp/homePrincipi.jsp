@@ -9,7 +9,7 @@
 <body>
 
 
-<h1> Visualizza Principi </h1>
+<h1> Menu Principi </h1>
      
      <form action="PrincipiServlet" method="post"> 
      

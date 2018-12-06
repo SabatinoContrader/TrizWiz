@@ -120,4 +120,14 @@
     <servlet-name>MuenuServlet</servlet-name>
     <url-pattern>/MuenuServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ParametriServlet</display-name>
+    <servlet-name>ParametriServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.ParametriServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParametriServlet</servlet-name>
+    <url-pattern>/ParametriServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

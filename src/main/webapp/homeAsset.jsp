@@ -6,58 +6,9 @@
      <h1>Benvenuto/a <%= request.getSession().getAttribute("utente")%></h1>
      <h2>------- MENU PRINCIPALE MATRIX -------</h2>
      <h2>    <h2>
-<!--  
-     <h3>1. Assets</h3>
-     <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Asset</button>
-     </form>
-     
-     <h3>2. Badge Readers</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Badge Reader</button>
-     </form>
-    -->
-    <center>
-    <!-- 
-    <h3> Inserisci parametro</h3>
-     <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Ins parametro</button>
-     </form>
-     
-     <h3> Visualizza parametri</h3>
-     <form action="AssetServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button>
-     </form>
-     <h2>---------</h2>
-     
-      -->
-     
-     <!--  
-     <h3> Inserisci Principio</h3> 
-     <form action="BadgeReaderServlet" method="post"> 
-     <button type="submit" value="insert" name="richiesta">Ins principio</button> 
-     </form> 
-     -->
-     
-    <!--   
-    <h3> Visualizza principi</h3> 
-     <form action="BadgeReaderServlet" method="post"> 
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button> 
-     </form> 
-     -->
-    
-    <!--  
-     <h3> Cancella principio</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="delete" name="richiesta">Cancella</button>
-     </form>
-    -->
-    
-     </center>
-    
     
     <h3>1. Impostazioni parametri</h3>
-     <form action="AssetServlet" method="post">
+     <form action="ParametriServlet" method="post">
      <button type="submit" value="vparametri" name="richiesta">Parametri</button>
      </form>
      
