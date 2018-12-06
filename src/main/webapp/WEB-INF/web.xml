@@ -12,6 +12,10 @@
     <servlet-class>com.virtualpairprogrammers.servlets.AssetServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>PrincipiServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.PrincipiServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>BadgeReaderServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.BadgeReaderServlet</servlet-class>
   </servlet>
@@ -54,6 +58,10 @@
   <servlet-mapping>
     <servlet-name>AssetServlet</servlet-name>
     <url-pattern>/AssetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PrincipiServlet</servlet-name>
+    <url-pattern>/PrincipiServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ProdottoServlet</servlet-name>

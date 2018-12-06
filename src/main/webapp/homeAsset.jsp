@@ -18,6 +18,7 @@
      </form>
     -->
     <center>
+    <!-- 
     <h3> Inserisci parametro</h3>
      <form action="AssetServlet" method="post">
      <button type="submit" value="assetsManagement" name="richiesta">Ins parametro</button>
@@ -28,21 +29,29 @@
      <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button>
      </form>
      <h2>---------</h2>
-     <h3> Inserisci Principio</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="insert" name="richiesta">Ins principio</button>
-     </form>
      
-     <h3> Visualizza principi</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button>
-     </form>
+      -->
+     
+     <!--  
+     <h3> Inserisci Principio</h3> 
+     <form action="BadgeReaderServlet" method="post"> 
+     <button type="submit" value="insert" name="richiesta">Ins principio</button> 
+     </form> 
+     -->
+     
+    <!--   
+    <h3> Visualizza principi</h3> 
+     <form action="BadgeReaderServlet" method="post"> 
+     <button type="submit" value="badgesReaderManagement" name="richiesta">Visualizza</button> 
+     </form> 
+     -->
     
+    <!--  
      <h3> Cancella principio</h3>
      <form action="BadgeReaderServlet" method="post">
      <button type="submit" value="delete" name="richiesta">Cancella</button>
      </form>
-    
+    -->
     
      </center>
     
@@ -53,8 +62,8 @@
      </form>
      
      <h3>2. Impostazioni principi</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Principi</button>
+     <form action="PrincipiServlet" method="post">
+     <button type="submit" value="vprincipi" name="richiesta">Principi</button>
      </form>
      
      
