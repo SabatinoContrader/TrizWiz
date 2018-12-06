@@ -60,28 +60,40 @@ public class BadgeReaderServlet extends HttpServlet {
             	response.sendRedirect("insertBadgeReader.jsp");
             	//getServletContext().getRequestDispatcher("/inserBadgereader.jsp").forward(request,response);
                 break;
-                /////////////////////////////		////////////
-            /*    
-            case "indietro":
-            	this.allBadgeReader = this.badgeReaderService.getAllBadgeReaders();
-                request.setAttribute("visualizzaBadgeReaders", allBadgeReader);
-            	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
-            	break;
-            case "indietrohome":
+                
+                
+            case "Indietro":
+            	//getServletContext().getRequestDispatcher("/homeAsset.jsp").forward(request,response);
+                
             	response.sendRedirect("homeAsset.jsp");
-            	break;
-            case "update":
-            	int id=Integer.parseInt(request.getParameter("id"));
-            	request.setAttribute("id1", id);
-            	request.setAttribute("id", this.badgeReaderService.getBadgeReader(id));
-            	this.allAssets = this.assetService.getAllAssets();
-                request.setAttribute("allAssets", allAssets);
-            	getServletContext().getRequestDispatcher("/updateBadgeReader.jsp").forward(request,response);
-                break;
+            	//getServletContext().getRequestDispatcher("/inserBadgereader.jsp").forward(request,response);
+                break;    
+                
+                
+                
+                /////////////////////////////		////////////
             case "delete":
-            	getServletContext().getRequestDispatcher("/deleteBadgeReader.jsp").forward(request,response);
-                break;
-               */
+            	this.allPrincipio = this.CrudPrincipiService.getAllPrincipio();
+                request.setAttribute("visualizzaBadgeReaders", allPrincipio);
+            	getServletContext().getRequestDispatcher("/DeletePrincipio.jsp").forward(request,response);
+            break;
+            
+            	
+            	
+            case "deleteID":
+            	if(this.CrudPrincipiService.deletePrincipio(Integer.parseInt(request.getParameter("id")))){
+            		this.allPrincipio = this.CrudPrincipiService.getAllPrincipio();
+                    request.setAttribute("visualizzaBadgeReaders", allPrincipio);
+                	getServletContext().getRequestDispatcher("/DeletePrincipio.jsp").forward(request,response);}
+            	else {
+            		response.sendRedirect("homeAsset.jsp");
+            	}
+            	
+             break;
+           	
+            	
+            	
+            	
             //insert principio						////////////////////////    
             case "insertBadgeReader":
             	if (request != null) {

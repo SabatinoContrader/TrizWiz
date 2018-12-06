@@ -27,9 +27,9 @@ public class BadgeReaderService {
         return this.badgeReaderDAO.getBadgeReader(id);
     }
 ////////////////////// modifica ///////////////////////////////
-    public boolean insertPrincipio (Principio principio) {
+    /*public boolean insertPrincipio (Principio principio) {
         return this.badgeReaderDAO.insertPrincipio(principio);
-    }
+    }*/
     public boolean deleteBadgeReadear (int idBadgeReader) {
     	return this.badgeReaderDAO.deleteBadgeReadear(idBadgeReader);
     }
