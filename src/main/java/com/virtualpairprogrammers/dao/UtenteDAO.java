@@ -9,28 +9,33 @@ import java.util.List;
 
 public class UtenteDAO {
 
-    private final String QUERY_INSERT_UTENTE = "INSERT INTO utente\n" +
-            "(username,\n" +
+	private final String QUERY_INSERT_UTENTE = "INSERT INTO utente (username,password,nome,cognome,email,ruolo) VALUES (?,?,?,?,?,?)";
+	
+    /*private final String QUERY_INSERT_UTENTE = "INSERT INTO user "(username,\n" +
             "password,\n" +
             "nome,\n" +
-            "cognome)\n" +
+            "cognome,\n"+
+            "email,\n"+
+            "ruolo)\n" +
             "VALUES\n" +
             "(?,\n" +
             "?,\n" +
             "?,\n" +
+            "?,\n" +
+            "?,\n" +
             "?);\n";
-
-    private  final  String QUERY_UPDATE_UTENTE = "UPDATE utente\n" +
+*/
+   /* private  final  String QUERY_UPDATE_UTENTE = "UPDATE utente\n" +
             "SET\n" +
             "username = ?,\n" +
             "password = ?,\n" +
             "nome = ?,\n" +
             "cognome = ?\n" +
-            "WHERE id = ?;\n";
+            "WHERE id = ?;\n";*/
 
-    private final String QUERY_GET_UTENTE = "SELECT * FROM utente WHERE id = ?";
+    private final String QUERY_GET_UTENTE = "SELECT * FROM user WHERE id = ?";
 
-    private final String QUERY_GET_UTENTE_BY_USERNAME = "SELECT * FROM utente WHERE username = ?";
+    private final String QUERY_GET_UTENTE_BY_USERNAME = "SELECT * FROM user WHERE username = ?";
 
     public Utente get(int id){
         Connection connection = ConnectionSingleton.getInstance();
@@ -45,6 +50,8 @@ public class UtenteDAO {
                 utente.setCognome(resultSet.getString("cognome"));
                 utente.setNomeUtente(resultSet.getString("username"));
                 utente.setPassword(resultSet.getString("password"));
+                utente.setEmail(resultSet.getString("email"));
+                utente.setRuolo(resultSet.getString("ruolo"));//Questo poi va gestito in base ai ruoli
                 preparedStatement.close();
                 return utente;
             }
@@ -69,6 +76,8 @@ public class UtenteDAO {
                 utente.setPassword(resultSet.getString("password"));
                 utente.setNome(resultSet.getString("nome"));
                 utente.setCognome(resultSet.getString("cognome"));
+                utente.setEmail(resultSet.getString("email"));
+                utente.setRuolo(resultSet.getString("ruolo"));
                 preparedStatement.close();
                 return utente;
             }
@@ -84,29 +93,24 @@ public class UtenteDAO {
         return null;
     }
 
-    public int insert(Utente utente){
+    public boolean insert(Utente utente){
         Connection connection = ConnectionSingleton.getInstance();
-        int id = -1;
         try {
-            String generatedColumns[] = { "id" };
-            PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT_UTENTE, generatedColumns);
+            PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT_UTENTE);
             preparedStatement.setString(1,utente.getNomeUtente());
             preparedStatement.setString(2,utente.getPassword());
             preparedStatement.setString(3,utente.getNome());
             preparedStatement.setString(4,utente.getCognome());
+            preparedStatement.setString(5,utente.getEmail());
+            preparedStatement.setString(6, utente.getRuolo());//al momento gli utenti sono tutti consumer
             preparedStatement.execute();
-            ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            while (resultSet.next()) {
-                id = resultSet.getInt(1);
-            }
-            preparedStatement.close();
+            return true;
 
         } catch (Exception e) {
             GestoreEccezioni.getInstance().gestisciEccezione(e);
-            return -1;
+            return false;
         }
 
-        return id;
     }
 
     public int update(Utente utente){

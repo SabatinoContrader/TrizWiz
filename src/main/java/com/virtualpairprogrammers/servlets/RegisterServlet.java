@@ -20,9 +20,11 @@ public class RegisterServlet extends HttpServlet {
         if (request != null) {
             String nomeUtente = request.getParameter("username").toString();
             String password = request.getParameter("password").toString();
+            String email=request.getParameter("email").toString();
             String nome = request.getParameter("nome").toString();
             String cognome = request.getParameter("cognome").toString();
-            if (registerService.insert(new Utente(0, nomeUtente, password, nome, cognome)) > 0)
+            String ruolo = "Consumer";
+            if (registerService.insert(new Utente(0, nomeUtente, password, nome, cognome, email,ruolo)))
                 response.sendRedirect("index.jsp");
             else
                 response.sendRedirect("register.jsp");

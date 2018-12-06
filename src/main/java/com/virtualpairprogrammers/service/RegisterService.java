@@ -11,7 +11,7 @@ public class RegisterService {
         this.utenteDAO = new UtenteDAO();
     }
 
-    public int insert(Utente utente) {
+    public boolean insert(Utente utente) {
          return this.utenteDAO.insert(utente);
 
     }
