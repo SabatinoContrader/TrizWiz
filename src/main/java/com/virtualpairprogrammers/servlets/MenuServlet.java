@@ -28,8 +28,9 @@ public class MenuServlet extends HttpServlet {
 //                request.setAttribute("all_product_fornitore", allProdotti);
 //                getServletContext().getRequestDispatcher("/listProdotti.jsp").forward(request,response);
                 break;
-            case "CustomersMenu":
-            	response.sendRedirect("homeCustomers.jsp");
+            case "CastumersMenu":
+            	getServletContext().getRequestDispatcher("/homeCustomers.jsp").forward(request,response);
+            	//response.sendRedirect("homeCustomers.jsp");
                 break;
             case "Indietro":
             	response.sendRedirect("home.jsp");
