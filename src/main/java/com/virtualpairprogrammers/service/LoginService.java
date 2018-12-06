@@ -16,7 +16,7 @@ public class LoginService {
         return this.loginDAO.login(username, password);
     }
     
-    public boolean login (String username, String password, String ruolo) {
+   /* public boolean login (String username, String password, String ruolo) {
         return this.loginDAO.login(username, password, ruolo);
-    }
+    }*/
 }

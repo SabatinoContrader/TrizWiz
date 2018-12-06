@@ -5,6 +5,7 @@ import com.virtualpairprogrammers.utils.GestoreEccezioni;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDAO {
@@ -14,13 +15,17 @@ public class LoginDAO {
 
     public boolean login (String username, String password) {
 
+    	boolean ritorno= false;
         Connection connection = ConnectionSingleton.getInstance();
         try {
             PreparedStatement statement = connection.prepareStatement(QUERY_LOGIN);
             statement.setString(1, username);
             statement.setString(2, password);
-            statement.executeQuery();
-            return true;
+           ResultSet risultato=statement.executeQuery();
+           // return true;
+            while(risultato.next()) {
+            	ritorno=true;
+            }
             
         }
         catch (SQLException e) {
@@ -28,6 +33,7 @@ public class LoginDAO {
             return false;
         }
     	
+        return ritorno;
     }
     
 /*    public boolean login (String username, String password, String ruolo) {

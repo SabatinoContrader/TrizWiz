@@ -10,6 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+import com.virtualpairprogrammers.model.Utente;
+import com.virtualpairprogrammers.service.RegisterService;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+
 public class RegisterServlet extends HttpServlet {
 
     private RegisterService registerService;
@@ -24,11 +34,16 @@ public class RegisterServlet extends HttpServlet {
             String nome = request.getParameter("nome").toString();
             String cognome = request.getParameter("cognome").toString();
             String ruolo = "Consumer";
-            if (registerService.insert(new Utente(0, nomeUtente, password, nome, cognome, email,ruolo)))
-                response.sendRedirect("index.jsp");
+            if(nomeUtente.isEmpty()||password.isEmpty()||nome.isEmpty()||cognome.isEmpty()) {
+            	getServletContext().getRequestDispatcher("/register.jsp").forward(request,response);
+            }
+            else{
+            	registerService.insert(new Utente(0, nomeUtente, password, nome, cognome, email,ruolo));
+				response.sendRedirect("index.jsp");
+            }
+        }
             else
-                response.sendRedirect("register.jsp");
+            	getServletContext().getRequestDispatcher("/register.jsp").forward(request,response);
         }
 
     }
-}

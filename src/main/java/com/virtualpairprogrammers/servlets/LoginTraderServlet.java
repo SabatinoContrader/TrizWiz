@@ -16,6 +16,12 @@ public class LoginTraderServlet extends HttpServlet {
 
     public void service (HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {
+    	
+    	String richiesta = request.getParameter("richiestaLogin").toString();
+    	if (richiesta.equals("Registrati")) {
+    		getServletContext().getRequestDispatcher("/register.jsp").forward(request,response);
+    	}
+    	else {
         loginService =  new LoginService();
         HttpSession session = request.getSession();
         session.setAttribute("utente", null);
@@ -29,7 +35,8 @@ public class LoginTraderServlet extends HttpServlet {
         }
         else
             //response.sendRedirect("login.jsp");
-            getServletContext().getRequestDispatcher("/login.jsp").forward(request,response);
-    }
+            getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+        }
+    	}
     }
 }
