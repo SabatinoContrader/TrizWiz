@@ -24,6 +24,7 @@ import com.virtualpairprogrammers.service.AssetService;
 public class AssetServlet extends HttpServlet {
 	 private AssetService assetService;
      private List<Asset> allAssets;
+    
      
      
 	 public void service (HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
@@ -31,11 +32,17 @@ public class AssetServlet extends HttpServlet {
 	        HttpSession session = request.getSession(true);
 	        assetService =  new AssetService();
 	        switch (scelta) {
-	        	case "assetsManagement":
+	        	 case "assetsManagement":
 	        		 this.allAssets = this.assetService.getAllAssets();
 	                 request.setAttribute("allAssets", allAssets);
 	                 getServletContext().getRequestDispatcher("/asset.jsp").forward(request,response);
-	                 break;
+	                 break; 
+	                 
+	        	case "vparametri":
+	        		response.sendRedirect("homePrametri.jsp");
+	        		break;
+	                 
+	                 
 	            case "insert":
                     response.sendRedirect("insertAsset.jsp");
 	            	 break;

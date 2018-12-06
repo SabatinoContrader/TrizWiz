@@ -49,7 +49,7 @@
     
     <h3>1. Impostazioni parametri</h3>
      <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Parametri</button>
+     <button type="submit" value="vparametri" name="richiesta">Parametri</button>
      </form>
      
      <h3>2. Impostazioni principi</h3>

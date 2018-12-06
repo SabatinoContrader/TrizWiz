@@ -94,14 +94,22 @@
   <session-config>
     <session-timeout>4000</session-timeout>
   </session-config>
-  
   <servlet>
     <servlet-name>AssegnazioneServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.AssegnazioneServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>AssegnazioneServlet</servlet-name>
     <url-pattern>/AssegnazioneServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MuenuServlet</display-name>
+    <servlet-name>MuenuServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.MuenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MuenuServlet</servlet-name>
+    <url-pattern>/MuenuServlet</url-pattern>
   </servlet-mapping>
 </web-app>
