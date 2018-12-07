@@ -1,11 +1,10 @@
 package com.virtualpairprogrammers.service;
 
 import com.virtualpairprogrammers.dao.VparametroDAO;
-import com.virtualpairprogrammers.dao.VprincipioDAO;
 import com.virtualpairprogrammers.model.Parametro;
-import com.virtualpairprogrammers.model.Principio;
 
-import java.sql.SQLException;
+
+
 import java.util.List;
 
 public class VparametroService {

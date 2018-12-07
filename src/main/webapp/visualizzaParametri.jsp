@@ -1,10 +1,10 @@
-<%@ page import="com.virtualpairprogrammers.model.Parametro" %>
+<%@ page import="com.virtualpairprogrammers.dto.ParametroNomeDTO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-<% List<Parametro> allParametro = (List<Parametro>) request.getAttribute("visualizzaParametro");%>
+<% List<ParametroNomeDTO> allParametro = (List<ParametroNomeDTO>) request.getAttribute("visualizzaParametro");%>
 </head>
 <body>
 
@@ -27,45 +27,17 @@
          <th>
              Nome Parametro
          </th>
-         <th>
-             Nome Parametro Ita
-         </th>
-         <th>
-             Descrizione
-         </th>
-         <th>
-             Descrizione Ita
-         </th>
-         <th>
-             Icona
-         </th>
-
+        
      </tr>
-        <%for (Parametro Parametro : allParametro) { %>
+        <%for (ParametroNomeDTO parametro : allParametro) { %>
      <tr>
 
          <td>
-             <%= Parametro.getId()%>
+             <%= parametro.getIdDTO()%>
          </td>
 
          <td>
-             <%=  Parametro.getNomeParametro()%>
-         </td>
-
-         <td>
-             <%=  Parametro.getNomeParametroIta()%>
-         </td>
-
-         <td>
-             <%=  Parametro.getDescrizione()%>
-         </td>
-
-         <td>
-             <%=  Parametro.getDescrizioneIta()%>
-         </td>
-         
-         <td>
-             <%=  Parametro.getIcona()%>
+             <%=  parametro.getNomeParametroDTO()%>
          </td>
 
      </tr>
