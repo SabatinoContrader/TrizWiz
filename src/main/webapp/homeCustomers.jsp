@@ -14,23 +14,23 @@
 <center>
 		<h1 style="color:blue;">Standard</h1>
      <h3> Inserisci una standard solution</h3>
-     <form action="CustomersServlet" method="post">
-     <button type="submit" value="usersManagement" name="richiesta"> Inserisci</button>
+     <form action="StandardServlet" method="post">
+     <button type="submit" value="inserisciStandard" name="richiesta"> Inserisci</button>
      </form>
      
-     <h3> Visualizza le 76 standard solutions</h3>
-     <form action="BadgeServlet" method="post">
-     <button type="submit" value="badgesManagement" name="richiesta"> Visualizza </button>
+     <h3> Visualizza le standard solutions</h3>
+     <form action="StandardServlet" method="post">
+     <button type="submit" value="visualizzaStandard" name="richiesta"> Visualizza </button>
      </form>
      
      <h3> Cancella una standard solution</h3>
-     <form action="AssegnazioneServlet" method="post">
-     <button type="submit" value="assegnazioneManagement" name="richiesta"> Cancella </button>
+     <form action="StandardServlet" method="post">
+     <button type="submit" value="cancellaStandard" name="richiesta"> Cancella </button>
      </form>
 
      <h3> Aggiorna una standard solution</h3>
-     <form action="AssegnazioneServlet" method="post">
-     <button type="submit" value="assegnazioneManagement" name="richiesta"> Aggiorna </button>
+     <form action="StandardServlet" method="post">
+     <button type="submit" value="aggiornaStandard" name="richiesta"> Aggiorna </button>
      </form>
 </center>
 </div>     

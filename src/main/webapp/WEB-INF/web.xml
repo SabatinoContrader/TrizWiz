@@ -63,6 +63,20 @@
   </servlet-mapping>
   
   
+  
+  
+  <servlet>
+    <servlet-name>StandardServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.StandardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StandardServlet</servlet-name>
+    <url-pattern>/StandardServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
   <servlet-mapping>
     <servlet-name>LoginTraderServlet</servlet-name>
     <url-pattern>/LoginTraderServlet</url-pattern>

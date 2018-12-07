@@ -31,6 +31,7 @@ public class ParametriServlet extends HttpServlet {
 		
 		this.VParametriServiceDTO= new VparametroServiceDTO();
 		this.VParametriService= new VparametroService();
+
     	this.message = "";
     	
 		String scelta = request.getParameter("richiesta");
@@ -45,6 +46,7 @@ public class ParametriServlet extends HttpServlet {
         	//this.allParametro = this.VParametriService.getAllParametro();
         	this.allParametroDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
             request.setAttribute("visualizzaParametroDTO", allParametroDTO);
+            //request.setAttribute("visualizzaParametro", allParametroDTO);
             //response.sendRedirect("visualizzaParametri.jsp");
     		getServletContext().getRequestDispatcher("/visualizzaParametri.jsp").forward(request,response);
     		break;
@@ -76,20 +78,5 @@ public class ParametriServlet extends HttpServlet {
         }
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}*/
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}*/
 
 }
