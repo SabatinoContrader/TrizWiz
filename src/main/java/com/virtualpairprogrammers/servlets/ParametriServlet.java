@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.virtualpairprogrammers.dto.ParametroNomeDTO;
+import com.virtualpairprogrammers.model.Parametro;
+import com.virtualpairprogrammers.service.VparametroService;
 //import com.virtualpairprogrammers.model.Parametro;
 //import com.virtualpairprogrammers.service.VparametroService;
 import com.virtualpairprogrammers.service.VparametroServiceDTO;
@@ -20,14 +22,15 @@ import com.virtualpairprogrammers.service.VparametroServiceDTO;
 public class ParametriServlet extends HttpServlet {
 	private String message;
 	
-	//private VparametroService VParametriService;
-	private VparametroServiceDTO VParametriService;
-	//private List<Parametro> allParametro;
+	private VparametroService VParametriService;
+	private VparametroServiceDTO VParametriServiceDTO;
+	private List<Parametro> allParametro;
 	private List<ParametroNomeDTO> allParametroDTO;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		this.VParametriService= new VparametroServiceDTO();
+		this.VParametriServiceDTO= new VparametroServiceDTO();
+		this.VParametriService= new VparametroService();
     	this.message = "";
     	
 		String scelta = request.getParameter("richiesta");
@@ -40,8 +43,8 @@ public class ParametriServlet extends HttpServlet {
     		
         case "visParametri":
         	//this.allParametro = this.VParametriService.getAllParametro();
-        	this.allParametroDTO = this.VParametriService.getAllParametroNomeDTO ();
-            request.setAttribute("visualizzaParametro", allParametroDTO);
+        	this.allParametroDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
+            request.setAttribute("visualizzaParametroDTO", allParametroDTO);
             //response.sendRedirect("visualizzaParametri.jsp");
     		getServletContext().getRequestDispatcher("/visualizzaParametri.jsp").forward(request,response);
     		break;

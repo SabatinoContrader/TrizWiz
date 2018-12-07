@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<% List<ParametroNomeDTO> allParametro = (List<ParametroNomeDTO>) request.getAttribute("visualizzaParametro");%>
+<% List<ParametroNomeDTO> allParametro = (List<ParametroNomeDTO>) request.getAttribute("visualizzaParametroDTO");%>
 </head>
 <body>
 
