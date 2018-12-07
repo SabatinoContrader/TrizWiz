@@ -51,6 +51,18 @@
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.RegisterServlet</servlet-class>
   </servlet>
+  
+  
+  <servlet>
+    <servlet-name>CategorieStandarServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.CategorieStandarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategorieStandarServlet</servlet-name>
+    <url-pattern>/CategorieStandarServlet</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet-mapping>
     <servlet-name>LoginTraderServlet</servlet-name>
     <url-pattern>/LoginTraderServlet</url-pattern>

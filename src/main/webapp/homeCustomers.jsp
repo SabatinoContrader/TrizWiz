@@ -38,23 +38,23 @@
 <center>
 		<h1 style="color:red;">Categorie</h1>
      <h3> Inserisci Categoria</h3>
-     <form action="CustomersServlet" method="post">
-     <button type="submit" value="usersManagement" name="richiesta"> Inserisci </button>
+     <form action="CategorieStandarServlet" method="post">
+     <button type="submit" value="InserisciCat" name="richiesta"> Inserisci </button>
      </form>
      
      <h3> Visualizza le Categorie</h3>
-     <form action="BadgeServlet" method="post">
-     <button type="submit" value="badgesManagement" name="richiesta"> Visualizza</button>
+     <form action="CategorieStandarServlet" method="post">
+     <button type="submit" value="VisualizzaCat" name="richiesta"> Visualizza</button>
      </form>
      
      <h3> Cancella una Categoria</h3>
-     <form action="AssegnazioneServlet" method="post">
-     <button type="submit" value="assegnazioneManagement" name="richiesta"> Cancella</button>
+     <form action="CategorieStandarServlet" method="post">
+     <button type="submit" value="CancellaCat" name="richiesta"> Cancella</button>
      </form>
 
      <h3> Aggiorna una Categoria</h3>
-     <form action="AssegnazioneServlet" method="post">
-     <button type="submit" value="assegnazioneManagement" name="richiesta"> Aggiorna</button>
+     <form action="CategorieStandarServlet" method="post">
+     <button type="submit" value="AggiornaCat" name="richiesta"> Aggiorna</button>
      </form>
 </center>
 </div>
