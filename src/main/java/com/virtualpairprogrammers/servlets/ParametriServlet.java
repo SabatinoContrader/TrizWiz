@@ -46,7 +46,29 @@ public class ParametriServlet extends HttpServlet {
     		getServletContext().getRequestDispatcher("/visualizzaParametri.jsp").forward(request,response);
     		break;
     		
+        case "Indietro":
+        	this.allParametro = this.VParametriService.getAllParametro();
+    		getServletContext().getRequestDispatcher("/homeAsset.jsp").forward(request,response);
+    	break; 		
+
     		
+        case "deleteParametri":
+        	this.allParametro = this.VParametriService.getAllParametro();
+            request.setAttribute("visualizzaParametro", allParametro);
+        	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);
+        break;
+        
+        case "deleteID":
+        	if(this.VParametriService.deleteParametro(Integer.parseInt(request.getParameter("id")))){
+        		this.allParametro = this.VParametriService.getAllParametro();
+                request.setAttribute("visualizzaParametro", allParametro);
+            	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);}
+        	else {
+        		response.sendRedirect("homeAsset.jsp");
+        	}
+        	
+         break;
+    	
     		
         }
 	}
