@@ -17,7 +17,7 @@ public class CrudSottoCategorieDAO {
 			
 		////////////////////// cambiare le query
 		    private final String QUERY_CategorieStandard = "select * from sottoCategorie";
-			private final String QUERY_INSERT = "INSERT INTO SottoCategorie (decsrizione,idStandard,descrizioneIta) VALUES (?,?,?)";
+			private final String QUERY_INSERT = "INSERT INTO SottoCategorie (descrizione,idStandard,descrizioneIta) VALUES (?,?,?)";
 			private final String QUERY_DELETE = "delete from SottoCategorie where id = ?";
 			
 			
@@ -56,9 +56,9 @@ public class CrudSottoCategorieDAO {
 					PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
 					//preparedStatement.setInt(1, Principio.getId());
 					preparedStatement.setString(1, SottoCategorie.getDescrizione());
-		            preparedStatement.setString(2, SottoCategorie.getDescrizioneIta());
-		            preparedStatement.setInt(3, SottoCategorie.getIdStandard());
-		  		  
+					preparedStatement.setInt(2, SottoCategorie.getIdStandard());
+		            preparedStatement.setString(3, SottoCategorie.getDescrizioneIta());
+		            
 		            preparedStatement.execute();
 		            return true;
 				}
