@@ -156,4 +156,14 @@
     <servlet-name>MatrixServlet</servlet-name>
     <url-pattern>/MatrixServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExpParametroServlet</display-name>
+    <servlet-name>ExpParametroServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.ExpParametroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExpParametroServlet</servlet-name>
+    <url-pattern>/ExpParametroServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

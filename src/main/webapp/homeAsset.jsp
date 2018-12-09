@@ -26,8 +26,8 @@
      </form>
      
      <h3>4. Inserisci esperienza parametro</h3>
-     <form action="BadgeReaderServlet" method="post">
-     <button type="submit" value="badgesReaderManagement" name="richiesta">Ex parametro</button>
+     <form action=ExpParametroServlet method="post">
+     <button type="submit" value="InserisciEsperienza" name="richiesta">Ex parametro</button>
      </form>
      
      
