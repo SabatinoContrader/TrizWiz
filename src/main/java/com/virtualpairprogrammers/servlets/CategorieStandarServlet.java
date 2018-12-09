@@ -43,18 +43,64 @@ public class CategorieStandarServlet extends HttpServlet {
     	String choice = request.getParameter("richiesta");
         if (choice != null) {
         	switch (choice) {
+        	
             case "VisualizzaCat":
             	this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
                 request.setAttribute("visualizzaCategorieStandard", allCategorieStandard);
             	getServletContext().getRequestDispatcher("/CategorieStandardSelect.jsp").forward(request,response);
             	break;
             	
-            	//inserimento principio			//////////////////////
-            case "insert":
-            	response.sendRedirect("insertBadgeReader.jsp");
-            	//getServletContext().getRequestDispatcher("/inserBadgereader.jsp").forward(request,response);
+            case "vprincipi":
+
+        		//response.sendRedirect("homePrincipi.jsp");
+
+        		getServletContext().getRequestDispatcher("/homePrincipi.jsp").forward(request,response);
+
+        		break;
+            	
+            	
+            case "inserisciCategoria":
+
+            	//response.sendRedirect("insertBadgeReader.jsp");
+
+            	getServletContext().getRequestDispatcher("/insertCategoria.jsp").forward(request,response);
+
                 break;
+
                 
+
+            case "insert":
+             if (request != null) {
+
+                    int id = 0;
+
+                    String nome = request.getParameter("nome").toString();
+
+                    String nomeIng = request.getParameter("nomeIng").toString();
+
+                    //int categoria = Integer.parseInt(request.getParameter("categoria").toString());
+
+                    //int idasset = Integer.parseInt(request.getParameter("idasset").toString());
+
+                    if (CrudCategorieStandardService.insertCategorieStandard(new CategorieStandard( id,nome, nomeIng))) {
+
+                   	 this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
+
+                   	 request.setAttribute("visualizzaCategorieStandard", this.allCategorieStandard);
+
+                   	 getServletContext().getRequestDispatcher("/inserisciCat.jsp").forward(request,response);
+
+                    } 
+
+                    else {
+
+                        response.sendRedirect("insertBadgeReader.jsp");
+
+                    }
+
+           	}
+
+               break;
                 
             case "Indietro":
             	//getServletContext().getRequestDispatcher("/homeAsset.jsp").forward(request,response);
@@ -63,24 +109,24 @@ public class CategorieStandarServlet extends HttpServlet {
             	//getServletContext().getRequestDispatcher("/inserBadgereader.jsp").forward(request,response);
                 break;    
                 
-                
+           
                 
                 /////////////////////////////		////////////
             case "delete":
             	this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
-                request.setAttribute("visualizzaBadgeReaders", allCategorieStandard);
-            	getServletContext().getRequestDispatcher("/DeletePrincipio.jsp").forward(request,response);
+                request.setAttribute("visualizzaCategorieStandard", allCategorieStandard);
+            	getServletContext().getRequestDispatcher("/deliteCategoria.jsp").forward(request,response);
             break;
             
             	
-            	
+           
             case "deleteID":
             	if(this.CrudCategorieStandardService.deleteCategorieStandard(Integer.parseInt(request.getParameter("id")))){
             		this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
-                    request.setAttribute("visualizzaBadgeReaders", allCategorieStandard);
-                	getServletContext().getRequestDispatcher("/DeletePrincipio.jsp").forward(request,response);}
+                    request.setAttribute("visualizzaCategorieStandard", allCategorieStandard);
+                	getServletContext().getRequestDispatcher ("/deliteCategoria.jsp").forward(request,response);}
             	else {
-            		response.sendRedirect("homeAsset.jsp");
+            		response.sendRedirect("home.jsp");
             	}
             	
              break;
@@ -88,23 +134,7 @@ public class CategorieStandarServlet extends HttpServlet {
             	
             	
             	
-            //insert principio						////////////////////////    
-            case "insertBadgeReader":
-            	if (request != null) {
-                    int id = 0;
-                    String nome = request.getParameter("nome").toString();
-                    String nomeIng = request.getParameter("nomeIng").toString();
-                    //int idasset = Integer.parseInt(request.getParameter("idasset").toString());
-                    if (CrudCategorieStandardService.insertCategorieStandard(new CategorieStandard( id,nome,nomeIng ))) {
-                   	 this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
-                   	 request.setAttribute("visualizzaBadgeReaders", this.allCategorieStandard);
-                   	 getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
-                    } 
-                    else {
-                        response.sendRedirect("insertBadgeReader.jsp");
-                    }
-           	}
-               break;
+            
                /////////////////////////				/////////////
            
              /*
@@ -123,37 +153,63 @@ public class CategorieStandarServlet extends HttpServlet {
             	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
            break;
             	
+            	*/
             	
-            	
-            case "updateBadgeReader":
-               int a=Integer.parseInt(request.getParameter("asset"));
-               
-               int b=Integer.parseInt(request.getParameter("Badge"));
-               
-               request.setAttribute("asset", a);
-           	request.setAttribute("Badge", b);
-                
+            case "aggiornaID":
 
-            	if (badgeReaderService.updateBadgeReader(request)) {
-            		this.message = "Aggiornamento asset avvenuto correttamente";
-            	}
-            	else {
-            		this.message = "Errore durante la procedura di aggiornamento asset";
-            	}
-            	request.setAttribute("message", this.message);
-            	request.setAttribute("visualizzaAssets", this.assetService.getAllAssets());
-            	request.setAttribute("visualizzaBadgeReaders", this.badgeReaderService.getAllBadgeReaders());
-            	getServletContext().getRequestDispatcher("/badgeReaderHome.jsp").forward(request,response);
-            	break;
-            */}
+    	    	if (request != null) {
+
+    	    		int id = Integer.parseInt(request.getParameter("id").toString());
+
+                    String nome = request.getParameter("nome").toString();
+
+                    String nomeIng = request.getParameter("nomeIng").toString();
+
+                  //  int categoria = Integer.parseInt(request.getParameter("categoria").toString());
+
+
+                    if (CrudCategorieStandardService.updateCategorieStandard(new CategorieStandard( id,nome,nomeIng ))) {
+
+                   	 this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
+
+                   	 request.setAttribute("visualizzaCategorieStandard", this.allCategorieStandard);
+
+                   	 getServletContext().getRequestDispatcher("/inserisciCat.jsp").forward(request,response);
+
+                    } 
+
+                    else {
+
+                        response.sendRedirect("insertBadgeReader.jsp");
+
+                    }
+
+           	}	
+
+             break;
+
+           	
+
+    	    
+
+    	    case "aggiornaCat": //da implementare
+
+    	    	this.allCategorieStandard = this.CrudCategorieStandardService.getAllCategorieStandard();
+
+                request.setAttribute("visualizzaCategorieStandard", allCategorieStandard);
+
+            	getServletContext().getRequestDispatcher("/AggiornaCategoria.jsp").forward(request,response);
+
+            break;
         	
         	
-        	
-        }
+        }/*
         else {
         	response.sendRedirect("assetHome.jsp");
+        	*/
         }
-    }
+    
+	}
 	}
 	 
 	 

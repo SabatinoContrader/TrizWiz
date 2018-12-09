@@ -6,27 +6,50 @@
      <% List<CategorieStandard> allCategorieStandard = (List<CategorieStandard>) request.getAttribute("visualizzaCategorieStandard");%>
  </head>
  <body>
+ 		
+ </head>
+ <body>
 <h2>Sei loggato come <%= request.getSession().getAttribute("utente")%></h2>
 
+
+
  <h3> Indietro</h3>
+
      <form action="CategorieStandarServlet" method="post">
+
      <input type="submit" value="Indietro" name="richiesta">
+
      </form>
+
     
 
+
+
  <table>
+
      <tr>
+
          <th>
-             id 
+
+             ID 
+
+         </th>
+
+
+
+         <th>
+
+             nome
+
          </th>
 
          <th>
-             nome
-         </th>
-         <th>
+
              nomeIng
+
          </th>
-     </tr>
+
+      </tr>
         <%for (CategorieStandard CategorieStandard : allCategorieStandard) { %>
      <tr>
 
@@ -41,6 +64,8 @@
          <td>
              <%=  CategorieStandard.getNomeIng()%>
          </td>
+
+        
      </tr>
      <% }%>
  </table>

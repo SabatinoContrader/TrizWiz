@@ -6,18 +6,25 @@
      <% List<CategorieStandard> allCategorieStandard = (List<CategorieStandard>) request.getAttribute("visualizzaCategorieStandard");%>
  </head>
  <body>
-<h2>Sei loggato come <%= request.getSession().getAttribute("utente")%></h2>
-
+ 		
+ 	<h3>Inserisci ID principio da cancellare</h3>
+	 <form action = "CategorieStandarServlet" method= "post">
+	 
+     <h3>id: <input type = "text" id = "user" name ="id"></h3>
+    <button type="submit" value="deleteID" name="richiesta">Cancella</button>
+       
+    </form>
  <h3> Indietro</h3>
-     <form action="CategorieStandarServlet" method="post">
+     <form action="MenuServlet" method="post">
      <input type="submit" value="Indietro" name="richiesta">
      </form>
+    
     
 
  <table>
      <tr>
          <th>
-             id 
+             Id 
          </th>
 
          <th>
@@ -26,6 +33,7 @@
          <th>
              nomeIng
          </th>
+        
      </tr>
         <%for (CategorieStandard CategorieStandard : allCategorieStandard) { %>
      <tr>
@@ -41,6 +49,8 @@
          <td>
              <%=  CategorieStandard.getNomeIng()%>
          </td>
+
+        
      </tr>
      <% }%>
  </table>

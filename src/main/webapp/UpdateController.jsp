@@ -9,7 +9,7 @@
 <h2>Sei loggato come <%= request.getSession().getAttribute("utente")%></h2>
 
  <h3> Indietro</h3>
-     <form action="CategorieStandarServlet" method="post">
+     <form action="MenuServlet" method="post">
      <input type="submit" value="Indietro" name="richiesta">
      </form>
     
@@ -17,17 +17,19 @@
  <table>
      <tr>
          <th>
-             id 
+             ID 
          </th>
-
-         <th>
-             nome
+          <th>
+            nome 
          </th>
-         <th>
-             nomeIng
+          
+ <th>
+            nomeIng 
          </th>
+         
      </tr>
-        <%for (CategorieStandard CategorieStandard : allCategorieStandard) { %>
+      <%for (CategorieStandard CategorieStandard : allCategorieStandard) { %>
+       
      <tr>
 
          <td>
@@ -41,6 +43,9 @@
          <td>
              <%=  CategorieStandard.getNomeIng()%>
          </td>
+
+         
+
      </tr>
      <% }%>
  </table>

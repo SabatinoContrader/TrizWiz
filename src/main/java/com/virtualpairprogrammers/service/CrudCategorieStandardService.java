@@ -27,6 +27,7 @@ public class CrudCategorieStandardService {
 		public boolean deleteCategorieStandard(int id) {
 			return this.CrudCategorieStandardDAO.deleteCategorieStandard(id);
 		}
+		
 	}
 
 

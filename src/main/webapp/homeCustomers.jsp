@@ -37,9 +37,10 @@
 <div style="width:50%; float:left;">
 <center>
 		<h1 style="color:red;">Categorie</h1>
+		
      <h3> Inserisci Categoria</h3>
      <form action="CategorieStandarServlet" method="post">
-     <button type="submit" value="InserisciCat" name="richiesta"> Inserisci </button>
+     <button type="submit" value="inserisciCategoria" name="richiesta"> Inserisci </button>
      </form>
      
      <h3> Visualizza le Categorie</h3>
@@ -49,12 +50,12 @@
      
      <h3> Cancella una Categoria</h3>
      <form action="CategorieStandarServlet" method="post">
-     <button type="submit" value="CancellaCat" name="richiesta"> Cancella</button>
+     <button type="submit" value="delete" name="richiesta"> Cancella</button>
      </form>
 
      <h3> Aggiorna una Categoria</h3>
      <form action="CategorieStandarServlet" method="post">
-     <button type="submit" value="AggiornaCat" name="richiesta"> Aggiorna</button>
+     <button type="submit" value="aggiornaCat" name="richiesta"> Aggiorna</button>
      </form>
 </center>
 </div>

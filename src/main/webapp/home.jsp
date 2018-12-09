@@ -48,14 +48,19 @@
      <button type="submit" value="CastumersMenu" name="richiesta">click</button>
      </form>
      
-     <!-- 
+      
      <h3>3. Indietro</h3>
      <form action="MenuServlet" method="post">
      <input type="submit" value="Indietro" name="richiesta">
      </form>
+<<<<<<< Updated upstream
      -->
     
        <center><h3> Logout<h3>
+=======
+   
+       <h3>4. Logout<h3>
+>>>>>>> Stashed changes
      <form action="LogoutServlet" method="post">
      <input type="submit" value="Logout" name="Logout">
      </form></center>
