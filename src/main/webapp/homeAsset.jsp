@@ -21,8 +21,8 @@
      <!-- da qui in poi cambiare i form -->
      
      <h3>3. Consulta contradictions matrix</h3>
-     <form action="AssetServlet" method="post">
-     <button type="submit" value="assetsManagement" name="richiesta">Matrix</button>
+     <form action="MatrixServlet" method="post">
+     <button type="submit" value="insValoriMatrice" name="richiesta">Matrix</button>
      </form>
      
      <h3>4. Inserisci esperienza parametro</h3>

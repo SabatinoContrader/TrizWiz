@@ -57,10 +57,7 @@
      -->
     
        <center><h3> Logout<h3>
-=======
-   
-       <h3>4. Logout<h3>
->>>>>>> Stashed changes
+
      <form action="LogoutServlet" method="post">
      <input type="submit" value="Logout" name="Logout">
      </form></center>

@@ -51,8 +51,6 @@
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.RegisterServlet</servlet-class>
   </servlet>
-  
-  
   <servlet>
     <servlet-name>CategorieStandarServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.CategorieStandarServlet</servlet-class>
@@ -61,10 +59,6 @@
     <servlet-name>CategorieStandarServlet</servlet-name>
     <url-pattern>/CategorieStandarServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <servlet-name>StandardServlet</servlet-name>
     <servlet-class>com.virtualpairprogrammers.servlets.StandardServlet</servlet-class>
@@ -73,10 +67,6 @@
     <servlet-name>StandardServlet</servlet-name>
     <url-pattern>/StandardServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet-mapping>
     <servlet-name>LoginTraderServlet</servlet-name>
     <url-pattern>/LoginTraderServlet</url-pattern>
@@ -155,5 +145,15 @@
   <servlet-mapping>
     <servlet-name>ParametriServlet</servlet-name>
     <url-pattern>/ParametriServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MatrixServlet</display-name>
+    <servlet-name>MatrixServlet</servlet-name>
+    <servlet-class>com.virtualpairprogrammers.servlets.MatrixServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MatrixServlet</servlet-name>
+    <url-pattern>/MatrixServlet</url-pattern>
   </servlet-mapping>
 </web-app>
