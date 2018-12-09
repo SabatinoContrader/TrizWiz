@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.virtualpairprogrammers.dto.ParametroDTO;
 import com.virtualpairprogrammers.dto.ParametroNomeDTO;
 import com.virtualpairprogrammers.model.Parametro;
 import com.virtualpairprogrammers.service.VparametroService;
@@ -25,7 +26,8 @@ public class ParametriServlet extends HttpServlet {
 	private VparametroService VParametriService;
 	private VparametroServiceDTO VParametriServiceDTO;
 	private List<Parametro> allParametro;
-	private List<ParametroNomeDTO> allParametroDTO;
+	private List<ParametroNomeDTO> allParametroNomeDTO;
+	private ParametroDTO parametroDTO;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -44,35 +46,45 @@ public class ParametriServlet extends HttpServlet {
     		
         case "visParametri":
         	//this.allParametro = this.VParametriService.getAllParametro();
-        	this.allParametroDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
-            request.setAttribute("visualizzaParametroDTO", allParametroDTO);
-            //request.setAttribute("visualizzaParametro", allParametroDTO);
+        	this.allParametroNomeDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
+            request.setAttribute("visualizzaParametroDTO", allParametroNomeDTO);
             //response.sendRedirect("visualizzaParametri.jsp");
     		getServletContext().getRequestDispatcher("/visualizzaParametri.jsp").forward(request,response);
     		break;
     		
-        case "Indietro":
-        	this.allParametro = this.VParametriService.getAllParametro();
-    		getServletContext().getRequestDispatcher("/homeAsset.jsp").forward(request,response);
-    	break; 		
-
     		
-        case "deleteParametri":
-        	this.allParametro = this.VParametriService.getAllParametro();
-            request.setAttribute("visualizzaParametro", allParametro);
-        	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);
-        break;
-        
-        case "deleteID":
-        	if(this.VParametriService.deleteParametro(Integer.parseInt(request.getParameter("id")))){
-        		this.allParametro = this.VParametriService.getAllParametro();
-                request.setAttribute("visualizzaParametro", allParametro);
-            	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);}
-        	else {
-        		response.sendRedirect("homeAsset.jsp");
+        case "visualizzaParametroId":
+        	parametroDTO= this.VParametriServiceDTO.getParametroDTOID(request.getParameter("id"));
+        	if(parametroDTO!=null) {
+            request.setAttribute("visParametroDTO", parametroDTO);
+           	getServletContext().getRequestDispatcher("/visDettaglioParametro.jsp").forward(request,response);
         	}
-        	
-         break;
+        	else
+        		response.sendRedirect("homeAsset.jsp");
+        	break;
+    		
+		case "Indietro":
+			this.allParametro = this.VParametriService.getAllParametro();
+			getServletContext().getRequestDispatcher("/homeAsset.jsp").forward(request,response);
+			break; 		
+
+		
+    case "deleteParametri":
+    	this.allParametro = this.VParametriService.getAllParametro();
+        request.setAttribute("visualizzaParametro", allParametro);
+    	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);
+    break;
+    
+    case "deleteID":
+    	if(this.VParametriService.deleteParametro(Integer.parseInt(request.getParameter("id")))){
+    		this.allParametro = this.VParametriService.getAllParametro();
+            request.setAttribute("visualizzaParametro", allParametro);
+        	getServletContext().getRequestDispatcher("/DeleteParametro.jsp").forward(request,response);}
+    	else {
+    		response.sendRedirect("homeAsset.jsp");
+    	}
+    	
+     break;
     	
     		
         }
