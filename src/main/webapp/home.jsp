@@ -4,20 +4,46 @@
 </head>
 <body>
 <center>
-     <h1>Benvenuto/a  <%= request.getSession().getAttribute("utente")%></h1>
-     <h1>------- MENU PRINCIPALE TRIZWIZ -------</h1>
+     <h1 style="height: auto; margin-top:40px;">------- MENU PRINCIPALE TRIZWIZ -------</h1>
      <h2>    <h2>
-</center>
+</center style="margin-top:50px;">
+	<h1 style="height: auto; margin-left:70px;">Benvenuto/a  <%= request.getSession().getAttribute("utente")%></h1>
+    <center> <h2>TOOLS:</h2></center>
 
-     <h2>TOOLS:</h2>
-     
-     <h3>1. Contradiction matrix</h3>
+<div style="height: auto; margin-left:30px; overflow: hidden">
+<div style="width:50%; float:left;" >
+<center>
+     <h3>Contradiction matrix</h3>
      <form action="MenuServlet" method="post">
      <button type="submit" value="AssetMenu" name="richiesta">Click</button>
      </form>
+</center>
+</div>
+<div style="width:50%; float:left;" >
+<center>	
+	<h3>76 standard solutions</h3>
+	<form action="MenuServlet" method="post">
+     <button type="submit" value="CastumersMenu" name="richiesta">Click</button>
+     </form>
+</center>	
+</div>
+</div>
+<!--  
+<div style="height: auto; margin-left:90px; overflow: hidden">
+<div style="width:50%; float:left;" >
+     <form action="MenuServlet" method="post">
+     <button type="submit" value="AssetMenu" name="richiesta">Click</button>
+     </form>
+</div>
+<div style="width:50%; float:left;" >
+<form action="MenuServlet" method="post">
+     <button type="submit" value="CastumersMenu" name="richiesta">Click</button>
+     </form>
      
+</div>     
+</div> -->
      
-     <h3>2. 76 standard solutions</h3>
+     <!-- <h3>76 standard solutions</h3>
      <form action="MenuServlet" method="post">
      <button type="submit" value="CastumersMenu" name="richiesta">click</button>
      </form>
@@ -28,10 +54,11 @@
      <input type="submit" value="Indietro" name="richiesta">
      </form>
      -->
-       <h3>4. Logout<h3>
+    
+       <center><h3> Logout<h3>
      <form action="LogoutServlet" method="post">
      <input type="submit" value="Logout" name="Logout">
-     </form>
+     </form></center>
     
 
 </body>
