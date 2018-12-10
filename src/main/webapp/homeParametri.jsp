@@ -19,7 +19,7 @@
     
     <h3>2. Inserisci Parametri</h3>
      <form action="ParametriServlet" method="post">
-     <button type="submit" value="inserisciParametri" name="richiesta"> Inserisci Parametri</button>
+     <button type="submit" value="insert" name="richiesta"> Inserisci Parametri</button>
     </form>
      
     <h3>3. Cancella parametri</h3>
