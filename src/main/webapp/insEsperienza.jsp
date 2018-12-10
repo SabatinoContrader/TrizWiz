@@ -1,4 +1,3 @@
-
 </html><%@ page import="com.virtualpairprogrammers.dto.ParametroNomeDTO" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -42,9 +41,9 @@
 
 <form action = "ExpParametroServlet" method= "post">
 	 <h3>Inserisci ID parametro per inserire la tua esperienza</h3>
-     <h3>id: <input type = "text" id = "user" name ="id"></h3>
+     <h3>id: <input type = "text" id = "user" name ="idParam"></h3>
      <h3>Inserisci un commento per lasciare la tua esperienza</h3>
-     <h3>Commento: <input type = "text" id = "user" name ="id"></h3>
+     <h3>Commento: <input type = "text" id = "user" name ="commento"></h3>
      <button type="submit" value="insertEsperienza" name="richiesta">Inserisci Esperienza</button>
 </form>
 	
