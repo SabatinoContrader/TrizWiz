@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.virtualpairprogrammers.model.ExpParametro;
 import com.virtualpairprogrammers.model.Principio;
 import com.virtualpairprogrammers.utils.ConnectionSingleton;
 import com.virtualpairprogrammers.utils.GestoreEccezioni;
@@ -18,8 +21,31 @@ public class CrudExpParametroDAO {
 	private final String QUERY_INSERT = "INSERT INTO expar (commento) VALUES (?)";
 	private final String QUERY_SELECTID = "select id from expar where commento = ?";
 	private final String QUERY_INSERTDEPAR = "INSERT INTO depar (parId,exId) VALUES (?,?)";
+	private final String QUERY_SELECTESP= "SELECT e.id , e.commento FROM parametri as p, depar as d, expar as e  WHERE p.Id=? and p.Id=d.parId and d.exId=e.id";
 	
 	
+	public List<ExpParametro> selezionaExpParametro(String id){
+		
+		List<ExpParametro> listExpParametro= new ArrayList<ExpParametro>();
+		 Connection connection = ConnectionSingleton.getInstance();
+	        try {
+	            PreparedStatement statement = connection.prepareStatement(QUERY_SELECTESP);
+	            statement.setString(1, id);
+	            ResultSet resultSet = statement.executeQuery();
+	            while (resultSet.next()) {
+	            	ExpParametro newExpParametro=new ExpParametro();
+	            	newExpParametro.setId(resultSet.getInt("e.id"));
+	            	newExpParametro.setCommento(resultSet.getString("e.commento"));
+	            	listExpParametro.add(newExpParametro);
+	            }
+	        }
+	        catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        
+		return listExpParametro; 
+		
+	}
 	
 	public boolean insertEspParametro(String idParam, String commento) {
 		Connection connection = ConnectionSingleton.getInstance();

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.virtualpairprogrammers.dto.ParametroNomeDTO;
+import com.virtualpairprogrammers.model.ExpParametro;
 import com.virtualpairprogrammers.service.CrudExpParamService;
 import com.virtualpairprogrammers.service.VparametroServiceDTO;
 
@@ -23,6 +24,7 @@ public class ExpParametroServlet extends HttpServlet {
 	private List<ParametroNomeDTO> allParametroNomeDTO;
 	private CrudExpParamService crudExpParamService;
 	private String rispostaIns;
+	private List<ExpParametro> listExpParametro;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -40,12 +42,16 @@ public class ExpParametroServlet extends HttpServlet {
         
         switch(scelta) {
         
+        case "EsperienzaParametro":
+        	
+        	getServletContext().getRequestDispatcher("/homeEsperienzaParam.jsp").forward(request,response);
+        	break;
+        	
         case "InserisciEsperienza":
         	
-        	//this.allParametro = this.VParametriService.getAllParametro();
+        	
         	this.allParametroNomeDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
             request.setAttribute("insParametroDTO", allParametroNomeDTO);
-            //response.sendRedirect("visualizzaParametri.jsp");
     		getServletContext().getRequestDispatcher("/insEsperienza.jsp").forward(request,response);
     		break;
     		
@@ -63,7 +69,24 @@ public class ExpParametroServlet extends HttpServlet {
         	request.setAttribute("rispostaInserimento", rispostaIns);
         	getServletContext().getRequestDispatcher("/rispostaEsperienza.jsp").forward(request,response);
         
-        	break; }
+        	break; 
+        	
+        case "visEsperienza":
+        	
+        	this.allParametroNomeDTO = this.VParametriServiceDTO.getAllParametroNomeDTO ();
+            request.setAttribute("insParametroDTO", allParametroNomeDTO);
+    		getServletContext().getRequestDispatcher("/insParamVisualizza.jsp").forward(request,response);
+    		break;
+    		
+        case "listaEsperienza":
+        	
+        	String idParam= request.getParameter("idParam");
+        	listExpParametro= crudExpParamService.selezionaExpParametro(idParam);
+        	request.setAttribute("idParam", idParam);
+        	request.setAttribute("listEspParametro", listExpParametro);
+        	getServletContext().getRequestDispatcher("/visualizzaEsperienza.jsp").forward(request,response);
+        	break;
+        }
     }
 
 }

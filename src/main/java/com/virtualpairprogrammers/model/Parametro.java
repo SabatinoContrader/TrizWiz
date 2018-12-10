@@ -1,5 +1,6 @@
 package com.virtualpairprogrammers.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parametro {
@@ -9,11 +10,11 @@ public class Parametro {
 	private String descrizione;
 	private String descrizioneIta;
 	private String icona;
-	
+	private List<ExpParametro> esperienza;
 
 //costruttore
 	public Parametro(){
-		
+		this.esperienza=new ArrayList<ExpParametro>();
 	}
 
 	public Parametro(int id, String nomeParametro,String nomeParametroIta, String descrizione, String descrizioneIta, String icona) {
@@ -23,9 +24,18 @@ public class Parametro {
 	this.descrizione=descrizione;
 	this.descrizioneIta=descrizioneIta;
 	this.icona=icona;
+	this.esperienza=new ArrayList<ExpParametro>();
 	
 	
 }
+
+public List<ExpParametro> getEsperienza() {
+		return esperienza;
+	}
+
+	public void setEsperienza(List<ExpParametro> esperienza) {
+		this.esperienza = esperienza;
+	}
 
 public int getId() {
 	return id;

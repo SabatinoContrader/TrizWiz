@@ -25,11 +25,14 @@
      <button type="submit" value="insValoriMatrice" name="richiesta">Matrix</button>
      </form>
      
-     <h3>4. Inserisci esperienza parametro</h3>
+     <!--  <h3>4. Inserisci esperienza parametro</h3>
      <form action=ExpParametroServlet method="post">
      <button type="submit" value="InserisciEsperienza" name="richiesta">Ex parametro</button>
-     </form>
+     </form>  -->
      
+     <h3>4. Esperienza parametro</h3>
+     <form action=ExpParametroServlet method="post">
+     <button type="submit" value="EsperienzaParametro" name="richiesta">Ex parametro</button>
      
      <h3>5. Inserisci esperienza principi</h3>
      <form action="BadgeReaderServlet" method="post">

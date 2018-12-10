@@ -1,6 +1,9 @@
 package com.virtualpairprogrammers.service;
 
+import java.util.List;
+
 import com.virtualpairprogrammers.dao.CrudExpParametroDAO;
+import com.virtualpairprogrammers.model.ExpParametro;
 
 public class CrudExpParamService {
 
@@ -15,5 +18,9 @@ public class CrudExpParamService {
 		boolean risposta=false;
 		risposta= this.crudEsperienzaDAO.insertEspParametro(idParam, commento);
 		return risposta;
+	}
+	
+	public List<ExpParametro> selezionaExpParametro(String id){
+		return this.crudEsperienzaDAO.selezionaExpParametro(id);
 	}
 }

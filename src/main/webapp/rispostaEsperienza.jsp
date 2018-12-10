@@ -11,6 +11,15 @@
 	
 	<h2>RISPOSTA <%= request.getAttribute("rispostaInserimento")%></h2> 
 
-<!--  <h1>INSERIMENTO RIUSCITO</h1> -->
+	<h3>6. Indietro</h3>
+     <form action="MenuServlet" method="post">
+     <input type="submit" value="Indietro" name="richiesta">
+     </form>
+     
+       <h3>7. Logout<h3>
+     <form action="LogoutServlet" method="post">
+     <input type="submit" value="Logout" name="Logout">
+     </form>
+     
 </body>
 </html>
