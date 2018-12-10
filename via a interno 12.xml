@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building id="1">
+  <indirizzo>via a</indirizzo>
+  <interno>12</interno>
+  <citta>b</citta>
+  <cap>12</cap>
+  <floors />
+</building>

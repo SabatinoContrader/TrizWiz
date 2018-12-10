@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building id="1">
+  <indirizzo>Via da qui</indirizzo>
+  <interno>12</interno>
+  <citta>Roma</citta>
+  <cap>00100</cap>
+  <floors>
+    <floor id="1">
+      <nome>Panino al prosciutto</nome>
+      <descrizione>ora di pranzo</descrizione>
+      <rooms />
+    </floor>
+  </floors>
+</building>
