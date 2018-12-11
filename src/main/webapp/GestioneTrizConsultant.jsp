@@ -7,32 +7,26 @@
 <link href="/resources/css/styles.css" rel="stylesheet">
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
-<title>superuserhome</title>
+<title>Triz Consultant Menu</title>
 </head>
 <body>
 	<h1>Seleziona l'operazione che vuoi effettuare</h1>
 		<div class="menuDiv">
 			<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png "class="imgSuperUser"> 
-			<a href="/Customer/goBack" class="customerLink">
-			Gestione Customer 
+			<a href="/Building/menu" class="customerLink">
+			Gestione Triz Customer 
 			</a></br>
 		</div>
 		<div class="menuDiv">
 			<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png "class="imgSuperUser"> 
 			<a href="/Installer/goBack" class="customerLink">
-			Gestione Installer 
+			Gestione Item
 			</a></br>
-		</div>
-		<div class="menuDiv">
-			<img src="https://png2.kisspng.com/show/812fa857dddd93107f5556efc9640d62/L0KzQYm3UcMxN6d2fZH0aYP2gLBuTgRma5lzh954Z4mwdcbqjPllbZJzRehuY4Tygn7wgB9vNZpoh9C2b3awebB7hgJvbaUyh9g2dHjsfrj6TgRma5lzh954Z4mwRbKAUMJmbGU4T6hrMkSxQIq5UsA3OWU2TaMCM0C0RIe3UsI4NqFzf3==/kisspng-technology-euclidean-vector-icon-icon-of-internet-of-things-technology-5a702ed4376b24.092206141517301460227.png" class="imgSuperUser"> 
-			<a href="/ItemType/menu" class="customerLink">
-			Gestione Tipologia Item 
-			</a></br>	
 		</div>
 		<div class="menuDiv">
 			<img src="https://cdn3.iconfinder.com/data/icons/databases-2-2/512/data_cube-512.png"class="imgSuperUser"> 
 			<a href="/Thing/goBack" class="customerLink">
-			Gestione Thing
+			Gestione Label
 			</a>	
 		</div>
 		

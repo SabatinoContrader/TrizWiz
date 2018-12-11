@@ -6,7 +6,7 @@
 <head>
 <link href="/resources/css/styles.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Insert Customer</title>
+<title>Insert Triz Consultant</title>
 	<a href="/Customer/goBack" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
@@ -16,7 +16,7 @@
 		<img
 			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
 			class="imgSuperUser">
-		<h1>Inserisci il tuo Customer</h1>
+		<h1>Inserisci il tuo Triz Consultant</h1>
 	</div>
 	<form class="customerForm" action="/Customer/insert" method="post">
 		<table class="insertTable">

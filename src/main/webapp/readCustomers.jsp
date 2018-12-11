@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <link href="/resources/css/styles.css" rel="stylesheet">
 
-<title>Customers</title>
+<title>Triz Consultant</title>
 	<a href="/Customer/goBack" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
@@ -15,7 +15,7 @@
 	<div class="readCustomer">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/user.png"
 			class="imgSuperUser">
-	<h1>Customers</h1>
+	<h1>Triz Consultant</h1>
 	</div>
 	<div class="readTable">
 		<table class="table">

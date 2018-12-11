@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Elimina Building</title>
+<title>Elimina Triz Customer</title>
 <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
-<a href="/Building/goBack" class="logout">Indietro</a>
+<a href="/Building/menu" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
 <body>
@@ -15,7 +15,7 @@
 	<div class="deleteCustomer">
 		<img src="http://icons-for-free.com/free-icons/png/512/905647.png"
 			class="imgThing">
-		<h1>Elimina Building</h1>
+		<h1>Elimina Triz Customer</h1>
 	</div>
 	<div>
 		<div class="thingDiv" style="margin-top: 5%">
@@ -27,13 +27,13 @@
 				<th>cap</th>
 				<th>interno</th>
 			</th>
-			<c:forEach var="building" items="${buildings}">
+			<c:forEach var="trizcustomer" items="${trizcustomer}">
 			<tr>
-				<td align="center">${building.id}</td>
-				<td align="center">${building.address}</td>
-				<td align="center">${building.city}</td>
-				<td align="center">${building.cap}</td>
-				<td align="center">${building.interno}</td>
+				<td align="center">${trizcustomer.id}</td>
+				<td align="center">${trizcustomer.address}</td>
+				<td align="center">${trizcustomer.city}</td>
+				<td align="center">${trizcustomer.cap}</td>
+				<td align="center">${trizcustomer.interno}</td>
 			</tr>
 		</c:forEach>
 		</table>
@@ -41,10 +41,10 @@
 				<form action="delete" method="post">
 					<table>
 						<tr>
-							<td><h2 style="display:block">Id Building:</h2></td>
+							<td><h2 style="display:block">Id Triz Customer:</h2></td>
 							<td><select name="idselected">
-									<c:forEach var="building" items="${buildings}">
-										<option value="${building.id}">${building.id}</option>
+									<c:forEach var="trizcustomer" items="${buildings}">
+										<option value="${trizcustomer.id}">${trizcustomer.id}</option>
 									</c:forEach>
 							</select></td>
 						</tr>

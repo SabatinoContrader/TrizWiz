@@ -39,11 +39,11 @@ public class Login {
 		request.getSession().setAttribute("username", nomeUtente);
 		long userRole = customerService.login(nomeUtente, password);
 		if (userRole== 1) {
-			return "superuserhome";
+			return "GestioneCustomer";
 		} else if (userRole == 2) {
 			List <BuildingDTO> myBuildings = buildingService.getAll((String) request.getSession().getAttribute("username"));
 			request.setAttribute("buildings", myBuildings);
-			return "CustomerHome";	
+			return "BuildingMenu";	
 		} else if (userRole == 3) {
 			List <BuildingDTO> buildings = buildingService.findByInstaller((String) request.getSession().getAttribute("username"));
 			CustomerDTO cDTO = customerService.findByUsername((String) request.getSession().getAttribute("username"));
@@ -53,7 +53,7 @@ public class Login {
 		}
 		
 		else {
-			return "index";
+			return "GestioneTrizConsultant";
 		}
 
 	}

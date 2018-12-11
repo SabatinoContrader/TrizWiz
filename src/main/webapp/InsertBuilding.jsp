@@ -1,52 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/resources/css/styles.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Inserisci Building</title>
-<link rel="stylesheet" href="styles.css">
-<a href="/Building/goBack" class="logout">Indietro</a>
+<title>Insert Triz Customer</title>
+	<a href="/Building/menu" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
-<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
-
 </head>
-
 <body>
-	<div class="deleteCustomer">
+	
+	<div class="insertBuilding">
 		<img
-			src="https://cdn4.iconfinder.com/data/icons/symbol-color-business-1/32/office_building-add-512.png"
+			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
 			class="imgSuperUser">
-		<h1>Crea il tuo building</h1>
+		<h1>Inserisci il tuo Triz Customer</h1>
 	</div>
-	<div>
-		<form action="insert" method="post">
-			<table class="insertTable">
-				<tr>
-					<td><h2>Indirizzo del building:</h2></td>
-					<td><input type="text" id="indirizzoBuilding" name="indirizzo"
-						placeholder="Inserisci indirizzo del building"></td>
-				</tr>
-				<tr>
-					<td><h2>Interno del building:</h2></td>
-					<td><input type="text" id="internoBuilding" name="interno"
-						placeholder="Inserisci interno del building"></td>
-				</tr>
-				<tr>
-					<td><h2>Citta' del building: </h2></td>
-					<td><input type="text" id="citt�Building"
-					name="citta" placeholder="Inserisci citt� del building"></td>
-				</tr>
-				<tr>
-					<td><h2>Cap del building: </h2></td>
-					<td>	<input type="text" id="capBuilding" name="cap"
-					placeholder="Inserisci cap del building"></td>
-				</tr>
-			</table>
-			<button class="censisciButton" type="submit">Crea</button>
-		</form>
-			
-	</div>
+	<form class="customerForm" action="/Building/insert" method="post">
+		<table class="insertTable">
+			<tr>
+				<td><h2>Nome:</h2></td>
+				<td><input type="text" class="form-control" id="nome"
+					name="nome" placeholder="Inserisci Nome"></td>
+			</tr>
+			<tr>
+				<td><h2>Cognome:</h2></td>
+				<td><input type="text" class="form-control" id="cognome" name="cognome"
+					placeholder="Inserisci Cognome"></td>
+			</tr>
+			<tr>
+				<td><h2>Data di Nascita:</h2></td>
+				<td><input type="date" class="form-control" id="dataDiNascita" name="dataDiNascita"
+					placeholder="Inserisci Data di Nascita"></td>
+			</tr>
+			<tr>
+				<td><h2>Email:</h2></td>
+				<td><input type="text" class="form-control" id="email" name="email"
+					placeholder="Inserisci Email"></td>
+			</tr>
+			<tr>
+				<td><h2>Username:</h2></td>
+				<td><input type="text" class="form-control" id="username" name="username"
+					placeholder="Username"></td>
+			</tr>
+			<tr>
+				<td><h2>Password:</h2></td>
+				<td><input type="password" class="form-control" id="password" name="password"
+					placeholder="Inserisci Password"></td>
+			</tr>
+		</table>
+
+		<button type="submit" class="registerButton">Registra</button>
+
+	</form>
+
 </body>
 </html>

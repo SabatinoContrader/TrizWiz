@@ -7,7 +7,7 @@
 <head>
 <link href="/resources/css/styles.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Update Customer</title>
+<title>Update Triz Consultant</title>
 <a href="/Customer/goBack" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
@@ -15,15 +15,15 @@
 <div class="readCustomer">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/edit-user.png"
 			class="imgSuperUser">
-			<h1>Modifica Customer</h1>
+			<h1>Modifica Triz Consultant</h1>
 	</div>
 	
 	
 	
 	<div class="modifyCustomer">
-	<h2 >Seleziona l'id del customer da modificare</h2>
+	<h2 >Seleziona l'id del Triz Consultant da modificare</h2>
 	  <form action = "/Customer/update" method= "post">
-		<div class="idCustomer"><h3>Id Customer:</h3>
+		<div class="idCustomer"><h3>Id Triz Consultant:</h3>
 			<div style="padding-left:2%"><select style="border-radius: 10%" name="idselected">
 				<c:forEach var="customer" items="${customers}">
 						<option value="${customer.id}">${customer.id}</option>
