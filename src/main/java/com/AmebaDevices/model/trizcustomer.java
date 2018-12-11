@@ -22,13 +22,13 @@ import lombok.Setter;
 
 @Entity
 
-@Table(name="trizcostumer",  uniqueConstraints = {@UniqueConstraint(columnNames={"idConstumer"})})
+@Table(name="trizcustomer",  uniqueConstraints = {@UniqueConstraint(columnNames={"idCustomer"})})
 @NoArgsConstructor
-public class trizcostumer {
+public class trizcustomer {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idConstumer;
+	private long idCustomer;
 
 	@Column
 	@NonNull

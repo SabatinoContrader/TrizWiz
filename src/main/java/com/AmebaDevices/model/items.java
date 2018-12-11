@@ -37,8 +37,8 @@ public class items {
 	private String nome;
 	
 	@OneToMany
-	@JoinColumn (name = " idConstumer")
-    private trizcostumer  idConstumer; 
+	@JoinColumn (name = " idCustomer")
+    private trizcustomer idCustomer; 
 ////
 //	@Override
 //	public String getId() {
