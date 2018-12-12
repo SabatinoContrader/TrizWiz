@@ -24,7 +24,7 @@
 							<th>Id</th>
 							<th>Username</th>
 							<th>Password</th>
-							<th>Ruolo</th>
+							<!--<th>Ruolo</th> -->
 					</tr>
 				</thead>
 				<tbody>

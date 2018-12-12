@@ -58,59 +58,50 @@ public class UtentiLocaliController  {
 		return "readCustomers"; //cambiare nome readCustomers in readUtenti
 	}
 	
-/*	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
+	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
-		List<CustomerDTO> customers = customerService.readAll();
-		request.setAttribute("customers", customers);
+		List<utentiLocaliDTO> utenti = utentiLocaliService.readAll();
+		request.setAttribute("utentiLocali", utenti);
 		return "updateCustomer";
 	} 
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("idselected"));
 		long l=id;
-		CustomerDTO newcustomer = customerService.searchCustomer(l);
+		utentiLocaliDTO newutente = utentiLocaliService.searchUtentiLocali(l);
 		System.out.println(request.getParameter("selected"));
 		switch (Integer.parseInt(request.getParameter("selected"))) {
 		case 1:
-			newcustomer.setNome(request.getParameter("value"));
+			newutente.setnomeLogin(request.getParameter("value"));
 			break;
 		case 2:
-			newcustomer.setCognome(request.getParameter("value"));
-			break;
-		case 3:
-			newcustomer.setDataNascita(request.getParameter("value"));
-			break;
-		case 4:
-			newcustomer.setUsername(request.getParameter("value"));
-			break;
-		case 5:
-			newcustomer.setPassword(request.getParameter("value"));
+			newutente.setpasswordLogin(request.getParameter("value"));
 			break;
 		default:
 			break;
 		}
-		customerService.updateCustomer(newcustomer);
+		utentiLocaliService.updateUtentiLocali(newutente);
 		return "GestioneCustomer";
 	} 
 	
 	@RequestMapping(value="/deleteForm", method=RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
-		List<CustomerDTO> customers = customerService.readAll();
-		request.setAttribute("customers", customers);
+		List<utentiLocaliDTO> utenti = utentiLocaliService.readAll();
+		request.setAttribute("utenti", utenti);
 		return "deletecustomer";
 	} 
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public String delete(HttpServletRequest request) {
 		int idDelete = Integer.parseInt(request.getParameter("idselected"));
 		long l=idDelete;
-		customerService.deleteCustomer(l);
+		utentiLocaliService.deleteUtentiLocali(l);
 		return "GestioneCustomer";
 	} 
 	
 	@RequestMapping(value="/goBack", method=RequestMethod.GET)   // cambiare return con goBack
 	public String goBack(HttpServletRequest request) {
 		return "GestioneCustomer";
-	} */
+	} 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)

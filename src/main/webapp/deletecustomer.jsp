@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Elimina Triz Consultant</title>
 <link rel="stylesheet" href="styles.css">
-<a href="/Customer/goBack" class="logout">Indietro</a>
+<a href="/UtentiLocali/goBack" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
 <body>
@@ -21,12 +21,12 @@
 	</div>
 <div class="delete">
 	<h2>Seleziona l'id del Triz Consultant da eliminare</h2>
-	<form action="/Customer/delete" method="post">
+	<form action="/UtentiLocali/delete" method="post">
 		<div  class="idCustomer"><h2>
 			Id Triz Consultant: </h2>
 			<div style="padding-left:7%"><select name="idselected">
-				<c:forEach var="customer" items="${customers}">
-					<option value="${customer.id}">${customer.id}</option>
+				<c:forEach var="utenti" items="${utenti}">
+					<option value="${utenti.id}">${utenti.id}</option>
 				</c:forEach>
 			</select>
 			</div>

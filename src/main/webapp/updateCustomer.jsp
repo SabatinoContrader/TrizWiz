@@ -22,11 +22,11 @@
 	
 	<div class="modifyCustomer">
 	<h2 >Seleziona l'id del Triz Consultant da modificare</h2>
-	  <form action = "/Customer/update" method= "post">
+	  <form action = "/UtentiLocali/update" method= "post">
 		<div class="idCustomer"><h3>Id Triz Consultant:</h3>
 			<div style="padding-left:2%"><select style="border-radius: 10%" name="idselected">
-				<c:forEach var="customer" items="${customers}">
-						<option value="${customer.id}">${customer.id}</option>
+				<c:forEach var="utentiLocali" items="${utentiLocali}">
+						<option value="${utentiLocali.id}">${utentiLocali.id}</option>
 				</c:forEach>
 			</select>
 			</div>
@@ -34,11 +34,8 @@
 		</div></br>
 		<div class="idCustomer"><h3>Cosa vuoi modificare?   </h3>&nbsp; 
 			<select style="border-radius: 10%" name="selected">
-  				<option value="1">Nome</option>
-  				<option value="2">Cognome</option>
-  				<option value="3">Data di Nascita</option>
-  				<option value="4">Username</option>
- 				 <option value="5">Password</option> 
+  				<option value="1">Username</option>
+ 				 <option value="2">Password</option> 
 			</select>
 			&nbsp;&nbsp;
 			<input type = "text" id = "value" name ="value" placeholder="Inserisci nuovo valore">

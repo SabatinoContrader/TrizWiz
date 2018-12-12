@@ -56,6 +56,19 @@ public class utentiLocaliService {
 		});
 		return utenti;
 	}
+	
+	public utentiLocaliDTO searchUtentiLocali(Long id) {
+		return utentiLocaliConverter.utentiLocaliDto(utentiLoginDAO.findOne(id));
+	}
+	
+	public void updateUtentiLocali(utentiLocaliDTO utenti) {
+		utentiLoginDAO.save(utentiLocaliConverter.convertToutentiLocali(utenti));
+	}
+	
+	public void deleteUtentiLocali(Long id) {
+		utentiLocali c = utentiLoginDAO.findOne(id);
+		utentiLoginDAO.delete(c);
+	}
 /*
 	public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();

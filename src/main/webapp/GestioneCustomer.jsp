@@ -25,13 +25,13 @@
 	</div>
 	<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/edit-user.png"
-			class="imgSuperUser"> <a href="/Customer/updateForm"
+			class="imgSuperUser"> <a href="/UtentiLocali/updateForm"
 			class="customerLink">Modifica un
 			Triz Consultant</a>
 	</div>
 	<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
-			class="imgSuperUser"> <a href="/Customer/deleteForm"
+			class="imgSuperUser"> <a href="/UtentiLocali/deleteForm"
 			class="customerLink">Elimina un
 			Triz Consultant</a> 
 	</div> 
