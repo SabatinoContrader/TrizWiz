@@ -1,12 +1,15 @@
 package com.AmebaDevices.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -22,25 +25,23 @@ import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Table(name="utentiLocali",  uniqueConstraints = {@UniqueConstraint(columnNames={"nomeLogin"})})
 @NoArgsConstructor
+@AllArgsConstructor
+public class utentiLocali {
 
-@Table(name="trizcustomer",  uniqueConstraints = {@UniqueConstraint(columnNames={"idCustomer", "nome" , "cognome"})})
-public class trizcustomer {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idCustomer;
-
-	@Column (length = 45)
+	private long id;
+	@Column
+	@NotNull
 	@NonNull
-	private String nome;
-	@Column (length = 45)
-	@NonNull
-	private String cognome;
-	
+	private String nomeLogin;
+	@Column
+	private String passwordLogin;
+	@Column
+	@NotNull
+	private Integer ruolo;
 
-	@ManyToOne 
-	@JoinColumn (name ="username")
-//	@OnDelete(action = OnDeleteAction.CASCADE)
-	private utentiLocali username;
 }
