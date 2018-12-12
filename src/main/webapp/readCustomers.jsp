@@ -8,7 +8,7 @@
 <link href="/resources/css/styles.css" rel="stylesheet">
 
 <title>Triz Consultant</title>
-	<a href="/Customer/goBack" class="logout">Indietro</a>
+	<a href="/UtentiLocali/goBack" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
 <body>
@@ -22,22 +22,19 @@
 				<thead>
 					<tr>
 							<th>Id</th>
-							<th>Nome</th>
-							<th>Cognome</th>
-							<th>Data Di Nascita</th>
 							<th>Username</th>
 							<th>Password</th>
+							<th>Ruolo</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="customer" items="${customers}">
+					<c:forEach var="utentiLocali" items="${utentiLocali}">
 						<tr>
-							<th>${customer.id}</th>
-							<td align="center">${customer.nome}</td>
-							<td align="center">${customer.cognome}</td>
-							<td align="center">${customer.dataNascita}</td>
-							<td align="center">${customer.username}</td>
-							<td align="center">${customer.password}</td>
+							<th>${utentiLocali.id}</th>
+							<td align="center">${utentiLocali.nomeLogin}</td>
+							<td align="center">${utentiLocali.passwordLogin}</td>
+							<!-- da stampare ruolo : per farlo trovare metodo per convertire Integer in long -->
+							
 						</tr>
 					</c:forEach>
 				</tbody>

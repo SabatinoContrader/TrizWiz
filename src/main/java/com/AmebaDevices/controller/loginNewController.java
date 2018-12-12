@@ -44,7 +44,7 @@ public class loginNewController {
 		} else if (ruolo == 1) {//utente
 		//	List <utentiLocaliDTO> myutentiLocali = utentiLocaliService.getAll((String) request.getSession().getAttribute("nomeLogin"));
 		//	request.setAttribute("utentiLocali", myutentiLocali);
-			return "BuildingMenu";	
+			return "GestioneTrizConsultant";	
 		} /*else if (userRole == 3) {
 			List <BuildingDTO> buildings = buildingService.findByInstaller((String) request.getSession().getAttribute("username"));
 			CustomerDTO cDTO = customerService.findByUsername((String) request.getSession().getAttribute("username"));

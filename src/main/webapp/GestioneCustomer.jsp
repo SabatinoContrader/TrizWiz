@@ -13,13 +13,13 @@
 	<h1>Seleziona l'operazione che vuoi effettuare</h1>
 	<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
-			class="imgSuperUser" > <a href="/Customer/insertForm"
+			class="imgSuperUser" > <a href="/UtentiLocali/insertForm"
 			class="customerLink">Inserisci nuovo
 			Triz Consultant </a>
 	</div>
 	<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/user.png"
-			class="imgSuperUser"> <a href="/Customer/read"
+			class="imgSuperUser"> <a href="/UtentiLocali/read"
 			class="customerLink">Visualizza i
 			Triz Consultant</a>
 	</div>

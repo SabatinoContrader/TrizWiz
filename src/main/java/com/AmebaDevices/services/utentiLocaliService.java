@@ -42,22 +42,21 @@ public class utentiLocaliService {
 		return utentiLocali;
 
 	}
-/*
-	public void insertCustomer(CustomerDTO customer) {
-		System.out.println(customer.getId() + customer.getNome() + customer.getCognome() + customer.getDataNascita()
-				+ customer.getEmail() + customer.getUsername() + customer.getPassword() + customer.getUserRole());
-		customerDAO.save(CustomerConverter.convertToCustomer(customer));
+
+	public void insertUtentiLocali(utentiLocaliDTO utenti) {
+		System.out.println(utenti.getId() + utenti.getnomeLogin() + utenti.getpasswordLogin() + utenti.ruolo());
+		utentiLoginDAO.save(utentiLocaliConverter.convertToutentiLocali(utenti));
 	}
 
-	public List<CustomerDTO> readAll() {
-		List<CustomerDTO> customers = new ArrayList<>();
-		customerDAO.findByUserRole(2).forEach(c -> {
-			customers.add(CustomerConverter.convertToDto(c));
-			System.out.println(c.getNome());
+	public List<utentiLocaliDTO> readAll() {
+		List<utentiLocaliDTO> utenti = new ArrayList<>();
+		utentiLoginDAO.findByRuolo(1).forEach(c -> {
+			utenti.add(utentiLocaliConverter.utentiLocaliDto(c));
+			System.out.println(c.getNomeLogin());
 		});
-		return customers;
+		return utenti;
 	}
-
+/*
 	public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();
 		customerDAO.findByUserRole(3).forEach(i -> installers.add(CustomerConverter.convertToDto(i)));

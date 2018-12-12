@@ -18,28 +18,8 @@
 			class="imgSuperUser">
 		<h1>Inserisci il tuo Triz Consultant</h1>
 	</div>
-	<form class="customerForm" action="/Customer/insert" method="post">
+	<form class="customerForm" action="/UtentiLocali/insert" method="post">
 		<table class="insertTable">
-			<tr>
-				<td><h2>Nome:</h2></td>
-				<td><input type="text" class="form-control" id="nome"
-					name="nome" placeholder="Inserisci Nome"></td>
-			</tr>
-			<tr>
-				<td><h2>Cognome:</h2></td>
-				<td><input type="text" class="form-control" id="cognome" name="cognome"
-					placeholder="Inserisci Cognome"></td>
-			</tr>
-			<tr>
-				<td><h2>Data di Nascita:</h2></td>
-				<td><input type="date" class="form-control" id="dataDiNascita" name="dataDiNascita"
-					placeholder="Inserisci Data di Nascita"></td>
-			</tr>
-			<tr>
-				<td><h2>Email:</h2></td>
-				<td><input type="text" class="form-control" id="email" name="email"
-					placeholder="Inserisci Email"></td>
-			</tr>
 			<tr>
 				<td><h2>Username:</h2></td>
 				<td><input type="text" class="form-control" id="username" name="username"
