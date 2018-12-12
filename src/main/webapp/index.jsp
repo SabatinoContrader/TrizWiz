@@ -8,7 +8,7 @@
 			<h2 class="login-text">Login</h2>
 			<p class="insert" >Inserisci i tuoi dati</p>
 			<div>
-				<form action="/login" method="post">
+				<form action="/loginNew" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" id="user" name="username"
 							placeholder="Inserisci Username">

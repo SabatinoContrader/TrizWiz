@@ -23,7 +23,7 @@ public class ItemService {
 	}
 	
 	public void insertItem(ItemDTO item) {
-		 this.itemEntityDao.save(ItemConverter.convertToItem(item));
+//		 this.itemEntityDao.save(ItemConverter.convertToDto(item));
 	}
 	
 	public void deleteItem(Long id) {
@@ -32,8 +32,8 @@ public class ItemService {
 	}
 	
 	public void updateItem(ItemDTO item) {
-		if (itemEntityDao.findOne(item.getId())!=null)
-		this.itemEntityDao.save(ItemConverter.convertToItem(item));
+	//	if (itemEntityDao.findOne(item.getId())!=null)
+	//	this.itemEntityDao.save(ItemConverter.convertToDto(item));
 	}
 	
 	public ItemDTO searchItem(Long id) {

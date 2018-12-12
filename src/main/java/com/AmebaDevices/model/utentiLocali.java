@@ -24,7 +24,10 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
+
 @Entity
+@Getter
+@Setter
 @Table(name="utentiLocali",  uniqueConstraints = {@UniqueConstraint(columnNames={"nomeLogin"})})
 @NoArgsConstructor
 @AllArgsConstructor
