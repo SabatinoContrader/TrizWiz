@@ -12,7 +12,7 @@
 					<div class="form-group">
 						<input type="text" class="form-control" id="user" name="username"
 							placeholder="Inserisci Username">
-					</div> <!-- modifica -->
+					</div> 
 					</br>
 					<div class="form-group">
 						<input type="password" class="form-control" id="pass"
