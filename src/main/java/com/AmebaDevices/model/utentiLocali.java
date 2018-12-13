@@ -33,13 +33,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public class utentiLocali {
 
+	
+	//private long id;
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	@Column
-	@NotNull
-	@NonNull
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String nomeLogin;
 	@Column
 	private String passwordLogin;

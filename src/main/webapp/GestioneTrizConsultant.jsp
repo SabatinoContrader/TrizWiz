@@ -39,7 +39,7 @@
 	<h1>Seleziona l'operazione che vuoi effettuare</h1>
 	<div style="display: flex; align-items: center;">
 		<img src="http://simpleicon.com/wp-content/uploads/add-user.png"
-			style="width: 5%; padding-right:2%;"> <a href="Customer?mode=InsertForm"
+			style="width: 5%; padding-right:2%;"> <a href="Custumer?mode=InsertForm"
 			style="font-size: x-large; text-decoration: none">Inserisci nuovo
 			customer </a></br>
 	</div>

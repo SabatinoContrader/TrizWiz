@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  	<h1>Customer Menu</h1>
+  	<h1>Triz Customer Menu</h1>
 	<h2 class="things">Buildings</h2>
 	<div class="thingDiv">
 		<table class="thingTable table" style="margin-top:-6%;">
@@ -20,20 +20,20 @@
 			<tr>
 				<th>idCustomer</th>
 				<th>nome</th>
-				<th>cognome</th>
-				<th>username</th>
-			
+				<th>Cognome</th>
+				
 			</tr>
 		</thead>
 		
 		<tbody>
-		<c:forEach var="trizcustomer1" items="${trizcustomer1}">
+		<c:forEach var="building" items="${buildings}">
 			<tr>
-				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.idCustomer}</a></td>
-				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.nome}</a></td>
-				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.cognome}</a></td>
-				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.username}</a></td>
-					</tr>
+				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?buildingId=${building.id}">${building.id}</a></td>
+				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?buildingId=${building.id}">${building.address}</a></td>
+				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?buildingId=${building.id}">${building.city}</a></td>
+				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?buildingId=${building.id}">${building.cap}</a></td>
+				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?buildingId=${building.id}">${building.interno}</a></ta>
+			</tr>
 		</c:forEach>
 		</tbody>
 	</table>

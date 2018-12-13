@@ -38,7 +38,7 @@ public class utentiLocaliService {
 	public List<utentiLocaliDTO> getAllByNomeLogin(utentiLocaliDTO nomeLogin) {
 		List<utentiLocali> items = (List<utentiLocali>) utentiLoginDAO.findByNomeLogin(utentiLocaliConverter.convertToutentiLocali(nomeLogin));
 		List<utentiLocaliDTO> utentiLocali= new ArrayList<>();
-		items.forEach(i->utentiLocali.addAll((Collection<? extends utentiLocaliDTO>) utentiLocaliConverter.utentiLocaliDto(i)));
+		items.forEach(i->utentiLocali.addAll((Collection<? extends utentiLocaliDTO>) utentiLocaliConverter.convertToDto(i)));
 		return utentiLocali;
 
 	}
@@ -51,14 +51,14 @@ public class utentiLocaliService {
 	public List<utentiLocaliDTO> readAll() {
 		List<utentiLocaliDTO> utenti = new ArrayList<>();
 		utentiLoginDAO.findByRuolo(1).forEach(c -> {
-			utenti.add(utentiLocaliConverter.utentiLocaliDto(c));
+			utenti.add(utentiLocaliConverter.convertToDto(c));
 			System.out.println(c.getNomeLogin());
 		});
 		return utenti;
 	}
 	
 	public utentiLocaliDTO searchUtentiLocali(Long id) {
-		return utentiLocaliConverter.utentiLocaliDto(utentiLoginDAO.findOne(id));
+		return utentiLocaliConverter.convertToDto(utentiLoginDAO.findOne(id));
 	}
 	
 	public void updateUtentiLocali(utentiLocaliDTO utenti) {
@@ -97,7 +97,7 @@ public class utentiLocaliService {
 	public List<utentiLocaliDTO> getAll(String attribute) {
 		List<utentiLocaliDTO> utentiLogin = new ArrayList<>();
 		utentiLoginDAO.findByRuolo(1).forEach(c -> {
-			utentiLogin.add(utentiLocaliConverter.utentiLocaliDto(c));
+			utentiLogin.add(utentiLocaliConverter.convertToDto(c));
 			System.out.println(c.getNomeLogin());
 		});
 		return utentiLogin;
