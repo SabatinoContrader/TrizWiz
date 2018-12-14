@@ -19,7 +19,7 @@
 		</div>
 		<div class="menuDiv">
 			<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png "class="imgSuperUser"> 
-			<a href="/Installer/goBack" class="customerLink">
+			<a href="/Item/menu" class="customerLink">
 			Gestione Item
 			</a></br>
 		</div>

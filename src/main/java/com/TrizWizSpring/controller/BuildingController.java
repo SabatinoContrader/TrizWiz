@@ -51,6 +51,11 @@ public class BuildingController {
 	public String menu(HttpServletRequest request) {
 		return "BuildingMenu";
 	}
+	
+	@RequestMapping(value = "/back", method = RequestMethod.GET)
+	public String back(HttpServletRequest request) {
+		return "GestioneTrizConsultant";
+	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String read(HttpServletRequest request) {

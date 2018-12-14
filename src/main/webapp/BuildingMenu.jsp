@@ -7,7 +7,7 @@
 <link href="/resources/css/styles.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Triz Consultant Home</title>
-<a href="/" class="logout">Indietro</a>
+<a href="/Building/back" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
 <body>

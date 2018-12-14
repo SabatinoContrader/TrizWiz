@@ -7,7 +7,7 @@
 <link href="/resources/css/styles.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Insert Triz Consultant</title>
-	<a href="/Customer/goBack" class="logout">Indietro</a>
+	<a href="/Building/menu" class="logout">Indietro</a>
 <jsp:include page="HeaderLogout.jsp"></jsp:include>
 </head>
 <body>

@@ -1,10 +1,16 @@
 package com.TrizWizSpring.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -19,41 +25,25 @@ import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@Table(name="customer",  uniqueConstraints = {@UniqueConstraint(columnNames={"username"})})
-@NoArgsConstructor
-@AllArgsConstructor
-public class Customer {
 
+@Table(name="labels",  uniqueConstraints = {@UniqueConstraint(columnNames={"idLabels", "nome"})})
+
+@NoArgsConstructor
+public class Label {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-
-	@Column
+	private long idLabels;
+	
+	@Column (length = 45)
 	@NotNull
 	private String nome;
-	@Column
-	@NotNull
-	private String cognome;
-	@Column
-	@NotNull
-	private String dataNascita;
-	@Column
-	private String email;
-	@Column
-	@NotNull
-	private String username;
-	@Column
-	private String password;
-
-	@Column
-	@NotNull
-	private Integer userRole;
-
 	
-////
+	/*
+	@ManyToMany(mappedBy="projects")
+	private Set<items> itemss= new HashSet<>();	
+	*/
+	////
 //	@Override
 //	public String getId() {
 //		return String.valueOf(this.id);
