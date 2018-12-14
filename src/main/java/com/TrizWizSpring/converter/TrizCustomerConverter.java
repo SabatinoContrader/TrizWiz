@@ -40,7 +40,7 @@ public class TrizCustomerConverter {
 		TrizCustomerDTO trizCustomerDTO=new TrizCustomerDTO();
 		trizCustomerDTO.setCognome(t.getCognome());
 		trizCustomerDTO.setNome(t.getNome());
-		trizCustomerDTO.setIdCustomer(t.getIdCustomer());
+	   trizCustomerDTO.setIdCustomer(t.getIdCustomer());
 		//trizCustomerDTO.setUsername(t.getUsername());
 		return trizCustomerDTO;
 }

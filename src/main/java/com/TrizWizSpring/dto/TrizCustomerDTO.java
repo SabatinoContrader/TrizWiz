@@ -18,7 +18,7 @@ public class TrizCustomerDTO {
 		this.idCustomer = idCustomer;
 		this.nome = nome;
 		this.cognome = cognome;
-	//	this.username = username;
+	this.username = username;
 	}
 
 	public long getIdCustomer() {

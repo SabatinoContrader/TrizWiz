@@ -68,6 +68,25 @@ public class TrizCustomerService {
 		return trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(trizcustomer));
 
 	}
+	/*
+	public void delete(TrizCustomerDTO trizcustomer) {
+		trizcustomer b = TrizCustomerConverter.convertTotrizcustomer(trizcustomer);
+		b.setUsername(null);
+		List<utentiLocali> utenteLocale = utentiLoginDAO.findByUtenti(b);
+		for (utentiLocali utentiLocali : utenteLocale) {
+			utentiLocali.setNomeLogin(null); 
+			utentiLoginDAO.save(utenteLocale);
+			utentiLoginDAO.delete(utenteLocale);
+		}
+		this.trizCustomerDAO.save(b);
+		trizCustomerDAO.delete(b);
+	}
+	/*
+	public void delete(Long nomeLogin) {
+		utentiLocali c = utentiLoginDAO.findOne(nomeLogin);
+		 utentiLoginDAO.delete(c);
+	}
+
 
 /*
 	public List<CustomerDTO> readAll() {

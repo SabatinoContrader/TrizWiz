@@ -66,7 +66,39 @@ public class TrizCustomerController  {
 			request.setAttribute("trizcustomer1", trizcustomer1);
 			return "CustomerHome";
 		}
+	
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public String read(HttpServletRequest request) {
+		String username = request.getSession().getAttribute("username").toString();
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		return "TrizCustomerRead";
+	}
+	/*
+	@RequestMapping(value = "/deleteForm", method = RequestMethod.GET)
+	public String deleteForm(HttpServletRequest request) {
+		String username = request.getSession().getAttribute("username").toString();
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		return "TrizCustomerRead";
+		//return "DeleteBuilding";
+	}
+/*
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(HttpServletRequest request) {
+		String username = request.getSession().getAttribute("username").toString();
+		int toDelete = Integer.parseInt(request.getParameter("idCustomer"));
+		TrizCustomerDTO trizcustomer1 = TrizCustomerService.(toDelete);
+		this.TrizCustomerService.delete(trizcustomer1);
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		return "TrizCustomerRead";
 		
+	//	return "CustomerHome";
+	 
+	 
+	} 
+
 		//this.trizCustomerService.insertTrizCustomer(trizcustomer);
 		//String username=request.getSession().getAttribute("username").toString();
 		//trizcustomer.setUsername(username);

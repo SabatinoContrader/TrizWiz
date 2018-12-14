@@ -19,7 +19,7 @@
 	</div>
 	<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/user.png"
-			class="imgSuperUser"> <a href="/Building/read"
+			class="imgSuperUser"> <a href="/TrizCustomer/read"
 			class="customerLink">Visualizza i
 			Triz Customer</a>
 	</div>
