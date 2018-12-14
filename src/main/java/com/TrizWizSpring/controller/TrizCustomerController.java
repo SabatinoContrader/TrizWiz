@@ -61,7 +61,7 @@ public class TrizCustomerController  {
 		 trizcustomer.setNome(nome);
 		 String username = request.getSession().getAttribute("username").toString();
 		 this.TrizCustomerService.create(trizcustomer, username);
-		 
+		 //commento
 			List<TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
 			request.setAttribute("trizcustomer1", trizcustomer1);
 			return "CustomerHome";
