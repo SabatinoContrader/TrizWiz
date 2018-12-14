@@ -25,6 +25,8 @@ import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 
 @Table(name="labels",  uniqueConstraints = {@UniqueConstraint(columnNames={"idLabels", "nome"})})
 

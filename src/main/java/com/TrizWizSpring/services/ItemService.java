@@ -40,16 +40,26 @@ public class ItemService {
 		itemDAO.save(ItemConverter.convertToItem(item));
 	}
 
-	public List<CustomerDTO> readAll() {
-		List<CustomerDTO> customers = new ArrayList<>();
-		customerDAO.findByUserRole(2).forEach(c -> {
-			customers.add(CustomerConverter.convertToDto(c));
-			System.out.println(c.getNome());
-		});
-		return customers;
+	public List<ItemDTO> readAll() {
+		List<ItemDTO> item = new ArrayList<>();
+		itemDAO.findByCommento("commento");
+		return item;
+	}
+	
+	public void updateItem(ItemDTO item) {
+		itemDAO.save(ItemConverter.convertToItem(item));
 	}
 
-	public List<CustomerDTO> readInstallers() {
+	public ItemDTO searchItem(Long id) {
+		return ItemConverter.convertToDto(itemDAO.findOne(id));
+	}
+	
+	public void deleteItem(Long id) {
+		Item i = itemDAO.findOne(id);
+		itemDAO.delete(i);
+	}
+
+	/*public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();
 		customerDAO.findByUserRole(3).forEach(i -> installers.add(CustomerConverter.convertToDto(i)));
 		return installers;
@@ -72,4 +82,5 @@ public class ItemService {
 	public CustomerDTO findByUsername(String username) {
 		return CustomerConverter.convertToDto(customerDAO.findByUsername(username));
 	}
+	*/
 }

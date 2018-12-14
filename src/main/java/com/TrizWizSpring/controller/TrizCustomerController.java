@@ -38,10 +38,7 @@ public class TrizCustomerController  {
 	public String insertForm(HttpServletRequest request) {
 		return "insertTrizCustomer";
 	} 
-	@RequestMapping(value="/goBackSuper", method=RequestMethod.GET)
-	public String goBackSuper(HttpServletRequest request) {
-		return "superuserhome";
-	}
+
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String menu(HttpServletRequest request) {
 		return "BuildingMenu";
@@ -64,7 +61,7 @@ public class TrizCustomerController  {
 		 //commento
 			List<TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
 			request.setAttribute("trizcustomer1", trizcustomer1);
-			return "CustomerHome";
+			return "BuildingMenu";
 		}
 	
 	@RequestMapping(value = "/read", method = RequestMethod.GET)

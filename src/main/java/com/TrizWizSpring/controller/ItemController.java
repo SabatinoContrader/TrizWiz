@@ -58,71 +58,48 @@ public class ItemController {
 		ItemDTO item = new ItemDTO();
 		item.setCommento(request.getParameter("commento"));
 		itemService.insertItem(item);
-		return "GestioneItem";
+		return "ItemMenu";
 	} 
 	
-	/*
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public String read(HttpServletRequest request, Model model) {
-		List<CustomerDTO> customers = customerService.readAll();
-		model.addAttribute("customers", customers);
-		return "readItem";
+		List<ItemDTO> item = itemService.readAll();
+		model.addAttribute("Item", item);
+		return "ReadItem";
 	}
+	
 	
 	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
-		List<CustomerDTO> customers = customerService.readAll();
-		request.setAttribute("customers", customers);
-		return "updateItem";
+		List<ItemDTO> item = itemService.readAll();
+		request.setAttribute("item", item);
+		return "UpdateItem";
 	} 
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("idselected"));
-		long l=id;
-		CustomerDTO newcustomer = customerService.searchCustomer(l);
+		int idItems = Integer.parseInt(request.getParameter("idselected"));
+		long l=idItems;
+		ItemDTO newitem = itemService.searchItem(l);
 		System.out.println(request.getParameter("selected"));
-		switch (Integer.parseInt(request.getParameter("selected"))) {
-		case 1:
-			newcustomer.setNome(request.getParameter("value"));
-			break;
-		case 2:
-			newcustomer.setCognome(request.getParameter("value"));
-			break;
-		case 3:
-			newcustomer.setDataNascita(request.getParameter("value"));
-			break;
-		case 4:
-			newcustomer.setUsername(request.getParameter("value"));
-			break;
-		case 5:
-			newcustomer.setPassword(request.getParameter("value"));
-			break;
-		default:
-			break;
-		}
-		customerService.updateCustomer(newcustomer);
-		return "GestioneItem";
+		itemService.updateItem(newitem);
+		return "ItemMenu";
 	} 
+	
 	
 	@RequestMapping(value="/deleteForm", method=RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
-		List<CustomerDTO> customers = customerService.readAll();
-		request.setAttribute("customers", customers);
-		return "deletecustomer";
+		List<ItemDTO> item = itemService.readAll();
+		request.setAttribute("item", item);
+		return "DeleteItem";
 	} 
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public String delete(HttpServletRequest request) {
-		int idDelete = Integer.parseInt(request.getParameter("idselected"));
-		long l=idDelete;
-		customerService.deleteCustomer(l);
-		return "GestioneItem";
+		int idItems = Integer.parseInt(request.getParameter("idselected"));
+		long l=idItems;
+		itemService.deleteItem(l);
+		return "DeleteItem";
 	} 
-	
-	@RequestMapping(value="/goBack", method=RequestMethod.GET)   // cambiare return con goBack
-	public String goBack(HttpServletRequest request) {
-		return "GestioneItem";
-	} */
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
