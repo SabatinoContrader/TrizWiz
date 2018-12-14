@@ -40,8 +40,8 @@ public class TrizCustomerConverter {
 		TrizCustomerDTO trizCustomerDTO=new TrizCustomerDTO();
 		trizCustomerDTO.setCognome(t.getCognome());
 		trizCustomerDTO.setNome(t.getNome());
-	   trizCustomerDTO.setIdCustomer(t.getIdCustomer());
-		//trizCustomerDTO.setUsername(t.getUsername());
+	    trizCustomerDTO.setIdCustomer(t.getIdCustomer());
+		trizCustomerDTO.setUsername(UtenteLocaleConverter.convertToDto(t.getUsername()));
 		return trizCustomerDTO;
 }
 	
@@ -49,7 +49,7 @@ public class TrizCustomerConverter {
 		trizcustomer trizcustomer= new trizcustomer();
 		trizcustomer.setCognome(c.getCognome());
         trizcustomer.setNome(c.getNome());
-      //  trizcustomer.setUsername(c.getUsername());
+        trizcustomer.setUsername(UtenteLocaleConverter.convertToutentiLocali(c.getUsername()));
 		trizcustomer.setIdCustomer(c.getIdCustomer());
 		return trizcustomer;
 	}

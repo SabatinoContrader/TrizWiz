@@ -13,7 +13,8 @@ import com.TrizWizSpring.model.utentiLocali;
 
 @Service
 public class utentiLocaliService {
-
+	//@Autowired
+	
 	private utentiLoginDAO utentiLoginDAO;
 
 	@Autowired

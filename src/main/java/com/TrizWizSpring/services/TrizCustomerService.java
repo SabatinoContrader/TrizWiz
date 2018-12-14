@@ -32,6 +32,8 @@ public class TrizCustomerService {
 	private TrizCustomerDAO trizCustomerDAO;
 	@Autowired
     private utentiLoginDAO utentiLoginDAO;
+	@Autowired
+	private utentiLocaliService utentiLocaliService;
     
 	public TrizCustomerService() {
 	}
@@ -62,9 +64,15 @@ public class TrizCustomerService {
 	
 }
 	public trizcustomer create(TrizCustomerDTO trizcustomer, String nomeLogin) {
-		utentiLocali c = this.utentiLoginDAO.findByNomeLogin(nomeLogin);
-		System.out.println("c = "+c);
-		trizcustomer.setUsername(UtenteLocaleConverter.convertToDto(c));
+		System.out.println("nomeLogin = "+nomeLogin);
+		//utentiLocali c = this.utentiLoginDAO.findByNomeLogin(nomeLogin);
+		//System.out.println("c = "+c.getNomeLogin()+ ""+c.getPasswordLogin()+""+c.getRuolo());
+		//trizcustomer.setUsername(UtenteLocaleConverter.convertToDto(c));
+		//utentiLocaliDTO p=UtenteLocaleConverter.convertToDto(c);
+		//System.out.println("p = "+p.getnomeLogin());
+		utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
+		System.out.println("utenteDTO= "+p.getnomeLogin()+ ""+p.getpasswordLogin()+""+p.ruolo());
+		trizcustomer.setUsername(p);
 		return trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(trizcustomer));
 
 	}
