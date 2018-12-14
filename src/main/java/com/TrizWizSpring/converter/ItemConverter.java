@@ -10,6 +10,7 @@ public class ItemConverter {
 		itemDTO.setIdItems(i.getIdItems());
 		itemDTO.setCommento(i.getCommento());
 		return itemDTO;
+		//c
 	}
 	
 	public static Item convertToItem(ItemDTO i) {
