@@ -21,21 +21,22 @@
 	
 	
 	<div class="modifyCustomer">
-	<h2 >Seleziona l'id del Triz Consultant da modificare</h2>
+	<h2 >Seleziona l'username del Triz Consultant da modificare</h2>
 	  <form action = "/UtentiLocali/update" method= "post">
 		<div class="idCustomer"><h3>Id Triz Consultant:</h3>
 			<div style="padding-left:2%"><select style="border-radius: 10%" name="idselected">
 				<c:forEach var="utentiLocali" items="${utentiLocali}">
-						<option value="${utentiLocali.id}">${utentiLocali.id}</option>
+						<option value="${utentiLocali.nomeLogin}">${utentiLocali.nomeLogin}</option>
 				</c:forEach>
 			</select>
 			</div>
 			
 		</div></br>
-		<div class="idCustomer"><h3>Cosa vuoi modificare?   </h3>&nbsp; 
+		<div class="idCustomer"><h3> Modifica la password dell'utente selezionato </h3>&nbsp; 
 			<select style="border-radius: 10%" name="selected">
-  				<option value="1">Username</option>
- 				 <option value="2">Password</option> 
+			
+  				 <!-- <option value="1">Username</option> -->
+ 				 <option value="1">Password</option> 
 			</select>
 			&nbsp;&nbsp;
 			<input type = "text" id = "value" name ="value" placeholder="Inserisci nuovo valore">

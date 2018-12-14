@@ -20,13 +20,13 @@
 		</br>
 	</div>
 <div class="delete">
-	<h2>Seleziona l'id del Triz Consultant da eliminare</h2>
+	<h2>Seleziona l'username dell'utente da eliminare</h2>
 	<form action="/UtentiLocali/delete" method="post">
 		<div  class="idCustomer"><h2>
 			Id Triz Consultant: </h2>
 			<div style="padding-left:7%"><select name="idselected">
 				<c:forEach var="utenti" items="${utenti}">
-					<option value="${utenti.id}">${utenti.id}</option>
+					<option value="${utenti.nomeLogin}">${utenti.nomeLogin}</option>
 				</c:forEach>
 			</select>
 			</div>

@@ -25,11 +25,13 @@ import com.TrizWizSpring.services.utentiLocaliService;
 @Controller
 @RequestMapping("/UtentiLocali")// da vedere
 public class UtentiLocaliController  {
-
+	
+	@Autowired
 	private utentiLocaliService utentiLocaliService;
+	
 	@Autowired
 	public UtentiLocaliController(utentiLocaliService utentiLocaliService) {
-	this.utentiLocaliService=utentiLocaliService;
+	//this.utentiLocaliService=utentiLocaliService;
 	}
 	
 	@RequestMapping(value="/insertForm", method=RequestMethod.GET)
@@ -55,28 +57,30 @@ public class UtentiLocaliController  {
 	public String read(HttpServletRequest request, Model model) {
 		List<utentiLocaliDTO> utenti = utentiLocaliService.readAll();
 		model.addAttribute("utentiLocali", utenti);
-		return "readCustomers"; //cambiare nome readCustomers in readUtenti
+		return "ReadUtenteLocale"; //cambiare nome readCustomers in readUtenti
 	}
 	
 	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
 		List<utentiLocaliDTO> utenti = utentiLocaliService.readAll();
 		request.setAttribute("utentiLocali", utenti);
-		return "updateCustomer";
+		return "UpdateUtenteLocale";
 	} 
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("idselected"));
-		long l=id;
-		utentiLocaliDTO newutente = utentiLocaliService.searchUtentiLocali(l);
+		String username= request.getParameter("idselected");
+		//int id = Integer.parseInt(request.getParameter("idselected"));
+		//long l=id;
+		utentiLocaliDTO newutente = utentiLocaliService.searchUtentiLocali(username);
 		System.out.println(request.getParameter("selected"));
 		switch (Integer.parseInt(request.getParameter("selected"))) {
 		case 1:
-			newutente.setnomeLogin(request.getParameter("value"));
-			break;
-		case 2:
 			newutente.setpasswordLogin(request.getParameter("value"));
+			newutente.setnomeLogin(username);
 			break;
+		/*case 2:
+			newutente.setpasswordLogin(request.getParameter("value"));
+			break;*/
 		default:
 			break;
 		}
@@ -92,9 +96,9 @@ public class UtentiLocaliController  {
 	} 
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public String delete(HttpServletRequest request) {
-		int idDelete = Integer.parseInt(request.getParameter("idselected"));
-		long l=idDelete;
-		utentiLocaliService.deleteUtentiLocali(l);
+		String username = request.getParameter("idselected");
+		//long l=idDelete;
+		utentiLocaliService.deleteUtentiLocali(username);
 		return "GestioneCustomer";
 	} 
 	

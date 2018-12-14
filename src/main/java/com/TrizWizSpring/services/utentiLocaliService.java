@@ -38,7 +38,7 @@ public class utentiLocaliService {
 	}
 
 	public void insertUtentiLocali(utentiLocaliDTO utenti) {
-		System.out.println(utenti.getId() + utenti.getnomeLogin() + utenti.getpasswordLogin() + utenti.ruolo());
+		System.out.println(utenti.getnomeLogin() + utenti.getpasswordLogin() + utenti.ruolo());
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
 	}
 
@@ -51,16 +51,25 @@ public class utentiLocaliService {
 		return utenti;
 	}
 	
-	public utentiLocaliDTO searchUtentiLocali(Long id) {
+	/*public utentiLocaliDTO searchUtentiLocali(Long id) {
 		return UtenteLocaleConverter.convertToDto(utentiLoginDAO.findOne(id));
+	}*/
+	
+	public utentiLocaliDTO searchUtentiLocali(String username) {
+		return UtenteLocaleConverter.convertToDto(utentiLoginDAO.findByNomeLogin(username));
 	}
 	
 	public void updateUtentiLocali(utentiLocaliDTO utenti) {
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
 	}
 	
-	public void deleteUtentiLocali(Long id) {
+	/*public void deleteUtentiLocali(Long id) {
 		utentiLocali c = utentiLoginDAO.findOne(id);
+		utentiLoginDAO.delete(c);
+	}*/
+	
+	public void deleteUtentiLocali(String username) {
+		utentiLocali c = utentiLoginDAO.findByNomeLogin(username);
 		utentiLoginDAO.delete(c);
 	}
 /*

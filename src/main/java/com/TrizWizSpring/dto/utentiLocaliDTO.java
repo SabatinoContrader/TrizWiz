@@ -2,7 +2,6 @@ package com.TrizWizSpring.dto;
 
 public class utentiLocaliDTO {
 
-	private long id;
 	private String nomeLogin;
 	private String passwordLogin;
 	private Integer ruolo;
@@ -11,16 +10,13 @@ public class utentiLocaliDTO {
 
 	}
 
-	public utentiLocaliDTO(long id, String nomeLogin, String passwordLogin, Integer ruolo) {
-		this.id = id;
+	public utentiLocaliDTO(String nomeLogin, String passwordLogin, Integer ruolo) {
+	
 		this.nomeLogin = nomeLogin;
 		this.passwordLogin = passwordLogin;
 		this.ruolo = ruolo;
 	}
 
-	public long getId() {
-		return id;
-	}
 
 
 	public String getnomeLogin() {
@@ -33,10 +29,6 @@ public class utentiLocaliDTO {
 
 	public Integer ruolo() {
 		return ruolo;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public void setnomeLogin(String nomeLogin) {
