@@ -49,14 +49,14 @@
 				<img
 					src="https://image.flaticon.com/icons/png/512/1155/1155556.png"
 					class="imgThing"> <a
-					href="/Building/updateForm" class="customerLink">Modifica
+					href="/TrizCustomer/updateForm" class="customerLink">Modifica
 					building </a>
 			</div>
 			<div class="insertDiv">
 				<img
 					src="http://icons-for-free.com/free-icons/png/512/905647.png"
 					class="imgThing"> <a
-					href="/Building/deleteForm" class="customerLink">Elimina
+					href="/TrizCustomer/deleteForm" class="customerLink">Elimina
 					building </a>
 			</div>
 		</div>

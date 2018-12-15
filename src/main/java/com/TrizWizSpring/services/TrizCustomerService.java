@@ -76,11 +76,31 @@ public class TrizCustomerService {
 		return trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(trizcustomer));
 
 	}
-	/*
+	public TrizCustomerDTO findByPrimaryKey(long IdCustomer) {
+		return TrizCustomerConverter.convertToDto(trizCustomerDAO.findOne(IdCustomer));
+	}
+
+
+   public void update(TrizCustomerDTO newValues, String nomeLogin) {
+	  if (trizCustomerDAO.findOne(newValues.getIdCustomer()) != null) {
+		utentiLocali utentiLocali = this.utentiLoginDAO.findByNomeLogin(nomeLogin);
+		newValues.setUsername(UtenteLocaleConverter.convertToDto(utentiLocali));
+		trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(newValues));
+	}
+}
+
+   public void update(TrizCustomerDTO newValues) {
+	trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(newValues));
+}
+
+
+/*
+	
 	public void delete(TrizCustomerDTO trizcustomer) {
 		trizcustomer b = TrizCustomerConverter.convertTotrizcustomer(trizcustomer);
 		b.setUsername(null);
-		List<utentiLocali> utenteLocale = utentiLoginDAO.findByUtenti(b);
+		List<utentiLocali> utenteLocale = utentiLoginDAO.findByBuilding(b);
+		
 		for (utentiLocali utentiLocali : utenteLocale) {
 			utentiLocali.setNomeLogin(null); 
 			utentiLoginDAO.save(utenteLocale);
@@ -89,7 +109,7 @@ public class TrizCustomerService {
 		this.trizCustomerDAO.save(b);
 		trizCustomerDAO.delete(b);
 	}
-	/*
+	
 	public void delete(Long nomeLogin) {
 		utentiLocali c = utentiLoginDAO.findOne(nomeLogin);
 		 utentiLoginDAO.delete(c);
