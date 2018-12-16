@@ -13,18 +13,20 @@ import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.utentiLocaliService;
-
+import com.TrizWizSpring.services.TrizCustomerService;
 @Controller
 @RequestMapping("")
 public class loginNewController {
 
 	private BuildingService buildingService;
 	private utentiLocaliService utentiLocaliService;
+	private TrizCustomerService TrizCustomerService ;
 
 	@Autowired
-	public loginNewController(utentiLocaliService cs, BuildingService bs) {
+	public loginNewController(utentiLocaliService cs, BuildingService bs,TrizCustomerService b) {
 		utentiLocaliService = cs;
 		buildingService = bs;
+		TrizCustomerService=b;
 	}
 
 	@RequestMapping(value="/", method= RequestMethod.GET)

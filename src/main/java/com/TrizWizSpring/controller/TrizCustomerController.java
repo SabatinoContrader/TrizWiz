@@ -75,30 +75,50 @@ public class TrizCustomerController  {
 		request.setAttribute("trizcustomer", trizcustomer);
 		return "TrizCustomerRead";
 	}
-	/*
+	
 	@RequestMapping(value = "/deleteForm", method = RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();
 		List <TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
 		request.setAttribute("trizcustomer1", trizcustomer1);
-		return "DeleteTrizCustomer";
+		return "TrizCustomerDelete";
+		//return "DeleteTrizCustomer";
 		
 	}
-
+	
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();
-		int toDelete = Integer.parseInt(request.getParameter("idCustomer"));
+		int toDelete = Integer.parseInt(request.getParameter("idselected"));
 		TrizCustomerDTO toDestroy = TrizCustomerService.findByPrimaryKey(toDelete);
 		this.TrizCustomerService.delete(toDestroy);
 		List <TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
 		request.setAttribute("trizcustomer1", trizcustomer1);
-		return "TrizCustomerRead";
+		
+		
+		return "CustomerHome";
+	
+	 
+	 }
+		/*long idCustomer = Long.parseLong(request.getParameter("idCustomer"));
+		TrizCustomerService.delete(idCustomer);
+		List <TrizCustomerDTO> trizcustomer1 =TrizCustomerService.getAll(null);
+		request.setAttribute("trizcustomer1", trizcustomer1);
+		return "CustomerHome";
+		
+	}
+		String username = request.getSession().getAttribute("username").toString();
+		int toDelete = Integer.parseInt(request.getParameter("idselected"));
+		TrizCustomerDTO toDestroy = TrizCustomerService.findByPrimaryKey(toDelete);
+		this.TrizCustomerService.delete(toDestroy);
+		List <TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer1", trizcustomer1);
+		return "CustomerHome";
 		
 	//	return "CustomerHome";
 	
+	 */
 	 
-	} */
  
 	@RequestMapping(value = "/updateForm", method = RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
@@ -130,7 +150,7 @@ public class TrizCustomerController  {
 	
 	@RequestMapping(value = "/goBack", method = RequestMethod.GET)
 	public String goBack(HttpServletRequest request) {
-		return "CustomerHome";
+		return "BuildingMenu";
 	
 	}
 

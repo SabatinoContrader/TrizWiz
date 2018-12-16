@@ -44,5 +44,12 @@ public class trizcustomer {
 
 	@ManyToOne 
 	@JoinColumn (name ="username")
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	private utentiLocali username;
+
+
+	public trizcustomer get() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

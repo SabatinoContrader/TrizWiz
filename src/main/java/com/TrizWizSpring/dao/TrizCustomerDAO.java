@@ -20,4 +20,5 @@ public interface TrizCustomerDAO extends CrudRepository<trizcustomer, Long> {
 	 public trizcustomer findByNome(trizcustomer trizcustomer);
 	 
 	 public List<trizcustomer> findByUsername(utentiLocali username);
+	//  public List<trizcustomer> findAllListTrizcustomer(long idCustomer);
 }

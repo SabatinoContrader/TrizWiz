@@ -93,13 +93,31 @@ public class TrizCustomerService {
 	trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(newValues));
 }
 
-
-/*
-	
-	public void delete(TrizCustomerDTO trizcustomer) {
-		trizcustomer b = TrizCustomerConverter.convertTotrizcustomer(trizcustomer);
+  public void delete(TrizCustomerDTO toDestroy) {
+		trizcustomer b = TrizCustomerConverter.convertTotrizcustomer(toDestroy);
 		b.setUsername(null);
-		List<utentiLocali> utenteLocale = utentiLoginDAO.findByBuilding(b);
+  
+  this.trizCustomerDAO.save(b);
+	trizCustomerDAO.delete(b);
+}
+
+		//List<trizcustomer> trizcustomer1=trizCustomerDAO.findByUsername(b);
+	/*	List<utentiLocali> utenteLocale = utentiLoginDAO.findByNomeLogin(b);
+		
+		for (utentiLocali utentiLocali : utenteLocale) {
+			utentiLocali.setNomeLogin(null); 
+			utentiLoginDAO.save(utenteLocale);
+			utentiLoginDAO.delete(utenteLocale);
+		}
+		this.trizCustomerDAO.save(b);
+		trizCustomerDAO.delete(b);
+	}
+	
+		
+		/*for (trizcustomer trizcustomern : trizcustomer1) {
+			trizcustomer.setUsername(null); 
+			trizCustomerDAO.save(trizcustomer1);
+			trizCustomerDAO.delete(trizcustomer1);
 		
 		for (utentiLocali utentiLocali : utenteLocale) {
 			utentiLocali.setNomeLogin(null); 
@@ -116,7 +134,7 @@ public class TrizCustomerService {
 	}
 
 
-/*
+
 	public List<CustomerDTO> readAll() {
 		List<CustomerDTO> customers = new ArrayList<>();
 		customerDAO.findByUserRole(2).forEach(c -> {

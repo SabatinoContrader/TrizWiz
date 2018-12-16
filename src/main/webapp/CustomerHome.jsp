@@ -12,8 +12,8 @@
 
 </head>
 <body>
-  	<h1>Customer Menu</h1>
-	<h2 class="things">Buildings</h2>
+  	<h1>Triz Customer Menu</h1>
+<!--	<h2 class="things">Buildings</h2>-->
 	<div class="thingDiv">
 		<table class="thingTable table" style="margin-top:-6%;">
 		<thead>
@@ -32,7 +32,7 @@
 				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.idCustomer}</a></td>
 				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.nome}</a></td>
 				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.cognome}</a></td>
-				<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.username}</a></td>
+			<td align="center"><a style="text-decoration:none; color:white" href="/Floors/menu?trizcustomer1IdCustomer=${trizcustomer1.idCustomer}">${trizcustomer1.username}</a></td>
 					</tr>
 		</c:forEach>
 		</tbody>
@@ -43,21 +43,21 @@
 					src="https://cdn4.iconfinder.com/data/icons/symbol-color-business-1/32/office_building-add-512.png"
 					class="imgThing"> <a
 					href="/Building/insertForm" class="customerLink">Inserisci
-					building </a>
+					Triz Customer </a>
 			</div>
 			<div class="insertDiv">
 				<img
 					src="https://image.flaticon.com/icons/png/512/1155/1155556.png"
 					class="imgThing"> <a
 					href="/TrizCustomer/updateForm" class="customerLink">Modifica
-					building </a>
+					Triz Customer </a>
 			</div>
 			<div class="insertDiv">
 				<img
 					src="http://icons-for-free.com/free-icons/png/512/905647.png"
 					class="imgThing"> <a
 					href="/TrizCustomer/deleteForm" class="customerLink">Elimina
-					building </a>
+					Triz Customer </a>
 			</div>
 		</div>
 	</div>
