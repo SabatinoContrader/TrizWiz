@@ -13,6 +13,7 @@ public class ItemDTO {
 	public ItemDTO(long idItems, String commento, TrizCustomerDTO idCustomer) {
 		this.idItems=idItems;
 		this.commento=commento;
+		this.idCustomer=idCustomer;
 	}
 
 	public long getIdItems() {
@@ -38,5 +39,9 @@ public class ItemDTO {
 		this.idCustomer = idCustomer;
 	}
 
-	
+/*	public String getNomeIdCustomer() {
+		long id= idCustomer.getIdCustomer();
+		String idReturn= ""+id;
+		return idReturn;
+	}*/
 }

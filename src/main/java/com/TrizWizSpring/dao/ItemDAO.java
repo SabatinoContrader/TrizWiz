@@ -1,5 +1,7 @@
 package com.TrizWizSpring.dao;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +15,8 @@ import com.TrizWizSpring.model.utentiLocali;
 public interface ItemDAO extends CrudRepository<Item, Long> { 
 	
 	public Item findByCommento(String commento);
+	
+	public List<Item> findByIdCustomer(trizcustomer idCustomer);
 
 	public Item findByIdItems(long idItems);
 

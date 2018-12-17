@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.ItemConverter;
+import com.TrizWizSpring.converter.TrizCustomerConverter;
 import com.TrizWizSpring.dao.CustomerDAO;
 import com.TrizWizSpring.dao.ItemDAO;
 import com.TrizWizSpring.dao.TrizCustomerDAO;
@@ -19,6 +20,7 @@ import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.model.trizcustomer;
+import com.TrizWizSpring.model.utentiLocali;
 
 
 @Service
@@ -71,9 +73,25 @@ public class ItemService {
 		Item i = itemDAO.findOne(id);
 		itemDAO.delete(i);
 	}
+
 	public ItemDTO findByPrimaryKey(long idItems) {
 		return ItemConverter.convertToDto(itemDAO.findByIdItems(idItems));
 	}
+
+	
+	public List<ItemDTO> readItemsCustomer(long idCustomer) {
+		List<Item> item = new ArrayList<>();
+		List<ItemDTO> itemDTO = new ArrayList<>();
+		trizcustomer trizCustomerId = this.TrizCustomerDAO.findOne(idCustomer);
+		item= itemDAO.findByIdCustomer(trizCustomerId);
+		
+		item.forEach(b -> itemDTO.add(ItemConverter.convertToDto(b)));
+		System.out.println("----------------------------------->" + item.size());
+		return itemDTO;
+		
+	}
+
+
 	/*public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();
 		customerDAO.findByUserRole(3).forEach(i -> installers.add(CustomerConverter.convertToDto(i)));

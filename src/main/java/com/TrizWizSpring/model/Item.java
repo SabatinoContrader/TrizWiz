@@ -56,6 +56,8 @@ public class Item {
 			inverseJoinColumns= {@JoinColumn(name="idLabels")}
 			)
 	Set<Label> projects= new HashSet<Label>();
+<<<<<<< Updated upstream
 
 	*/
+
 	}

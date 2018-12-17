@@ -17,11 +17,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.ItemDTO;
+import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
+import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.CustomerService;
 import com.TrizWizSpring.services.ItemService;
+import com.TrizWizSpring.services.TrizCustomerService;
 import com.TrizWizSpring.services.utentiLocaliService;
 
 
@@ -30,6 +33,10 @@ import com.TrizWizSpring.services.utentiLocaliService;
 public class ItemController {
 	
 	private ItemService itemService;
+	
+	@Autowired
+	private TrizCustomerService TrizCustomerService;
+	
 	@Autowired
 	public ItemController(ItemService is) {
 		itemService = is;
@@ -67,9 +74,22 @@ public class ItemController {
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public String read(HttpServletRequest request, Model model) {
-		List<ItemDTO> item = itemService.readAll();
-		model.addAttribute("Item", item);
-		return "ReadItem";
+		String username = request.getSession().getAttribute("username").toString();
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		return "InsVisItem";
+	}
+	
+	@RequestMapping(value="/insVisCustomer", method=RequestMethod.POST)
+	public String insVisCustomer(HttpServletRequest request, Model model) {
+		String idCustomer= request.getParameter("idCustomer");
+		int idCustom = Integer.parseInt(idCustomer);
+		List <ItemDTO> itemIdCustomer= itemService.readItemsCustomer(idCustom);
+		request.setAttribute("itemCustomer", itemIdCustomer);
+		
+		
+		return "VisualizzaItem";
+		
 	}
 	
 	
