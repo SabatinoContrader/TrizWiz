@@ -4,12 +4,12 @@ import com.TrizWizSpring.dto.LabelDTO;
 import com.TrizWizSpring.model.Label;
 
 public class LabelConverter {
-	
 	public static LabelDTO convertToDto(Label l) {
-		LabelDTO labelDTO = new LabelDTO();
+		LabelDTO labelDTO=new LabelDTO();
 		labelDTO.setIdLabels(l.getIdLabels());
-		labelDTO.setNome(l.getNome());
+	    labelDTO.setNome(l.getNome());
 		return labelDTO;
+		//c
 	}
 	
 	public static Label convertToLabel(LabelDTO l) {
