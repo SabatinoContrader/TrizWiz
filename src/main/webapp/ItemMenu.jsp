@@ -20,7 +20,7 @@
 	
 		<div class="insertDiv">
 		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
-			class="imgSuperUser" > <a href="/Item/insertForm"
+			class="imgSuperUser" > <a href="/TrizCustomer/readItem"
 			class="customerLink">Inserisci nuovo item </a>
 	</div>
 	<div class="insertDiv">

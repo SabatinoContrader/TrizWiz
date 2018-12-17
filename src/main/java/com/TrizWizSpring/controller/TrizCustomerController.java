@@ -51,14 +51,10 @@ public class TrizCustomerController  {
 	*/
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
-		//String username = request.getSession().getAttribute("username").toString();
 		String nome= request.getParameter("nome");
 		String cognome= request.getParameter("cognome");
-		System.out.println("nome è" + nome);
-		
 		 TrizCustomerDTO trizcustomer = new TrizCustomerDTO();
 		 trizcustomer.setCognome(cognome);
-		// trizcustomer.setUsername(request.getParameter("username"));
 		 trizcustomer.setNome(nome);
 		 String username = request.getSession().getAttribute("username").toString();
 		 this.TrizCustomerService.create(trizcustomer, username);
@@ -76,6 +72,15 @@ public class TrizCustomerController  {
 		return "TrizCustomerRead";
 	}
 	
+	@RequestMapping(value = "/readItem", method = RequestMethod.GET)
+	public String readItem(HttpServletRequest request) {
+		String username = request.getSession().getAttribute("username").toString();
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		return "insertItem";
+	}
+	/*
+>>>>>>> Stashed changes
 	@RequestMapping(value = "/deleteForm", method = RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();

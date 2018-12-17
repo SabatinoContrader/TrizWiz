@@ -41,8 +41,8 @@ public class BuildingService {
 
 	public List<BuildingDTO> getAll(String owner) {
 
-		List<Building> buildings = new ArrayList<>();
-		List<BuildingDTO> toReturn = new ArrayList<>();
+		List<Building> buildings = new ArrayList<Building>();
+		List<BuildingDTO> toReturn = new ArrayList<BuildingDTO>();
 		Customer ownerC = this.customerdao.findByUsername(owner);
 		buildings = buildingdao.findByOwner(ownerC);
 		buildings.forEach(b -> toReturn.add(BuildingConverter.convertToDto(b)));

@@ -40,8 +40,6 @@ public class Item {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long idItems;
 	
-
-	
 	@Column (length = 45)
 	@NotNull
 	private String commento;
@@ -57,7 +55,7 @@ public class Item {
 			joinColumns= { @JoinColumn(name="idItems")},
 			inverseJoinColumns= {@JoinColumn(name="idLabels")}
 			)
-	Set<Label> projects= new HashSet<>();
+	Set<Label> projects= new HashSet<Label>();
 
 	
 	}

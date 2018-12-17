@@ -10,14 +10,24 @@ import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.ItemConverter;
 import com.TrizWizSpring.dao.CustomerDAO;
 import com.TrizWizSpring.dao.ItemDAO;
+import com.TrizWizSpring.dao.TrizCustomerDAO;
+import com.TrizWizSpring.dao.utentiLoginDAO;
 import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.ItemDTO;
+import com.TrizWizSpring.dto.TrizCustomerDTO;
+import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Item;
+import com.TrizWizSpring.model.trizcustomer;
 
 
 @Service
 public class ItemService {
+
+	@Autowired
+    private TrizCustomerDAO TrizCustomerDAO;
+	@Autowired
+	private TrizCustomerService TrizCustomerService;
 	private CustomerDAO customerDAO;
 	private ItemDAO itemDAO;
 
@@ -35,7 +45,10 @@ public class ItemService {
 		return -1;
 	} */
 
-	public void insertItem(ItemDTO item) {
+	public void insertItem(ItemDTO item, long idCustomer) {
+
+		TrizCustomerDTO p= this.TrizCustomerService.findByPrimaryKey(idCustomer);
+		item.setIdCustomer(p);
 		System.out.println(item.getIdItems() + item.getCommento());
 		itemDAO.save(ItemConverter.convertToItem(item));
 	}

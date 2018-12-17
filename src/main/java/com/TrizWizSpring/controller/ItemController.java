@@ -57,7 +57,10 @@ public class ItemController {
 	public String insert(HttpServletRequest request) {
 		ItemDTO item = new ItemDTO();
 		item.setCommento(request.getParameter("commento"));
-		itemService.insertItem(item);
+		String idCustomer= request.getParameter("idCustomer");
+		int idCustom = Integer.parseInt(idCustomer);///// casting
+		itemService.insertItem(item, idCustom);
+		///long g=(long)idCustom; // casting
 		return "ItemMenu";
 	} 
 	
