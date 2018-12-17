@@ -20,8 +20,8 @@ import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.model.trizcustomer;
-import com.TrizWizSpring.model.utentiLocali;
 
+import com.TrizWizSpring.model.utentiLocali;
 
 @Service
 public class ItemService {

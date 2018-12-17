@@ -57,6 +57,7 @@ public class Item {
 			)
 	Set<Label> projects= new HashSet<Label>();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 	*/
 

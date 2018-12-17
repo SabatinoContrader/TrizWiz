@@ -39,6 +39,7 @@ public class ItemDTO {
 		this.idCustomer = idCustomer;
 	}
 
+
 /*	public String getNomeIdCustomer() {
 		long id= idCustomer.getIdCustomer();
 		String idReturn= ""+id;

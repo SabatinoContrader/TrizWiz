@@ -79,7 +79,7 @@ public class TrizCustomerController  {
 		request.setAttribute("trizcustomer", trizcustomer);
 		return "insertItem";
 	}
-	
+/*
 	@RequestMapping(value = "/deleteForm", method = RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();
