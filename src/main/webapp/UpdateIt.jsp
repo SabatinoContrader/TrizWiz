@@ -20,19 +20,25 @@
 	
 	
 	
-	<div class="modifyItem" style="text-align: center">
+	<div class="modifyItem">
 	<h2 >Seleziona l'id dell'item da modificare</h2>
-	  <form action = "/Item/update" method= "post">
-		<div class="idCustomer"><h3>Id item:</h3>
-			<div style="padding-left:2%"><select style="border-radius: 10%" name="idCustomer">
-				<c:forEach var="trizcustomer" items="${trizcustomer}">
-						<option value="${trizcustomer.idCustomer}">${trizcustomer.idCustomer}</option>
+	  <form action = "/Item/updateItem" method= "post">
+		<div class="idItem"><h3>Id item:</h3>
+			<div style="padding-left:2%"><select style="border-radius: 10%" name="idItem">
+				<c:forEach var="itemCustomer" items="${itemCustomer}">
+						<option value="${itemCustomer.idItems}">${itemCustomer.idItems}</option>
 				</c:forEach>
 			</select>
 			</div>
-			
+							<div class="commento"><h2>Commento item:</h2>
+				<input type="text" class="form-control" id="commento" name="commento"
+					placeholder="Inserisci commento"></div>
+					
+					
 		</div></br>
+			
 		<button class="modifyButton" style="border-radius: 10%" type = "submit"> Modifica</button>
+		
 	</form>
 	</div>
 </body>

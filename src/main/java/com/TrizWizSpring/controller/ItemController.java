@@ -33,6 +33,7 @@ import com.TrizWizSpring.services.utentiLocaliService;
 public class ItemController {
 	
 	private ItemService itemService;
+	private long valore;
 	
 	@Autowired
 	private TrizCustomerService TrizCustomerService;
@@ -93,17 +94,48 @@ public class ItemController {
 	
 	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
-		List<ItemDTO> item = itemService.readAll();
-		request.setAttribute("item", item);
+		String username = request.getSession().getAttribute("username").toString();
+		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer", trizcustomer);
+		//System.out.println("ID CUSTOMER: "+username);
+		//int idCustom = Integer.parseInt(username);
+		//List <ItemDTO> itemIdCustomer= itemService.readItemsCustomer(idCustom);
+		//request.setAttribute("itemCustomer", itemIdCustomer);
 		return "UpdateItem";
 	} 
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(HttpServletRequest request) {
-		int idItems = Integer.parseInt(request.getParameter("idselected"));
-		long l=idItems;
-		ItemDTO newitem = itemService.searchItem(l);
-		System.out.println(request.getParameter("selected"));
-		itemService.updateItem(newitem);
+		int idItems = Integer.parseInt(request.getParameter("idCustomer"));
+		valore=Long.parseLong(request.getParameter("idCustomer"));
+		
+		//System.out.println("ID CUSTOMER = "+idItems);
+		List <ItemDTO> itemIdCustomer= itemService.readItemsCustomer(idItems);
+		//System.out.println("LISTA CREATA");
+		request.setAttribute("itemCustomer", itemIdCustomer);
+		request.setAttribute("idCustomer", idItems);
+		return "UpdateIt";
+	} 
+	
+	@RequestMapping(value="/updateItem", method=RequestMethod.POST)
+	public String updateItem(HttpServletRequest request) {
+		//System.out.println("ANTONELLA");
+		String item = request.getParameter("idItem");
+		//System.out.println("prova itenm: "+item);
+		String commento = request.getParameter("commento");
+		//System.out.println("prova commento: "+commento);
+
+		long idItems = Long.parseLong(item);
+		ItemDTO itemDTO = new ItemDTO();
+		itemDTO.setIdItems(idItems);
+		System.out.println("prova itenm: "+idItems);
+		itemDTO.setCommento(commento);
+		//System.out.println("prova commento: "+commento);
+		//System.out.println("CUSTOMER" +request.getAttribute("idCustomer"));
+		itemDTO.setIdCustomer(TrizCustomerService.findByPrimaryKey(valore));
+		valore=0;
+		System.out.println("itemDTO "+itemDTO.getCommento() +" "+itemDTO.getIdItems()+" "+itemDTO.getIdCustomer());
+
+		this.itemService.updateItem(itemDTO);
 		return "ItemMenu";
 	} 
 	

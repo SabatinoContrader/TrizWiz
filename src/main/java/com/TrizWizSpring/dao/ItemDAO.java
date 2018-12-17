@@ -18,8 +18,14 @@ public interface ItemDAO extends CrudRepository<Item, Long> {
 	
 	public List<Item> findByIdCustomer(trizcustomer idCustomer);
 
+
 public Item findByIdItems(long idItems);
 	
 //	public Item findByItem(String item);
 	 
+
+	
+	
+	
+
 }
