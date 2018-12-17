@@ -25,7 +25,7 @@
 		</div>
 		<div class="menuDiv">
 			<img src="https://cdn3.iconfinder.com/data/icons/databases-2-2/512/data_cube-512.png"class="imgSuperUser"> 
-			<a href="/Thing/goBack" class="customerLink">
+			<a href="/Label/menu" class="customerLink">
 			Gestione Label
 			</a>	
 		</div>
