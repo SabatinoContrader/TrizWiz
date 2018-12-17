@@ -1,5 +1,7 @@
 package com.TrizWizSpring.dao;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +15,6 @@ import com.TrizWizSpring.model.utentiLocali;
 @Repository
 public interface LabelDAO extends CrudRepository<Label, Long> {
 	public Label findByTipologia(String tipologia);
+
+	 public List<Label> findAll();
 }

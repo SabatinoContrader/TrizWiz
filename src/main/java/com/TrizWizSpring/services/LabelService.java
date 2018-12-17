@@ -28,6 +28,7 @@ public class LabelService {
 	@Autowired
 	private ItemService itemService;
 	private CustomerDAO customerDAO;
+	@Autowired
 	private LabelDAO labelDAO;
 	@Autowired
 	private ItemDAO itemDAO;
@@ -56,7 +57,9 @@ public class LabelService {
 
 	public List<LabelDTO> readAll() {
 		List<LabelDTO> label = new ArrayList<>();
-		labelDAO.findByTipologia("tipologia");
+		labelDAO.findAll().forEach(c -> {
+			label.add(LabelConverter.convertToDto(c));
+		});
 		return label;
 	}
 	
