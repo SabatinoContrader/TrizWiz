@@ -23,12 +23,19 @@ import com.TrizWizSpring.model.Label;
 @Service
 public class LabelService {
 	
+	private static final String ItemService = null;
+	
+	@Autowired
+	private ItemService itemService;
 	private CustomerDAO customerDAO;
 	private LabelDAO labelDAO;
-
 	@Autowired
-	public LabelService(LabelDAO labelDAO) {
+	private ItemDAO itemDAO;
+	
+	@Autowired
+	public LabelService(LabelDAO labelDAO, ItemDAO itemDAO ) {
 		this.labelDAO = labelDAO;
+		this.itemDAO = itemDAO;
 	}
 
 	/* public long login(String username, String password) {
@@ -40,14 +47,16 @@ public class LabelService {
 		return -1;
 	} */
 
-	public void insertLabel(LabelDTO label) {
-		System.out.println(label.getIdLabels() + label.getNome());
+	public void insertLabel(LabelDTO label, long idItems) {
+		ItemDTO i= this.itemService.findByPrimaryKey(idItems);
+		label.setItem(i);
+		System.out.println(label.getIdLabels() + label.getTipologia());
 		labelDAO.save(LabelConverter.convertToLabel(label));
 	}
 
 	public List<LabelDTO> readAll() {
 		List<LabelDTO> label = new ArrayList<>();
-		labelDAO.findByNome("nome");
+		labelDAO.findByTipologia("tipologia");
 		return label;
 	}
 	

@@ -49,7 +49,7 @@ public class Item {
 	@JoinColumn (name = " idCustomer")
     private trizcustomer idCustomer; 
 	
-	@ManyToMany(cascade=CascadeType.ALL)
+/*	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(
 			name= "Cartella",
 			joinColumns= { @JoinColumn(name="idItems")},
@@ -57,5 +57,5 @@ public class Item {
 			)
 	Set<Label> projects= new HashSet<Label>();
 
-	
+	*/
 	}

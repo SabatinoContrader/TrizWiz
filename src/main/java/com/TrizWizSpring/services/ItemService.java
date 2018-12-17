@@ -71,7 +71,9 @@ public class ItemService {
 		Item i = itemDAO.findOne(id);
 		itemDAO.delete(i);
 	}
-
+	public ItemDTO findByPrimaryKey(long idItems) {
+		return ItemConverter.convertToDto(itemDAO.findByIdItems(idItems));
+	}
 	/*public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();
 		customerDAO.findByUserRole(3).forEach(i -> installers.add(CustomerConverter.convertToDto(i)));

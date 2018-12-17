@@ -56,8 +56,11 @@ public class LabelController {
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
 		LabelDTO label = new LabelDTO();
-		label.setNome(request.getParameter("nome"));
-		labelService.insertLabel(label);
+		label.setTipologia(request.getParameter("tipologia"));
+		label.setCommento(request.getParameter("commento"));
+		String idItem=request.getParameter("idItems");
+		int idItems = Integer.parseInt(idItem);
+		labelService.insertLabel(label, idItems);
 		return "LabelMenu";
 	} 
 	

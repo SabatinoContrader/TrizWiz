@@ -3,15 +3,20 @@ package com.TrizWizSpring.dto;
 public class LabelDTO {
 	
 	private long idLabels;
-	private String nome;
+	private String tipologia;
+	private String commento;
+	private ItemDTO item;
 	
 	public LabelDTO() {
 		
 	}
-	
-	public LabelDTO (long idLabels, String nome) {
-		this.idLabels=idLabels;
-		this.nome=nome;
+
+	public LabelDTO(long idLabels, String tipologia, String commento, ItemDTO item) {
+		super();
+		this.idLabels = idLabels;
+		this.tipologia = tipologia;
+		this.commento = commento;
+		this.item = item;
 	}
 
 	public long getIdLabels() {
@@ -22,14 +27,28 @@ public class LabelDTO {
 		this.idLabels = idLabels;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getTipologia() {
+		return tipologia;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+
+	public String getCommento() {
+		return commento;
+	}
+
+	public void setCommento(String commento) {
+		this.commento = commento;
+	}
+
+	public ItemDTO getItem() {
+		return item;
+	}
+
+	public void setItem(ItemDTO item) {
+		this.item = item;
 	}
 	
-	
-
 }

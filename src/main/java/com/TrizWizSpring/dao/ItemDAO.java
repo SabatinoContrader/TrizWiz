@@ -14,4 +14,6 @@ public interface ItemDAO extends CrudRepository<Item, Long> {
 	
 	public Item findByCommento(String commento);
 
+	public Item findByIdItems(long idItems);
+
 }

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -23,12 +24,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
+import com.TrizWizSpring.model.Item;
 
 @Entity
 @Getter
 @Setter
 
-@Table(name="labels",  uniqueConstraints = {@UniqueConstraint(columnNames={"idLabels", "nome"})})
+@Table(name="labels",  uniqueConstraints = {@UniqueConstraint(columnNames={"idLabels", "tipologia","commento"})})
 
 @NoArgsConstructor
 public class Label {
@@ -39,7 +41,16 @@ public class Label {
 	
 	@Column (length = 45)
 	@NotNull
-	private String nome;
+	private String tipologia;
+	
+	@Column (length = 45)
+	@NotNull
+	private String commento;
+	
+
+	@ManyToOne
+	@JoinColumn (name = "item")
+    private Item item; 
 	
 	/*
 	@ManyToMany(mappedBy="projects")
