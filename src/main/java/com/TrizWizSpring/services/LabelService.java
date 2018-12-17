@@ -9,15 +9,19 @@ import org.springframework.stereotype.Service;
 import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.ItemConverter;
 import com.TrizWizSpring.converter.LabelConverter;
+import com.TrizWizSpring.converter.TrizCustomerConverter;
 import com.TrizWizSpring.dao.CustomerDAO;
 import com.TrizWizSpring.dao.ItemDAO;
 import com.TrizWizSpring.dao.LabelDAO;
 import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.ItemDTO;
 import com.TrizWizSpring.dto.LabelDTO;
+import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.model.Label;
+import com.TrizWizSpring.model.trizcustomer;
+import com.TrizWizSpring.model.utentiLocali;
 
 
 @Service
@@ -48,6 +52,28 @@ public class LabelService {
 		return -1;
 	} */
 
+	/*public List<LabelDTO> getAll(String item) {
+
+		List<Label> label = new ArrayList<>();
+		List<LabelDTO> toReturn = new ArrayList<>();
+		Item itemo = this.
+	label = labelDAO.findByUsername(itemo);
+		label.forEach(b -> toReturn.add(LabelConverter.convertToDto(b)));
+		System.out.println("----------------------------------->" + label.size());
+		return toReturn;
+	}*/
+	
+	/*public List<LabelDTO> readItemsCustomer(long idItems) {
+		List<Label> label = new ArrayList<>();
+		List<LabelDTO> toReturn = new ArrayList<>();
+		Item itemId = this.itemDAO.findOne(idItems);
+		label= labelDAO.findByIdItems(itemId);
+		
+		label.forEach(l -> LabelDTO.add(LabelConverter.convertToDto(l)));
+		System.out.println("----------------------------------->" + label.size());
+		return toReturn;
+		
+	}*/
 	public void insertLabel(LabelDTO label, long idItems) {
 		ItemDTO i= this.itemService.findByPrimaryKey(idItems);
 		label.setItem(i);
@@ -58,9 +84,12 @@ public class LabelService {
 	public List<LabelDTO> readAll() {
 		List<LabelDTO> label = new ArrayList<>();
 		labelDAO.findAll().forEach(c -> {
+
 			label.add(LabelConverter.convertToDto(c));
 		});
 		return label;
+
+		
 	}
 	
 	public void updateLabel(LabelDTO label) {

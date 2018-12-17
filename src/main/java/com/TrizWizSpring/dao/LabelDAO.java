@@ -14,7 +14,17 @@ import com.TrizWizSpring.model.utentiLocali;
 
 @Repository
 public interface LabelDAO extends CrudRepository<Label, Long> {
+
 	public Label findByTipologia(String tipologia);
 
-	 public List<Label> findAll();
+	
+
+	public Label findByIdLabels(String tipologia);
+	public List <Label> findAll();
+	
+//	 public List<Label> findByUsername(Item item);
+	// public Label findByNome(Item item);
+
+	//public List<Label> findByIdItems(Item itemId);
+
 }

@@ -17,19 +17,23 @@
 			class="imgSuperUser">
 	<h1>Tabella label</h1>
 	</div>
-	<div class="readTable">
+	<div class="readCustomer">
 		<table class="table">
 				<thead>
 					<tr>
-							<th>Id</th>
-							<th>Nome label</th>
+							<th>Id Labels</th>
+							<th>tipologia</th>
+							<th>Commento</th>
+							
+							
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="label" items="${label}">
 						<tr>
 							<th>${label.idLabels}</th>
-							<td align="center">${label.nome}</td>
+							<td align="center">${label.tipologia}</td>
+							<td align="center">${label.commento}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

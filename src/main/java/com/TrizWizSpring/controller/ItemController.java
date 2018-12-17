@@ -74,7 +74,7 @@ public class ItemController {
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public String read(HttpServletRequest request, Model model) {
-		String username = request.getSession().getAttribute("username").toString();
+		String username= request.getSession().getAttribute("username").toString();
 		List <TrizCustomerDTO> trizcustomer = this.TrizCustomerService.getAll(username);
 		request.setAttribute("trizcustomer", trizcustomer);
 		return "InsVisItem";
@@ -86,8 +86,6 @@ public class ItemController {
 		int idCustom = Integer.parseInt(idCustomer);
 		List <ItemDTO> itemIdCustomer= itemService.readItemsCustomer(idCustom);
 		request.setAttribute("itemCustomer", itemIdCustomer);
-		
-		
 		return "VisualizzaItem";
 		
 	}

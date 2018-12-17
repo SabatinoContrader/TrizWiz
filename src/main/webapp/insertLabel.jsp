@@ -40,7 +40,10 @@
              <select name="tipologia" id="tipologia">
             <option value="passato" selected="selected"> passato </option>
             <option value="presente" > presente </option>
-               <option value="futuro" > futuro </option>   
+               <option value="futuro" > futuro </option> 
+               <option value="subSystem" > subSystem </option>
+               <option value="System" > System </option>
+               <option value="superSystem" > superSystem </option>  
               </select>
               </fieldset>
 <!--	<input type="text" class="form-control" id="tipologia" name="tipologia"</td>

@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.CustomerDTO;
+import com.TrizWizSpring.dto.ItemDTO;
 import com.TrizWizSpring.dto.LabelDTO;
+import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
 import com.TrizWizSpring.services.BuildingService;
@@ -67,10 +69,12 @@ public class LabelController {
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public String read(HttpServletRequest request, Model model) {
+	//	String item = request.getSession().getAttribute("item").toString();
 		List<LabelDTO> label = labelService.readAll();
-		model.addAttribute("label", label);
+		request.setAttribute("label", label);
 		return "ReadLabel";
 	}
+
 	
 
 	@RequestMapping(value="/deleteForm", method=RequestMethod.GET)
@@ -87,6 +91,30 @@ public class LabelController {
 		labelService.deleteLabel(l);
 		return "DeleteLabel";
 	}
+
+	/*
+	@RequestMapping(value="/insVisCustomer", method=RequestMethod.POST)
+	public String insVisCustomer(HttpServletRequest request, Model model) {
+		String idItems= request.getParameter("idItems");
+		int idItems = Integer.parseInt(idItems);
+		List <LabelDTO> item= LabelService.readItemsItems(idItems);
+		request.setAttribute("item", item);
+		
+		
+		return "VisualizzaItem";
+	}*/
+	/*
+	@RequestMapping(value="/insVisCustomer", method=RequestMethod.POST)
+	public String insVisCustomer(HttpServletRequest request, Model model) {
+		String idCustomer= request.getParameter("idItems");
+		int idCustom = Integer.parseInt(idCustomer);
+		List<LabelDTO> label = labelService.readItemsCustomer(idCustom);
+		request.setAttribute("itemCustomer", itemIdCustomer);
+		
+		
+		return "VisualizzaItem";*/
+		
+
 	/*
 	
 	
