@@ -28,7 +28,7 @@ import com.TrizWizSpring.services.utentiLocaliService;
 @Controller
 @RequestMapping("/Label")
 public class LabelController {
-	
+	@Autowired
 	private LabelService labelService;
 	@Autowired
 	public LabelController(LabelService lb) {
@@ -72,6 +72,21 @@ public class LabelController {
 		return "ReadLabel";
 	}
 	
+
+	@RequestMapping(value="/deleteForm", method=RequestMethod.GET)
+	public String deleteForm(HttpServletRequest request) {
+		List<LabelDTO> label = this.labelService.readAll();
+		request.setAttribute("label", label);
+		return "DeleteLabel";
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String delete(HttpServletRequest request) {
+		int idItems = Integer.parseInt(request.getParameter("idselected"));
+		long l=idItems;
+		labelService.deleteLabel(l);
+		return "DeleteLabel";
+	}
 	/*
 	
 	
