@@ -25,6 +25,6 @@ public interface LabelDAO extends CrudRepository<Label, Long> {
 //	 public List<Label> findByUsername(Item item);
 	// public Label findByNome(Item item);
 
-	//public List<Label> findByIdItems(Item itemId);
+	public List<Label> findByItem(Item item);
 
 }

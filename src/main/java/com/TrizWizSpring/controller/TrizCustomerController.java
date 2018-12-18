@@ -1,6 +1,7 @@
 package com.TrizWizSpring.controller;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,6 +23,12 @@ import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.CustomerService;
 import com.TrizWizSpring.services.TrizCustomerService;
+import com.TrizWizSpring.services.ItemService;
+import com.TrizWizSpring.dto.ItemDTO;
+import com.TrizWizSpring.model.Item;
+import com.TrizWizSpring.services.LabelService;
+import com.TrizWizSpring.dto.LabelDTO;
+import com.TrizWizSpring.model.Label;
 
 @Controller
 @RequestMapping("/TrizCustomer")
@@ -29,6 +36,14 @@ public class TrizCustomerController  {
 
 	@Autowired
 	private TrizCustomerService TrizCustomerService;
+	
+	@Autowired
+	private ItemService itemService;
+	
+	@Autowired
+	private LabelService labelService;
+	
+	
 	
 	@Autowired
 	public TrizCustomerController() {
@@ -79,11 +94,45 @@ public class TrizCustomerController  {
 		request.setAttribute("trizcustomer", trizcustomer);
 		return "insertItem";
 	}
-
-/*
-=======
-	/*
->>>>>>> Stashed changes
+	
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(HttpServletRequest request) {
+		String username = request.getSession().getAttribute("username").toString();
+		int toDelete = Integer.parseInt(request.getParameter("idselected"));
+		long iditem= Long.parseLong(request.getParameter("idselected"));
+		List<ItemDTO> itemDTO= itemService.readItemsCustomer(iditem);
+		Iterator<ItemDTO> it= itemDTO.iterator();
+		//System.out.println("LIST CREATA"+it.next());
+		ItemDTO p=null;
+		while (it.hasNext()) {
+			
+			p= it.next();
+			long idItems= p.getIdItems();
+			System.out.println("ID ITEMS"+idItems);
+			List<LabelDTO> labelDTO= labelService.readLabelItem(idItems);
+			Iterator<LabelDTO> itLabel= labelDTO.iterator();
+			while(itLabel.hasNext()) {
+				
+				LabelDTO lab=itLabel.next();
+				long idLabel= lab.getIdLabels();
+				labelService.deleteLabel(idLabel);
+			}
+			
+			itemService.deleteItem(idItems);
+		}
+		TrizCustomerDTO toDestroy = TrizCustomerService.findByPrimaryKey(toDelete);
+		this.TrizCustomerService.delete(toDestroy);
+		
+		List <TrizCustomerDTO> trizcustomer1 = this.TrizCustomerService.getAll(username);
+		request.setAttribute("trizcustomer1", trizcustomer1);
+		
+		
+		return "TrizCustomerRead";
+	
+	 
+	 }
+	
 	@RequestMapping(value = "/deleteForm", method = RequestMethod.GET)
 	public String deleteForm(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();
@@ -93,7 +142,7 @@ public class TrizCustomerController  {
 		//return "DeleteTrizCustomer";
 		
 	}
-	
+/*	
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(HttpServletRequest request) {
 		String username = request.getSession().getAttribute("username").toString();

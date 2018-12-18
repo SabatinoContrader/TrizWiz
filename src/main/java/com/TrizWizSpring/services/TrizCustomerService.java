@@ -95,10 +95,9 @@ public class TrizCustomerService {
 
   public void delete(TrizCustomerDTO toDestroy) {
 		trizcustomer b = TrizCustomerConverter.convertTotrizcustomer(toDestroy);
-		b.setUsername(null);
-  
-  this.trizCustomerDAO.save(b);
-	trizCustomerDAO.delete(b);
+		//b.setUsername(null);  	//metto a null la chiave esterna
+		//this.trizCustomerDAO.save(b);
+		trizCustomerDAO.delete(b);
 }
 
 		//List<trizcustomer> trizcustomer1=trizCustomerDAO.findByUsername(b);

@@ -12,7 +12,7 @@ public class LabelDTO {
 	}
 
 	public LabelDTO(long idLabels, String tipologia, String commento, ItemDTO item) {
-		super();
+		//super();
 		this.idLabels = idLabels;
 		this.tipologia = tipologia;
 		this.commento = commento;

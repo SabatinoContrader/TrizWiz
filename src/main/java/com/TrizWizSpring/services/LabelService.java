@@ -64,19 +64,19 @@ public class LabelService {
 	}
 	public List<LabelDTO> getAll(long attribute) {
 		return (List<LabelDTO>) LabelConverter.convertToDto(labelDAO.findByIdLabels(attribute));
-	}
+	}*/
 	
-	public List<LabelDTO> readItemsCustomer(long idItems) {
+	public List<LabelDTO> readLabelItem(long idItems) {
 		List<Label> label = new ArrayList<>();
 		List<LabelDTO> toReturn = new ArrayList<>();
 		Item itemId = this.itemDAO.findOne(idItems);
-		label= labelDAO.findByIdItems(itemId);
+		label= labelDAO.findByItem(itemId);
 		
-		label.forEach(l -> LabelDTO.add(LabelConverter.convertToDto(l)));
+		label.forEach(l -> toReturn.add(LabelConverter.convertToDto(l)));
 		System.out.println("----------------------------------->" + label.size());
 		return toReturn;
 		
-	}*/
+	}
 	public void insertLabel(LabelDTO label, long idItems) {
 		ItemDTO i= this.itemService.findByPrimaryKey(idItems);
 		label.setItem(i);
@@ -110,5 +110,7 @@ public class LabelService {
 		Label l = labelDAO.findOne(id);
 		labelDAO.delete(l);
 	}
+	
+	
 
 }
