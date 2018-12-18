@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building id="1">
+  <indirizzo>via dei longobardi 9</indirizzo>
+  <interno>5</interno>
+  <citta>benevento</citta>
+  <cap>00100</cap>
+  <floors>
+    <floor id="1">
+      <nome>seminterrato</nome>
+      <descrizione>il seminterrato bellissimo</descrizione>
+      <rooms>
+        <room id="1">
+          <nome>stanza seminterrato</nome>
+          <descrizione>la mia unica stanza</descrizione>
+        </room>
+        <room id="4">
+          <nome>una stanza brutta</nome>
+          <descrizione>che veramente è bruttissima</descrizione>
+        </room>
+        <room id="5">
+          <nome>stanza a caso</nome>
+          <descrizione>qui ci faccio il bagno</descrizione>
+        </room>
+        <room id="6">
+          <nome>stanza grande</nome>
+          <descrizione>qui ci metto la tv</descrizione>
+        </room>
+      </rooms>
+    </floor>
+    <floor id="5">
+      <nome>shamalaia</nome>
+      <descrizione>shalalala</descrizione>
+      <rooms />
+    </floor>
+    <floor id="7">
+      <nome>supermartina</nome>
+      <descrizione>il floor di super martina</descrizione>
+      <rooms />
+    </floor>
+    <floor id="8">
+      <nome>Attico</nome>
+      <descrizione>grandissimo attico</descrizione>
+      <rooms>
+        <room id="2">
+          <nome>cielo rosa</nome>
+          <descrizione>Superbattito</descrizione>
+        </room>
+        <room id="3">
+          <nome>la macchina</nome>
+          <descrizione>di marco</descrizione>
+        </room>
+      </rooms>
+    </floor>
+  </floors>
+</building>
