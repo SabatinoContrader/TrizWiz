@@ -40,9 +40,11 @@ public class ItemDTO {
 	}
 
 
+
 /*	public String getNomeIdCustomer() {
 		long id= idCustomer.getIdCustomer();
 		String idReturn= ""+id;
 		return idReturn;
 	}*/
+
 }
