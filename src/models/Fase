@@ -1,0 +1,15 @@
+import {Macro} from "./Macro"
+export class Fase
+{
+    id: number; 
+    tipologia: string;  
+    macro:Macro;
+     
+    
+    constructor(id: number, tipologia: string, macro:Macro)
+    {
+        this.id = id;
+        this.tipologia = tipologia;
+        this.username=username;
+    }
+}
