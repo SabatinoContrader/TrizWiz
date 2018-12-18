@@ -50,7 +50,12 @@ public class Label {
 
 	@ManyToOne
 	@JoinColumn (name = "item")
-    private Item item; 
+    private Item item;
+
+
+
+
+	
 	
 	/*
 	@ManyToMany(mappedBy="projects")

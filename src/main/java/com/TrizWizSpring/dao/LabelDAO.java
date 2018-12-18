@@ -19,7 +19,7 @@ public interface LabelDAO extends CrudRepository<Label, Long> {
 
 	
 
-	public Label findByIdLabels(String tipologia);
+	public Label findByIdLabels(long idLabel);
 	public List <Label> findAll();
 	
 //	 public List<Label> findByUsername(Item item);

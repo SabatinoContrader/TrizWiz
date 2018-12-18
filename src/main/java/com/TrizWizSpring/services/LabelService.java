@@ -10,6 +10,7 @@ import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.ItemConverter;
 import com.TrizWizSpring.converter.LabelConverter;
 import com.TrizWizSpring.converter.TrizCustomerConverter;
+import com.TrizWizSpring.converter.UtenteLocaleConverter;
 import com.TrizWizSpring.dao.CustomerDAO;
 import com.TrizWizSpring.dao.ItemDAO;
 import com.TrizWizSpring.dao.LabelDAO;
@@ -17,6 +18,7 @@ import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.ItemDTO;
 import com.TrizWizSpring.dto.LabelDTO;
 import com.TrizWizSpring.dto.TrizCustomerDTO;
+import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.model.Label;
@@ -37,6 +39,7 @@ public class LabelService {
 	@Autowired
 	private ItemDAO itemDAO;
 	
+	
 	@Autowired
 	public LabelService(LabelDAO labelDAO, ItemDAO itemDAO ) {
 		this.labelDAO = labelDAO;
@@ -52,18 +55,18 @@ public class LabelService {
 		return -1;
 	} */
 
-	/*public List<LabelDTO> getAll(String item) {
+/*	public List<LabelDTO> getAll(long idLabel) {
 
 		List<Label> label = new ArrayList<>();
-		List<LabelDTO> toReturn = new ArrayList<>();
-		Item itemo = this.
-	label = labelDAO.findByUsername(itemo);
-		label.forEach(b -> toReturn.add(LabelConverter.convertToDto(b)));
-		System.out.println("----------------------------------->" + label.size());
+		Label label1 = this.label = labelDAO.findByIdLabels(idLabel);
+		label1.forEach(l -> toReturn.add(LabelConverter.convertToDto(l)));
 		return toReturn;
-	}*/
+	}
+	public List<LabelDTO> getAll(long attribute) {
+		return (List<LabelDTO>) LabelConverter.convertToDto(labelDAO.findByIdLabels(attribute));
+	}
 	
-	/*public List<LabelDTO> readItemsCustomer(long idItems) {
+	public List<LabelDTO> readItemsCustomer(long idItems) {
 		List<Label> label = new ArrayList<>();
 		List<LabelDTO> toReturn = new ArrayList<>();
 		Item itemId = this.itemDAO.findOne(idItems);
@@ -91,6 +94,9 @@ public class LabelService {
 
 		
 	}
+	   public void update(LabelDTO label) {
+			  labelDAO.save(LabelConverter.convertToLabel(label));
+		}
 	
 	public void updateLabel(LabelDTO label) {
 		labelDAO.save(LabelConverter.convertToLabel(label));

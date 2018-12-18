@@ -51,9 +51,6 @@ public class LabelController {
 	public String insertForm(HttpServletRequest request) {
 		return "insertLabel";
 	} 
-	/*@RequestMapping(value="/goBackSuper", method=RequestMethod.GET)
-	public String goBackSuper(HttpServletRequest request) {
-		return "superuserhome"; */
 	
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
@@ -92,81 +89,34 @@ public class LabelController {
 		return "DeleteLabel";
 	}
 
-	/*
-	@RequestMapping(value="/insVisCustomer", method=RequestMethod.POST)
-	public String insVisCustomer(HttpServletRequest request, Model model) {
-		String idItems= request.getParameter("idItems");
-		int idItems = Integer.parseInt(idItems);
-		List <LabelDTO> item= LabelService.readItemsItems(idItems);
-		request.setAttribute("item", item);
-		
-		
-		return "VisualizzaItem";
-	}*/
-	/*
-	@RequestMapping(value="/insVisCustomer", method=RequestMethod.POST)
-	public String insVisCustomer(HttpServletRequest request, Model model) {
-		String idCustomer= request.getParameter("idItems");
-		int idCustom = Integer.parseInt(idCustomer);
-		List<LabelDTO> label = labelService.readItemsCustomer(idCustom);
-		request.setAttribute("itemCustomer", itemIdCustomer);
-		
-		
-		return "VisualizzaItem";*/
-		
 
-	/*
-	
-	
 	@RequestMapping(value="/updateForm", method=RequestMethod.GET)
 	public String updateForm(HttpServletRequest request) {
-		List<ItemDTO> item = itemService.readAll();
-		request.setAttribute("item", item);
-		return "UpdateItem";
+		List<LabelDTO> label = labelService.readAll();
+		request.setAttribute("label", label);
+		return "UpdateLabel";
 	} 
+	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(HttpServletRequest request) {
-		int idItems = Integer.parseInt(request.getParameter("idselected"));
-		long l=idItems;
-		ItemDTO newitem = itemService.searchItem(l);
-		System.out.println(request.getParameter("selected"));
-		itemService.updateItem(newitem);
-		return "ItemMenu";
+		long idLabels = Integer.parseInt(request.getParameter("idLabels"));
+		String tipologia=request.getParameter("tipologia");
+		String commento=request.getParameter("commento");
+		LabelDTO label1 = (LabelDTO) this.labelService.searchLabel(idLabels);
+		//prendo la label dal db e sostituisco i valori modificati
+		((LabelDTO) label1).setTipologia(tipologia);
+		((LabelDTO) label1).setCommento(commento);
+		
+		this.labelService.update(label1);
+		return "LabelMenu";
 	} 
-	
-	
-	@RequestMapping(value="/deleteForm", method=RequestMethod.GET)
-	public String deleteForm(HttpServletRequest request) {
-		List<ItemDTO> item = itemService.readAll();
-		request.setAttribute("item", item);
-		return "DeleteItem";
-	} 
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public String delete(HttpServletRequest request) {
-		int idItems = Integer.parseInt(request.getParameter("idselected"));
-		long l=idItems;
-		itemService.deleteItem(l);
-		return "DeleteItem";
-	} */
-	
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void customerControl(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void customer(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	//	doGet(request, response);
-	}
-	
-
-	
+	}	
 }
