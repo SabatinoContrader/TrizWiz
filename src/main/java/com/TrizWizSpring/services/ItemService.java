@@ -57,8 +57,10 @@ public class ItemService {
 
 	public List<ItemDTO> readAll() {
 		List<ItemDTO> item = new ArrayList<>();
-		itemDAO.findByCommento("commento");
+		List<Item> itemdao = itemDAO.findAll();
+		itemdao.forEach(b -> item.add(ItemConverter.convertToDto(b)));
 		return item;
+		
 	}
 	
 	public void updateItem(ItemDTO item) {
