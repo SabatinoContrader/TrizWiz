@@ -35,7 +35,7 @@ public class Fase {
 	
 	@ManyToOne
 	@JoinColumn (name = "macro")
-    private utentiLocali macro;
+    private Macro macro;
 
 
 }

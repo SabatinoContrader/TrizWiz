@@ -1,7 +1,7 @@
 package com.TrizWizSpring.dto;
 
 public class ToolDTO {
-	private long idFase;
+	private long idTool;
 	private String tipologia;
 	
 	private FaseDTO fase;
@@ -10,18 +10,18 @@ public ToolDTO() {
 		
 	}
 
-public ToolDTO(long idFase, String tipologia, FaseDTO fase) {
-	this.idFase = idFase;
+public ToolDTO(long idTool, String tipologia, FaseDTO fase) {
+	this.idTool = idTool;
 	this.tipologia = tipologia;
 	this.fase = fase;
 }
 
-public long getIdFase() {
-	return idFase;
+public long getIdTool() {
+	return idTool;
 }
 
-public void setIdFase(long idFase) {
-	this.idFase = idFase;
+public void setIdTool(long idTool) {
+	this.idTool = idTool;
 }
 
 public String getTipologia() {
@@ -42,7 +42,7 @@ public void setFase(FaseDTO fase) {
 
 @Override
 public String toString() {
-	return "ToolDTO [idFase=" + idFase + ", tipologia=" + tipologia + ", fase=" + fase + "]";
+	return "ToolDTO [idTool=" + idTool + ", tipologia=" + tipologia + ", fase=" + fase + "]";
 }
 }
 	

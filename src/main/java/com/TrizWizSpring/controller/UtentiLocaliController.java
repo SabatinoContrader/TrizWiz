@@ -38,17 +38,14 @@ public class UtentiLocaliController  {
 	public String insertForm(HttpServletRequest request) {
 		return "insertCustomer";
 	} 
-	@RequestMapping(value="/goBackSuper", method=RequestMethod.GET)
-	public String goBackSuper(HttpServletRequest request) {
-		return "superuserhome";
-	}
+	
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
 		utentiLocaliDTO utenti = new utentiLocaliDTO();
-		utenti.setnomeLogin(request.getParameter("username"));
+		utenti.setNomeLogin(request.getParameter("username"));
 		Integer ruolo=1;
-		utenti.setruolo(ruolo);
-		utenti.setpasswordLogin(request.getParameter("password"));
+		utenti.setRuolo(ruolo);
+		utenti.setPasswordLogin(request.getParameter("password")); // in caso aggiungere anche utenti.setNome() e utenti.setCognome()
 		utentiLocaliService.insertUtentiLocali(utenti);
 		return "GestioneCustomer";
 	} 
@@ -75,8 +72,8 @@ public class UtentiLocaliController  {
 		System.out.println(request.getParameter("selected"));
 		switch (Integer.parseInt(request.getParameter("selected"))) {
 		case 1:
-			newutente.setpasswordLogin(request.getParameter("value"));
-			newutente.setnomeLogin(username);
+			newutente.setPasswordLogin(request.getParameter("value"));
+			newutente.setNomeLogin(username);
 			break;
 		/*case 2:
 			newutente.setpasswordLogin(request.getParameter("value"));

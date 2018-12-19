@@ -39,7 +39,7 @@ public class utentiLocaliService {
 	}
 
 	public void insertUtentiLocali(utentiLocaliDTO utenti) {
-		System.out.println(utenti.getnomeLogin() + utenti.getpasswordLogin() + utenti.ruolo());
+		System.out.println(utenti.getNomeLogin() + utenti.getPasswordLogin() + utenti.getRuolo()); // in caso aggiungere anche utenti.getNome() e utenti.getCognome()
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
 	}
 

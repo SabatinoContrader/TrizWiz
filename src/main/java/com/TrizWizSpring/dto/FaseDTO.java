@@ -1,7 +1,7 @@
 package com.TrizWizSpring.dto;
 
 public class FaseDTO {
-	private long idMacro;
+	private long idFase;
 	private String tipologia;
 	
 	private MacroDTO macro;
@@ -10,19 +10,19 @@ public class FaseDTO {
 		
 	}
 
-	public FaseDTO(long idMacro, String tipologia, MacroDTO macro) {
+	public FaseDTO(long idFase, String tipologia, MacroDTO macro) {
 
-		this.idMacro = idMacro;
+		this.idFase = idFase;
 		this.tipologia = tipologia;
 	    this.macro = macro;
 	}
 
-	public long getIdMacro() {
-		return idMacro;
+	public long getIdFase() {
+		return idFase;
 	}
 
-	public void setIdMacro(long idMacro) {
-		this.idMacro = idMacro;
+	public void setIdFase(long idFase) {
+		this.idFase = idFase;
 	}
 
 	public String getTipologia() {
@@ -43,7 +43,7 @@ public class FaseDTO {
 
 	@Override
 	public String toString() {
-		return "FaseDTO [idMacro=" + idMacro + ", tipologia=" + tipologia + ", macro=" + macro + "]";
+		return "FaseDTO [idFase=" + idFase + ", tipologia=" + tipologia + ", macro=" + macro + "]";
 	}
 	
 	

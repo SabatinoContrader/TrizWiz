@@ -44,5 +44,9 @@ public class utentiLocali {
 	@Column
 	@NotNull
 	private Integer ruolo;
+	@Column
+	private String nome;
+	@Column
+	private String cognome;
 
 }

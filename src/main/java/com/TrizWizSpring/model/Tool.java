@@ -1,4 +1,6 @@
-package com.TrizWizSpring.model;import java.util.HashSet;
+package com.TrizWizSpring.model;
+
+import java.util.HashSet;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,6 +37,6 @@ public class Tool {
 	
 	@ManyToOne
 	@JoinColumn (name = "fase")
-    private utentiLocali fase;
+    private Fase fase;
 
 }

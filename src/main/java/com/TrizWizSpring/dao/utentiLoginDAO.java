@@ -16,6 +16,8 @@ public interface utentiLoginDAO extends CrudRepository<utentiLocali, Long> {
 
 	 public utentiLocali findByNomeLogin(utentiLocali utentiLocali);
 	 public utentiLocali findByNomeLogin(String nomeLogin);
+	 public utentiLocali findByNome(String nome);
+	 public utentiLocali findByCognome(String cognome);
 	 
 	 public List<utentiLocali> findByRuolo(Integer ruolo);
 	
