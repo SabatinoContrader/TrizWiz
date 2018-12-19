@@ -89,6 +89,8 @@ import { DeleteListinoComponent } from '../components/deleteListino/deleteListin
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
 import { PopolaListinoComponent } from 'src/components/popolaListino/popolaListino.component';
 import { PrezzoService } from '../services/prezzo.service';
+import { utentiLocaliService } from '../services/utentiLocali.service';
+import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
 
 @NgModule({
   declarations: [
@@ -157,7 +159,8 @@ import { PrezzoService } from '../services/prezzo.service';
     DeleteListinoComponent,
     UpdateListinoComponent,
     SelectManufacturerComponent,
-    PopolaListinoComponent
+    PopolaListinoComponent,
+    GestioneUtenteLocaleComponent
   ],
   imports: [
     BrowserModule,
@@ -201,7 +204,8 @@ import { PrezzoService } from '../services/prezzo.service';
     SlotService,
     ListinoService,
     BuildingTreeManagerService,
-    PrezzoService
+    PrezzoService,
+    utentiLocaliService
 
   ],
   bootstrap: [AppComponent]

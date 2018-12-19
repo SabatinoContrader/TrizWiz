@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { Customer } from "src/models/Customer";
 import { CustomerService } from "src/services/customer.service";
+import { utentiLocaliService } from "src/services/utentiLocali.service";
+import { UtenteLocale } from "src/models/UtenteLocale";
 
 /*import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User';
@@ -55,9 +57,9 @@ export class LoginComponent implements OnInit {
 
 export class LoginComponent implements OnInit{
 
-  customer : Customer;
+  utenteLocale : UtenteLocale;
 
-  constructor(private customerService:CustomerService, private router:  Router){
+  constructor(private utentiLocaliService:utentiLocaliService, private router:  Router){
 
   }
   ngOnInit(){
@@ -66,17 +68,19 @@ export class LoginComponent implements OnInit{
   }
   login(f:NgForm): void{
     console.log("mi arrivano username="+ f.value.username + " password= "+ f.value.password)
-    this.customerService.login(f.value.username, f.value.password).subscribe((response) => {
+    this.utentiLocaliService.login(f.value.username, f.value.password).subscribe((response) => {
       if (response != null) {
-        this.customer=response;
-        sessionStorage.setItem("user", JSON.stringify(this.customer));
-           if(response.userRole==1)
-           this.router.navigateByUrl("/superuser");
-            else if(response.userRole==2)
+        this.utenteLocale=response;
+        sessionStorage.setItem("user", JSON.stringify(this.utenteLocale));
+        this.router.navigateByUrl("/gestioneUtenteLocale");   
+     /*   if(response.ruolo==1)
+            this.router.navigateByUrl("/superuser");
+            else if(response.ruolo==2)
             this.router.navigateByUrl("/gestioneBuilding");
-            else if(response.userRole==3)
+            else if(response.ruolo==3)
             this.router.navigateByUrl("/installer");
-      }
+      
+      */          } 
   });
 }
 }

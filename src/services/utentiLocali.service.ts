@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Customer } from "src/models/Customer";
-import { NewCustomer } from "src/models/NewCustomer";
+import { UtenteLocale } from "src/models/UtenteLocale";
+import { NewUtenteLocale } from "src/models/NewUtenteLocale";
 import { tap, catchError } from 'rxjs/operators';
 import {Observable, of, BehaviorSubject} from 'rxjs';
 
 @Injectable({ providedIn: 'root'}) 
-export class CustomerService{
+export class utentiLocaliService{
     constructor( private http : HttpClient){}
 
     private handleError<T>(operation = 'operation', result?: T) {
@@ -17,22 +17,23 @@ export class CustomerService{
             return of(result as T);
         };
     }
-    login(username:string, password:string):Observable<Customer>{
+    login(username:string, password:string):Observable<UtenteLocale>{
         const params = new HttpParams().set('username', username).set('password', password);
-        return this.http.post<Customer>('http://localhost:8080/user/login',params).
+        return this.http.post<UtenteLocale>('http://localhost:8080/utente/login',params).
         pipe(tap((response) => console.log("Utente"), catchError(this.handleError("login error", {})))
         );
     }
 
-    newCustomer(userRole:string, name:string, 
-        surname:string, email:string, username:string, password:string ): Observable<NewCustomer>{
+    newUtenteLocale(nomeLogin:string, passwordLogin:string, nome: string, cognome: string,
+        ruolo:string): Observable<NewUtenteLocale>{
         
-          const params = new HttpParams().set('userRole', userRole).
-           set('name', name).set('surname', surname).set('email', email).set('username', username).set('password', password);
+          const params = new HttpParams().set('nomeLogin', nomeLogin).
+           set('passwordLogin', passwordLogin).set('nome', nome).set('cognome', cognome).set('ruolo', ruolo);
         
-        return this.http.post<NewCustomer>('http://localhost:8080/Customer/new', params); 
+        return this.http.post<NewUtenteLocale>('http://localhost:8080/UtentiLocali/new', params); 
   
     }
+    /*
     newManufacturer(userRole:string, name:string, 
         email:string): Observable<NewCustomer>{
         
@@ -41,7 +42,8 @@ export class CustomerService{
         
         return this.http.post<NewCustomer>('http://localhost:8080/Customer/manufacturer', params); 
   
-    }
+    } 
+
     readAll():Observable<Array<NewCustomer>>{
         return this.http.get<Array<NewCustomer>>('http://localhost:8080/Customer/read');
     }
@@ -85,6 +87,6 @@ export class CustomerService{
     }
 
 
-
+*/
 
 }

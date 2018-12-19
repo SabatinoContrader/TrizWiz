@@ -65,6 +65,7 @@ import { ReadListinoComponent } from '../components/readListino/readListino.comp
 import { DeleteListinoComponent } from '../components/deleteListino/deleteListino.component';
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
 import { PopolaListinoComponent } from '../components/popolaListino/popolaListino.component';
+import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -132,7 +133,8 @@ const routes: Routes = [
   {path: 'deleteListino', component: DeleteListinoComponent},
   {path: 'updateListino', component: UpdateListinoComponent},
   {path: 'selectManufacturer/:buildingId', component: SelectManufacturerComponent},
-  {path: 'popolaListino', component:PopolaListinoComponent}
+  {path: 'popolaListino', component:PopolaListinoComponent},
+  {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
 ];
 
 @NgModule({
