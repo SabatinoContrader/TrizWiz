@@ -3,18 +3,19 @@ package com.TrizWizSpring.dao;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
+import com.TrizWizSpring.model.Fase;
 import com.TrizWizSpring.model.Macro;
 
-public interface FaseDAO extends CrudRepository<FaseDAO, Long> { 
+public interface FaseDAO extends CrudRepository<Fase, Long> { 
 	
-	public FaseDAO findByCommento(String commento);
+	//public Fase findByCommento(String commento);
 
-	public List<FaseDAO> findByIdMacro(Macro Macro);
-	public List<FaseDAO> findAll();
+	//public List<Fase> findByIdMacro(Macro Macro);
+	//public List<Fase> findAll();
 	
 
 
-public FaseDAO findByIdFase(long idFase);
+//public Fase findByIdFase(long idFase);
 
 
 	

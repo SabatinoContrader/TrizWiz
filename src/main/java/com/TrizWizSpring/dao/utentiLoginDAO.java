@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
 
@@ -18,6 +19,7 @@ public interface utentiLoginDAO extends CrudRepository<utentiLocali, Long> {
 	 public utentiLocali findByNomeLogin(String nomeLogin);
 	 public utentiLocali findByNome(String nome);
 	 public utentiLocali findByCognome(String cognome);
+	 //public utentiLocali findByUsernameAndPassword(String username, String password);
 	 
 	 public List<utentiLocali> findByRuolo(Integer ruolo);
 	

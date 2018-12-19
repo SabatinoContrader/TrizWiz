@@ -7,21 +7,23 @@ import org.springframework.stereotype.Repository;
 
 import com.TrizWizSpring.controller.TrizCustomerController;
 import com.TrizWizSpring.dto.LabelDTO;
+import com.TrizWizSpring.model.Fase;
 import com.TrizWizSpring.model.Item;
 import com.TrizWizSpring.model.Label;
+import com.TrizWizSpring.model.Tool;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
 
 @Repository
-public interface ToolDAO extends CrudRepository<ToolDAO, Long> {
+public interface ToolDAO extends CrudRepository<Tool, Long> {
 	
-	public ToolDAO findByTipologia(String tipologia);
+	//public Tool findByTipologia(String tipologia);
 	
-	public ToolDAO findByIdTool(long idTool);
+	//public Tool findByIdTool(long idTool);
 	
-	public Iterable<ToolDAO> findAll();
+	//public Iterable<Tool> findAll();
 	
-	public List<ToolDAO> findByFase(FaseDAO fase);
+	//public List<Tool> findByFase(Fase fase);
 	
 
 }

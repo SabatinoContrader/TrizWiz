@@ -16,10 +16,10 @@ public interface MacroDAO extends CrudRepository<Macro, Long> {
 
 
    // @Query(value = "SELECT c FROM Customer c where c.username = ?1")
-	public Macro findByTipologiaAndUsername(String tipologia, String username);
+	//public Macro findByTipologiaAndUsername(String tipologia, String username);
 
-	 public trizcustomer findBytipologia(Macro macro);
+	 //public trizcustomer findBytipologia(Macro macro);
 	 
-	 public List<Macro> findByUsername(utentiLocali username);
+	// public List<Macro> findByUsername(utentiLocali username);
 	//  public List<trizcustomer> findAllListTrizcustomer(long idCustomer);
 }

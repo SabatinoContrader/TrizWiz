@@ -9,7 +9,7 @@ public class UtenteLocaleConverter {
 		utentiLocaliDTO utentiLocaliDTO=new utentiLocaliDTO();
 		//utentiLocaliDTO.setId(c.getId());
 		utentiLocaliDTO.setNomeLogin(c.getNomeLogin());
-		utentiLocaliDTO.setPasswordLogin(c.getPasswordLogin());
+		//utentiLocaliDTO.setPasswordLogin(c.getPasswordLogin());
 		utentiLocaliDTO.setNome(c.getNome());
 		utentiLocaliDTO.setCognome(c.getCognome());
 		utentiLocaliDTO.setRuolo(c.getRuolo());
@@ -20,7 +20,7 @@ public class UtenteLocaleConverter {
 		utentiLocali utentiLocali= new utentiLocali();
 		//utentiLocali.setId(c.getId());
 		utentiLocali.setNomeLogin(c.getNomeLogin());
-		utentiLocali.setPasswordLogin(c.getPasswordLogin());
+		//utentiLocali.setPasswordLogin(c.getPasswordLogin());
 		utentiLocali.setNome(c.getNome());
 		utentiLocali.setCognome(c.getCognome());
 		utentiLocali.setRuolo(c.getRuolo());
