@@ -39,7 +39,7 @@ public class Building{
 	@Column (length = 5)
 	@NotNull
 	private String cap;
-	
+	//
 	@Column 
 	@NotNull
 	private long interno;
