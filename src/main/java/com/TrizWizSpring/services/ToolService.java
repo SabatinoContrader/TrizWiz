@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.TrizWizSpring.converter.CustomerConverter;
+import com.TrizWizSpring.converter.FaseConverter;
 import com.TrizWizSpring.converter.ItemConverter;
 import com.TrizWizSpring.converter.LabelConverter;
 import com.TrizWizSpring.converter.ToolConverter;
@@ -116,7 +117,10 @@ public class ToolService {
 		Tool l = toolDAO.findOne(idTool);
 		toolDAO.delete(l);
 	}
-	
+	public ToolDTO findByPrimaryKey(long idTool) {
+		return ToolConverter.convertToDto(toolDAO.findByIdTool(idTool));
+	}
+
 	
 
 }
