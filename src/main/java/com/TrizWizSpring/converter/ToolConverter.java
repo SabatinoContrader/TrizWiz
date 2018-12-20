@@ -6,12 +6,13 @@ import com.TrizWizSpring.model.Tool;
 public class ToolConverter {
 
 	public static ToolDTO convertToDto(Tool t) {
+
 		ToolDTO toolDTO= new ToolDTO();
 		toolDTO.setIdTool(t.getIdTool());
 		toolDTO.setTipologia(t.getTipologia());
 		toolDTO.setFase(FaseConverter.convertToDto(t.getFase()));
 		return toolDTO;
-	}
+			}
 	
 	public static Tool convertToTool(ToolDTO t) {
 		Tool tool= new Tool();

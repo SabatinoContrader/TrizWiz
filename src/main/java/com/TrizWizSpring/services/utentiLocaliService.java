@@ -6,8 +6,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
 import com.TrizWizSpring.dao.utentiLoginDAO;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.utentiLocali;
 
@@ -21,15 +24,29 @@ public class utentiLocaliService {
 	public utentiLocaliService(utentiLoginDAO utentiLoginDAO) {
 		this.utentiLoginDAO = utentiLoginDAO;
 	}
+	
 
-	public long login(String nomeLogin, String passwordLogin) {
+	/*public long login(String nomeLogin, String passwordLogin) {
 		utentiLocali c = utentiLoginDAO.findByNomeLoginAndPasswordLogin(nomeLogin, passwordLogin);
 		if (c != null) {
 			if (c.getRuolo() != null)
 				return c.getRuolo();
 		}
 		return -1;
+	}*/
+	
+	public utentiLocaliDTO login(String username, String password) {
+		utentiLocali c = utentiLoginDAO.findByNomeLoginAndPasswordLogin(username, password);
+		utentiLocaliDTO utenteDTO = UtenteLocaleConverter.convertToDto(c);
+		
+		return utenteDTO;
 	}
+	
+	public NewUtenteLocaleDTO insertUtentiLocali (NewUtenteLocaleDTO utente) {
+		return NewUtenteLocaleConverter.convertToDto(utentiLoginDAO.save(NewUtenteLocaleConverter.convertToutentiLocali(utente)));
+	}
+	
+	/*
 	public List<utentiLocaliDTO> getAllByNomeLogin(utentiLocaliDTO nomeLogin) {
 		List<utentiLocali> items = (List<utentiLocali>) utentiLoginDAO.findByNomeLogin(UtenteLocaleConverter.convertToutentiLocali(nomeLogin));
 		List<utentiLocaliDTO> utentiLocali= new ArrayList<>();
@@ -39,7 +56,7 @@ public class utentiLocaliService {
 	}
 
 	public void insertUtentiLocali(utentiLocaliDTO utenti) {
-		System.out.println(utenti.getnomeLogin() + utenti.getpasswordLogin() + utenti.ruolo());
+		System.out.println(utenti.getNomeLogin() + utenti.getPasswordLogin() + utenti.getRuolo()); // in caso aggiungere anche utenti.getNome() e utenti.getCognome()
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
 	}
 

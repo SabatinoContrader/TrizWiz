@@ -1,21 +1,21 @@
 package com.TrizWizSpring.dto;
 
-public class utentiLocaliDTO {
+public class NewUtenteLocaleDTO {
 
 	private String nomeLogin;
-	//private String passwordLogin;
+	private String passwordLogin;
 	private String nome;
 	private String cognome;
 	private Integer ruolo;
 
-	public utentiLocaliDTO() {
+	public NewUtenteLocaleDTO() {
 
 	}
 
-	public utentiLocaliDTO(String nomeLogin, String nome, String cognome, Integer ruolo) {
+	public NewUtenteLocaleDTO(String nomeLogin, String passwordLogin, String nome, String cognome, Integer ruolo) {
 	
 		this.nomeLogin = nomeLogin;
-		//this.passwordLogin = passwordLogin;
+		this.passwordLogin = passwordLogin;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.ruolo = ruolo;
@@ -29,13 +29,13 @@ public class utentiLocaliDTO {
 		this.nomeLogin = nomeLogin;
 	}
 
-	//public String getPasswordLogin() {
-	//	return passwordLogin;
-	//}
+	public String getPasswordLogin() {
+		return passwordLogin;
+	}
 
-	//public void setPasswordLogin(String passwordLogin) {
-	//	this.passwordLogin = passwordLogin;
-	//}
+	public void setPasswordLogin(String passwordLogin) {
+		this.passwordLogin = passwordLogin;
+	}
 
 	public String getNome() {
 		return nome;

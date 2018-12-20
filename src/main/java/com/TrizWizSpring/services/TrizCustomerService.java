@@ -71,7 +71,7 @@ public class TrizCustomerService {
 		//utentiLocaliDTO p=UtenteLocaleConverter.convertToDto(c);
 		//System.out.println("p = "+p.getnomeLogin());
 		utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
-		System.out.println("utenteDTO= "+p.getnomeLogin()+ ""+p.getpasswordLogin()+""+p.ruolo());
+		System.out.println("utenteDTO= "+p.getNomeLogin()+ ""+p.getRuolo());
 		trizcustomer.setUsername(p);
 		return trizCustomerDAO.save(TrizCustomerConverter.convertTotrizcustomer(trizcustomer));
 

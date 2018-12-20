@@ -11,18 +11,23 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.CustomerDTO;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.CustomerService;
 import com.TrizWizSpring.services.utentiLocaliService;
 
-@Controller
+@RestController
+@CrossOrigin
 @RequestMapping("/UtentiLocali")// da vedere
 public class UtentiLocaliController  {
 	
@@ -31,24 +36,46 @@ public class UtentiLocaliController  {
 	
 	@Autowired
 	public UtentiLocaliController(utentiLocaliService utentiLocaliService) {
-	//this.utentiLocaliService=utentiLocaliService;
+	   this.utentiLocaliService=utentiLocaliService;
 	}
+	
+	// CREAZIONE NEW UTENTE LOCALE
+	
+	@CrossOrigin
+	@RequestMapping(value="/new", method=RequestMethod.POST)
+	public NewUtenteLocaleDTO newUtenteLocale(
+			@RequestParam(value = "nomeLogin") String nomeLogin,
+			@RequestParam(value = "passwordLogin") String passwordLogin,
+			@RequestParam(value = "nome") String nome,
+			@RequestParam(value = "cognome") String cognome,
+			@RequestParam(value = "ruolo") String ruolo
+			)
+	{
+		int role = Integer.parseInt(ruolo);
+		NewUtenteLocaleDTO utentelocaleDTO = new NewUtenteLocaleDTO(nomeLogin, passwordLogin, nome, cognome, role);
+		utentelocaleDTO = utentiLocaliService.insertUtentiLocali(utentelocaleDTO);
+		return utentelocaleDTO;
+	}
+	
+	
+	
+	
 	
 	@RequestMapping(value="/insertForm", method=RequestMethod.GET)
 	public String insertForm(HttpServletRequest request) {
 		return "insertCustomer";
 	} 
-	@RequestMapping(value="/goBackSuper", method=RequestMethod.GET)
-	public String goBackSuper(HttpServletRequest request) {
-		return "superuserhome";
-	}
+	
+	
+	/*
+	
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
 		utentiLocaliDTO utenti = new utentiLocaliDTO();
-		utenti.setnomeLogin(request.getParameter("username"));
+		utenti.setNomeLogin(request.getParameter("username"));
 		Integer ruolo=1;
-		utenti.setruolo(ruolo);
-		utenti.setpasswordLogin(request.getParameter("password"));
+		utenti.setRuolo(ruolo);
+		utenti.setPasswordLogin(request.getParameter("password")); // in caso aggiungere anche utenti.setNome() e utenti.setCognome()
 		utentiLocaliService.insertUtentiLocali(utenti);
 		return "GestioneCustomer";
 	} 
@@ -75,13 +102,13 @@ public class UtentiLocaliController  {
 		System.out.println(request.getParameter("selected"));
 		switch (Integer.parseInt(request.getParameter("selected"))) {
 		case 1:
-			newutente.setpasswordLogin(request.getParameter("value"));
-			newutente.setnomeLogin(username);
+			newutente.setPasswordLogin(request.getParameter("value"));
+			newutente.setNomeLogin(username);
 			break;
 		/*case 2:
 			newutente.setpasswordLogin(request.getParameter("value"));
 			break;*/
-		default:
+/*		default:
 			break;
 		}
 		utentiLocaliService.updateUtentiLocali(newutente);

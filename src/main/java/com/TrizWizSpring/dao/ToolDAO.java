@@ -17,6 +17,7 @@ import com.TrizWizSpring.model.utentiLocali;
 @Repository
 public interface ToolDAO extends CrudRepository<Tool, Long> {
 
+
 	public Tool findByTipologia(String tipologia);
 
 	

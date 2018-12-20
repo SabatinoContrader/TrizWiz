@@ -2,6 +2,7 @@ package com.TrizWizSpring.dao;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
+
 import org.springframework.stereotype.Repository;
 
 import com.TrizWizSpring.model.Fase;
@@ -15,6 +16,7 @@ public interface FaseDAO extends CrudRepository<Fase, Long> {
 	public List<Fase> findAll();
 	
    public Fase findByIdFase(long idFase);
+
 
 
 	

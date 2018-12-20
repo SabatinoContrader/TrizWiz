@@ -78,7 +78,7 @@ public class MacroService {
 		//utentiLocaliDTO p=UtenteLocaleConverter.convertToDto(c);
 		//System.out.println("p = "+p.getnomeLogin());
 		utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
-		System.out.println("utenteDTO= "+p.getnomeLogin()+ ""+p.getpasswordLogin());
+		System.out.println("utenteDTO= "+p.getNomeLogin()+ ""+p.getNome()+ ""+p.getCognome());
 		Macro.setUsername(p);
 		return macroDAO.save(MacroConverter.convertToMacro(Macro));
 

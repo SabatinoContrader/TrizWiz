@@ -1,21 +1,28 @@
 package com.TrizWizSpring.controller;
 import java.util.*;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.utentiLocaliService;
 import com.TrizWizSpring.services.TrizCustomerService;
-@Controller
-@RequestMapping("")
+
+@RestController
+@CrossOrigin
+@RequestMapping("/utente")
 public class loginNewController {
 
 	private BuildingService buildingService;
@@ -28,8 +35,21 @@ public class loginNewController {
 		buildingService = bs;
 		TrizCustomerService=b;
 	}
+	
+	//modificare da qui in poi
+	
+	@CrossOrigin
+	@RequestMapping(value="/login", method= RequestMethod.POST)
+	public utentiLocaliDTO login
+	(
+			@RequestParam(value="username", required=true) String username,
+			@RequestParam(value="password", required=true) String password
+	) {
+		utentiLocaliDTO utentiLocaliDTO = utentiLocaliService.login(username, password);
+		return utentiLocaliDTO;
+	}
 
-	@RequestMapping(value="/", method= RequestMethod.GET)
+/*	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String retur(HttpServletRequest request) {
 		return "index";
 	}
@@ -45,7 +65,7 @@ public class loginNewController {
 		} else if (ruolo == 1) {//utente
 		//	List <utentiLocaliDTO> myutentiLocali = utentiLocaliService.getAll((String) request.getSession().getAttribute("nomeLogin"));
 		//	request.setAttribute("utentiLocali", myutentiLocali);
-			return "GestioneTrizConsultant";	
+			return "GestioneMacro";	
 		} /*else if (userRole == 3) {
 			List <BuildingDTO> buildings = buildingService.findByInstaller((String) request.getSession().getAttribute("username"));
 			CustomerDTO cDTO = customerService.findByUsername((String) request.getSession().getAttribute("username"));
@@ -54,10 +74,10 @@ public class loginNewController {
 			return "installerHome";
 		}*/
 		
-		else {
+/*		else {
 			return "index";
 		}
 
-	}
+	}*/
 
 }
