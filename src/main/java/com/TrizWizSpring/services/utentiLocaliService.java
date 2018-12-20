@@ -11,6 +11,7 @@ import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
 import com.TrizWizSpring.dao.utentiLoginDAO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.utentiLocali;
 
@@ -46,6 +47,10 @@ public class utentiLocaliService {
 		return NewUtenteLocaleConverter.convertToDto(utentiLoginDAO.save(NewUtenteLocaleConverter.convertToutentiLocali(utente)));
 	}
 	
+	public UtenteLocaleWithIdDTO updateUtente(UtenteLocaleWithIdDTO utente) {
+		return UtenteLocaleConverter.convertToDtoWithId((utentiLoginDAO.save(UtenteLocaleConverter.convertToUtentiLocali(utente))));
+}
+	
 	/*
 	public List<utentiLocaliDTO> getAllByNomeLogin(utentiLocaliDTO nomeLogin) {
 		List<utentiLocali> items = (List<utentiLocali>) utentiLoginDAO.findByNomeLogin(UtenteLocaleConverter.convertToutentiLocali(nomeLogin));
@@ -58,20 +63,20 @@ public class utentiLocaliService {
 	public void insertUtentiLocali(utentiLocaliDTO utenti) {
 		System.out.println(utenti.getNomeLogin() + utenti.getPasswordLogin() + utenti.getRuolo()); // in caso aggiungere anche utenti.getNome() e utenti.getCognome()
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
-	}
+	}*/
 
-	public List<utentiLocaliDTO> readAll() {
-		List<utentiLocaliDTO> utenti = new ArrayList<>();
+	public List<NewUtenteLocaleDTO> readAll() {
+		List<NewUtenteLocaleDTO> utenti = new ArrayList<>();
 		utentiLoginDAO.findByRuolo(1).forEach(c -> {
-			utenti.add(UtenteLocaleConverter.convertToDto(c));
+			utenti.add(NewUtenteLocaleConverter.convertToDto(c));
 			System.out.println(c.getNomeLogin());
 		});
 		return utenti;
 	}
 	
-	/*public utentiLocaliDTO searchUtentiLocali(Long id) {
+	public utentiLocaliDTO searchUtentiLocali(Long id) {
 		return UtenteLocaleConverter.convertToDto(utentiLoginDAO.findOne(id));
-	}*/
+	}
 	
 	public utentiLocaliDTO searchUtentiLocali(String username) {
 		return UtenteLocaleConverter.convertToDto(utentiLoginDAO.findByNomeLogin(username));
@@ -79,6 +84,10 @@ public class utentiLocaliService {
 	
 	public void updateUtentiLocali(utentiLocaliDTO utenti) {
 		utentiLoginDAO.save(UtenteLocaleConverter.convertToutentiLocali(utenti));
+	}
+	
+	public UtenteLocaleWithIdDTO findByNomeLogin(String username) {
+		return UtenteLocaleConverter.convertToDtoWithId(utentiLoginDAO.findByNomeLogin(username));
 	}
 	
 	/*public void deleteUtentiLocali(Long id) {
@@ -123,4 +132,10 @@ public class utentiLocaliService {
 		});
 		return utentiLogin;
 	}
+
+
+/*	public List<NewUtenteLocaleDTO> readAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 }

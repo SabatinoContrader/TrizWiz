@@ -2,6 +2,7 @@ package com.TrizWizSpring.converter;
 
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.model.utentiLocali;
 
 public class NewUtenteLocaleConverter {
@@ -33,6 +34,20 @@ public class NewUtenteLocaleConverter {
 		newutente.setRuolo(c.getRuolo());
 		return newutente;
 	}
+	
+	public static NewUtenteLocaleDTO convertToUtenteWhitIdNewUtente(UtenteLocaleWithIdDTO c) {
+		NewUtenteLocaleDTO newutenteDTO=new NewUtenteLocaleDTO();
+		
+		newutenteDTO.setNomeLogin(c.getNomeLogin());
+		newutenteDTO.setPasswordLogin(c.getPasswordLogin());
+		newutenteDTO.setNome(c.getNome());
+		newutenteDTO.setCognome(c.getCognome());
+		newutenteDTO.setRuolo(c.getRuolo());
+		
+		return newutenteDTO;
+		}
+		
+	}
 
 	
 
@@ -41,4 +56,3 @@ public class NewUtenteLocaleConverter {
 	
 	
 	
-}

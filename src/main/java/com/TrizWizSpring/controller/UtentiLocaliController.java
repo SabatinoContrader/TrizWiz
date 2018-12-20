@@ -17,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
+import com.TrizWizSpring.converter.UtenteLocaleConverter;
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
 import com.TrizWizSpring.services.BuildingService;
@@ -60,16 +63,53 @@ public class UtentiLocaliController  {
 	
 	
 	
-	
+	@CrossOrigin
 	@RequestMapping(value="/insertForm", method=RequestMethod.GET)
 	public String insertForm(HttpServletRequest request) {
 		return "insertCustomer";
 	} 
 	
 	
-	/*
+	@CrossOrigin
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public List<NewUtenteLocaleDTO> readAll(){
+		List<NewUtenteLocaleDTO> utente = utentiLocaliService.readAll();
+		return utente;
+	}
 	
-	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	@CrossOrigin
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public NewUtenteLocaleDTO update(
+			@RequestParam(value = "username") String username, 
+			@RequestParam(value = "field") String field, 
+			@RequestParam(value = "newValue") String newValue 
+			) {
+		UtenteLocaleWithIdDTO utenteWithIdDTO= utentiLocaliService.findByNomeLogin(username);
+		System.out.println("l'username is "+ utenteWithIdDTO.getNomeLogin());
+		/*if(utenteWithIdDTO==null) {
+			utenteWithIdDTO= new UtenteLocaleWithIdDTO();
+			utenteWithIdDTO.setRuolo(1);
+			utenteWithIdDTO.setNomeLogin(username);
+		}*/
+		if(Integer.parseInt(field)==1) {
+			utenteWithIdDTO.setNome(newValue);
+		}
+		else if(Integer.parseInt(field)==2) {
+			utenteWithIdDTO.setCognome(newValue);
+		}
+		else if(Integer.parseInt(field)==3) {
+			utenteWithIdDTO.setNomeLogin(newValue);
+		}
+		else if(Integer.parseInt(field)==4) {
+			utenteWithIdDTO.setPasswordLogin(newValue);
+		}
+		return NewUtenteLocaleConverter.convertToUtenteWhitIdNewUtente(utentiLocaliService.updateUtente(utenteWithIdDTO));
+	}
+	
+	
+	
+	
+/*	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
 		utentiLocaliDTO utenti = new utentiLocaliDTO();
 		utenti.setNomeLogin(request.getParameter("username"));
@@ -80,7 +120,7 @@ public class UtentiLocaliController  {
 		return "GestioneCustomer";
 	} 
 	
-	@RequestMapping(value="/read", method=RequestMethod.GET)
+/*	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public String read(HttpServletRequest request, Model model) {
 		List<utentiLocaliDTO> utenti = utentiLocaliService.readAll();
 		model.addAttribute("utentiLocali", utenti);

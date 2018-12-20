@@ -34,10 +34,12 @@ import lombok.Setter;
 public class utentiLocali {
 
 	
-	//private long id;
+	
 	@Id
 	@Column
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	@Column
 	private String nomeLogin;
 	@Column
 	private String passwordLogin;
