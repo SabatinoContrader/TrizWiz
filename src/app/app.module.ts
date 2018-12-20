@@ -43,7 +43,7 @@ import { BuildingTableComponent } from '../components/building-table/building-ta
 import { BuildingTreeComponent } from '../components/building-tree/building-tree.component';
 import { BuildingTreeService } from '../services/buildingTree.service';
 import { GestioneCustomerComponent} from '../components/gestioneCustomer/gestioneCustomer.component';
-import { InsertCustomerComponent } from '../components/insertCustomer/insertCustomer.component';
+import { InsertTrizConsultantComponent } from '../components/insertTrizConsultant/insertTrizConsultant.component';
 import { GestioneBuildingComponent } from '../components/gestioneBuilding/gestioneBuilding.component';
 import { InsertBuildingComponent } from '../components/insertBuilding/insertBuilding.component';
 import { RoomService } from '../services/room.service';
@@ -53,8 +53,8 @@ import { InsertitemtypeComponent } from '../components/insertItemType/insertItem
 import { UpdateitemtypeComponent } from '../components/updateitemType/updateitemType.component';
 import { DeleteitemtypeComponent } from '../components/deleteitemType/deleteitemType.component';
 import { ReaditemtypeComponent } from '../components/readitemType/readitemType.component';
-import { ReadCustomerComponent } from '../components/readCustomer/readCustomer.component';
-import { UpdateCustomerComponent } from '../components/updateCustomer/updateCustomer.component';
+import { ReadTrizConsultantComponent } from '../components/readTrizConsultant/readTrizConsultant.component';
+import { UpdateTrizConsultantComponent } from '../components/updateTrizConsultant/updateTrizConsultant.component';
 import { UpdateBuildingComponent } from '../components/updateBuilding/updateBuilding.component';
 import { DeleteBuildingComponent } from '../components/deleteBuilding/deleteBuilding.component';
 import { FloorService } from '../services/floor.service';
@@ -67,7 +67,7 @@ import { DeleteRoomComponent } from 'src/components/deleteRoom/deleteRoom.compon
 import { InsertinstallerComponent } from '../components/insertInstaller/insertInstaller.component';
 import { ReadinstallerComponent } from '../components/readInstaller/readInstaller.component';
 import { UpdateinstallerComponent } from '../components/updateInstaller/updateInstaller.component';
-import { DeleteCustomerComponent } from '../components/deleteCustomer/deleteCustomer.component';
+import { DeleteTrizConsultantComponent } from '../components/deleteTrizConsultant/deleteTrizConsultant.component';
 import { DeleteinstallerComponent } from '../components/deleteInstaller/deleteInstaller.component';
 import { AssociazioneBuildingsComponent } from '../components/associazioneBuildings/associazioneBuildings.components';
 import { GestioneInstallerComponent } from '../components/gestioneInstaller/gestioneInstaller.component';
@@ -119,16 +119,16 @@ import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocal
     BuildingTableComponent,
     BuildingTreeComponent,
     GestioneCustomerComponent,
-    InsertCustomerComponent,
+    InsertTrizConsultantComponent,
     GestioneBuildingComponent,
     InsertBuildingComponent,
     InsertitemtypeComponent,
     UpdateitemtypeComponent,
     DeleteitemtypeComponent,
     ReaditemtypeComponent,
-    ReadCustomerComponent, 
-    UpdateCustomerComponent,
-    DeleteCustomerComponent,
+    ReadTrizConsultantComponent, 
+    UpdateTrizConsultantComponent,
+    DeleteTrizConsultantComponent,
     UpdateBuildingComponent,
     DeleteBuildingComponent,
     GestioneFloorComponent,
@@ -143,7 +143,7 @@ import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocal
     InsertinstallerComponent,
     ReadinstallerComponent,
     UpdateinstallerComponent,
-    DeleteCustomerComponent,
+    DeleteTrizConsultantComponent,
     DeleteinstallerComponent,
     AssociazioneBuildingsComponent,
     InstallerComponent,

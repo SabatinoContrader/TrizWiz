@@ -6,7 +6,7 @@ import { NewCustomer } from "src/models/NewCustomer";
 @Injectable({
     providedIn: 'root'
   })
-  export class InsertCustomerService{
+  export class InsertTrizConsultantService{
     constructor(private http: HttpClient) { }
 
     private handleError<T>(operation = 'operation', result?: T) {

@@ -5,11 +5,11 @@ import { NewCustomer } from "src/models/NewCustomer";
 import { NgForm } from "@angular/forms";
 
 @Component({
-    selector: 'app-deleteCustomer',
-    templateUrl: './deleteCustomer.component.html',
-    styleUrls: ['./deleteCustomer.component.css']
+    selector: 'app-deleteTrizConsultant',
+    templateUrl: './deleteTrizConsultant.component.html',
+    styleUrls: ['./deleteTrizConsultant.component.css']
 })
-export class DeleteCustomerComponent implements OnInit{
+export class DeleteTrizConsultantComponent implements OnInit{
     public customers: Array<NewCustomer>;
     constructor(private customerService: CustomerService, private router: Router){}
     ngOnInit(){ 

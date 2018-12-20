@@ -33,6 +33,17 @@ export class utentiLocaliService{
         return this.http.post<NewUtenteLocale>('http://localhost:8080/UtentiLocali/new', params); 
   
     }
+
+   /* insertUtenteLocale(nomeLogin:string, passwordLogin:string, nome: string, cognome: string,
+        ruolo:string): Observable<NewUtenteLocale>{
+        
+          const params = new HttpParams().set('nomeLogin', nomeLogin).
+           set('passwordLogin', passwordLogin).set('nome', nome).set('cognome', cognome).set('ruolo', ruolo);
+        
+        return this.http.post<NewUtenteLocale>('http://localhost:8080/UtentiLocali/insert', params); 
+  
+    }*/
+
     /*
     newManufacturer(userRole:string, name:string, 
         email:string): Observable<NewCustomer>{
@@ -43,10 +54,11 @@ export class utentiLocaliService{
         return this.http.post<NewCustomer>('http://localhost:8080/Customer/manufacturer', params); 
   
     } 
-
-    readAll():Observable<Array<NewCustomer>>{
-        return this.http.get<Array<NewCustomer>>('http://localhost:8080/Customer/read');
+    */
+    readAll():Observable<Array<NewUtenteLocale>>{
+        return this.http.get<Array<NewUtenteLocale>>('http://localhost:8080/UtentiLocali/read');
     }
+    /*
     readAllManufacturers():Observable<Array<NewCustomer>>{
         return this.http.get<Array<NewCustomer>>('http://localhost:8080/Customer/readManufacturers');
     }
@@ -80,13 +92,13 @@ export class utentiLocaliService{
                 return this.http.post<NewCustomer>('http://localhost:8080/Customer/edit', params); 
             }
 
-    }
-    update(username: string, field: string, newValue: string):Observable<NewCustomer>{
+    }*/
+    update(username: string, field: string, newValue: string):Observable<NewUtenteLocale>{
         const params= new HttpParams().set('username',username).set('field',field).set('newValue',newValue);
-       return this.http.post<NewCustomer>('http://localhost:8080/Customer/editManufacturer', params);
+       return this.http.post<NewUtenteLocale>('http://localhost:8080/UtentiLocali/update', params);
     }
 
 
-*/
+
 
 }

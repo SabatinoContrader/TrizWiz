@@ -28,7 +28,7 @@ import { SuperuserComponent} from '../components/superuser/superuser.component';
 import { BuildingTreeComponent } from '../components/building-tree/building-tree.component';
 import { BuildingTableComponent } from '../components/building-table/building-table.component';
 import { GestioneCustomerComponent} from '../components/gestioneCustomer/gestioneCustomer.component';
-import { InsertCustomerComponent } from '../components/insertCustomer/insertCustomer.component';
+import { InsertTrizConsultantComponent } from '../components/insertTrizConsultant/insertTrizConsultant.component';
 import { GestioneBuildingComponent } from '../components/gestioneBuilding/gestioneBuilding.component';
 import { InsertBuildingComponent } from '../components/insertBuilding/insertBuilding.component';
 import {ItemtypemanagerComponent} from '../components/itemtype/itemtype.component';
@@ -36,9 +36,9 @@ import { InsertitemtypeComponent } from '../components/insertItemType/insertItem
 import { UpdateitemtypeComponent } from '../components/updateitemType/updateitemType.component';
 import { DeleteitemtypeComponent } from '../components/deleteitemType/deleteitemType.component';
 import { ReaditemtypeComponent } from '../components/readitemType/readitemType.component';
-import { ReadCustomerComponent } from '../components/readCustomer/readCustomer.component';
-import { UpdateCustomerComponent } from '../components/updateCustomer/updateCustomer.component';
-import { DeleteCustomerComponent } from '../components/deleteCustomer/deleteCustomer.component';
+import { ReadTrizConsultantComponent } from '../components/readTrizConsultant/readTrizConsultant.component';
+import { UpdateTrizConsultantComponent } from '../components/updateTrizConsultant/updateTrizConsultant.component';
+import { DeleteTrizConsultantComponent } from '../components/deleteTrizConsultant/deleteTrizConsultant.component';
 import { UpdateBuildingComponent } from '../components/updateBuilding/updateBuilding.component';
 import { DeleteBuildingComponent } from '../components/deleteBuilding/deleteBuilding.component';
 import { GestioneFloorComponent } from '../components/gestioneFloor/gestioneFloor.component';
@@ -93,7 +93,7 @@ const routes: Routes = [
   {path: 'installer/buildingTree/:buildingId', component: BuildingTreeComponent },
   {path: 'installer/buildings', component: BuildingTableComponent},
   {path: 'gestioneCustomer', component: GestioneCustomerComponent},
-  {path: 'insertCustomer', component: InsertCustomerComponent},
+  {path: 'insertTrizConsultant', component: InsertTrizConsultantComponent},
   {path: 'gestioneBuilding', component: GestioneBuildingComponent},
   {path: 'insertBuilding', component: InsertBuildingComponent},
   {path: 'insertitemType', component: InsertitemtypeComponent},
@@ -101,9 +101,9 @@ const routes: Routes = [
   {path: 'updateitemType', component:UpdateitemtypeComponent},
   {path: 'deleteitemType', component:DeleteitemtypeComponent},
   {path: 'readitemType', component:ReaditemtypeComponent},
-  {path: 'readCustomer', component: ReadCustomerComponent},  
-  {path: 'updateCustomer', component: UpdateCustomerComponent},
-  {path: 'deleteCustomer', component: DeleteCustomerComponent},
+  {path: 'readTrizConsultant', component: ReadTrizConsultantComponent},  
+  {path: 'updateTrizConsultant', component: UpdateTrizConsultantComponent},
+  {path: 'deleteTrizConsultant', component: DeleteTrizConsultantComponent},
   {path: 'updateBuilding', component: UpdateBuildingComponent},
   {path: 'deleteBuilding', component: DeleteBuildingComponent},
   {path: 'gestioneFloor/:buildingId', component: GestioneFloorComponent},
