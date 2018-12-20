@@ -32,7 +32,7 @@ public class UtenteLocaleConverter {
 		
 		UtenteLocaleWithIdDTO utentewithID= new UtenteLocaleWithIdDTO();
 		
-		utentewithID.setId(c.getId());
+		//utentewithID.setId(c.getId());
 		if (c.getNomeLogin()!=null)
 		utentewithID.setNomeLogin(c.getNomeLogin());
 		if(c.getPasswordLogin()!=null)
@@ -49,7 +49,7 @@ public static utentiLocali convertToUtentiLocali(UtenteLocaleWithIdDTO c) {
 		
 		utentiLocali utenti= new utentiLocali();
 		
-		utenti.setId(c.getId());
+		//utenti.setId(c.getId());
 		if (c.getNomeLogin()!=null)
 			utenti.setNomeLogin(c.getNomeLogin());
 		if(c.getPasswordLogin()!=null)

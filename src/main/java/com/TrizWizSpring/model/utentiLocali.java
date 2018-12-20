@@ -37,9 +37,9 @@ public class utentiLocali {
 	
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	@Column
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//private long id;
+	//@Column
 	private String nomeLogin;
 	@Column
 	private String passwordLogin;
