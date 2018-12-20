@@ -72,15 +72,15 @@ export class LoginComponent implements OnInit{
       if (response != null) {
         this.utenteLocale=response;
         sessionStorage.setItem("user", JSON.stringify(this.utenteLocale));
-        this.router.navigateByUrl("/gestioneUtenteLocale");   
-     /*   if(response.ruolo==1)
+       // this.router.navigateByUrl("/gestioneUtenteLocale");   
+      if(response.ruolo==0)
             this.router.navigateByUrl("/superuser");
-            else if(response.ruolo==2)
-            this.router.navigateByUrl("/gestioneBuilding");
-            else if(response.ruolo==3)
-            this.router.navigateByUrl("/installer");
+            else if(response.ruolo==1)
+            this.router.navigateByUrl("/gestioneUtenteLocale");
+            else if(response.ruolo<0||response.ruolo>1)
+            this.router.navigateByUrl("/login");
       
-      */          } 
+               } 
   });
 }
 }
