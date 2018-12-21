@@ -91,6 +91,11 @@ import { PopolaListinoComponent } from 'src/components/popolaListino/popolaListi
 import { PrezzoService } from '../services/prezzo.service';
 import { utentiLocaliService } from '../services/utentiLocali.service';
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
+import { GestioneMacroComponent } from 'src/components/gestioneMacro/gestioneMacro.component';
+import { DeleteMacroComponent } from 'src/components/deleteMacro/deleteMacro.component';
+import { InsertMacroComponent } from 'src/components/insertMacro/insertMacro.component';
+import { ReadMacroComponent } from 'src/components/readMacro/readMacro.component';
+import { UpdateMacroComponent } from 'src/components/updateMacro/updateMacro.component';
 
 @NgModule({
   declarations: [
@@ -160,7 +165,12 @@ import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocal
     UpdateListinoComponent,
     SelectManufacturerComponent,
     PopolaListinoComponent,
-    GestioneUtenteLocaleComponent
+    GestioneUtenteLocaleComponent,
+    GestioneMacroComponent,
+    DeleteMacroComponent,
+    InsertMacroComponent,
+    ReadMacroComponent,
+    UpdateMacroComponent
   ],
   imports: [
     BrowserModule,

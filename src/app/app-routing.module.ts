@@ -65,6 +65,13 @@ import { ReadListinoComponent } from '../components/readListino/readListino.comp
 import { DeleteListinoComponent } from '../components/deleteListino/deleteListino.component';
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
 import { PopolaListinoComponent } from '../components/popolaListino/popolaListino.component';
+
+import { GestioneMacroComponent } from '../components/gestioneMacro/gestioneMacro.component';
+import { UpdateMacroComponent } from '../components/updateMacro/updateMacro.component';
+import { ReadMacroComponent } from '../components/readMacro/readMacro.component';
+import { InsertMacroComponent } from '../components/insertMacro/insertMacro.component';
+import { DeleteMacroComponent } from '../components/deleteMacro/deleteMacro.component';
+
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
 
 const routes: Routes = [
@@ -134,6 +141,13 @@ const routes: Routes = [
   {path: 'updateListino', component: UpdateListinoComponent},
   {path: 'selectManufacturer/:buildingId', component: SelectManufacturerComponent},
   {path: 'popolaListino', component:PopolaListinoComponent},
+
+  {path: 'gestioneMacro', component:GestioneMacroComponent},
+  {path: 'insertMacro', component:InsertMacroComponent},
+  {path: 'deleteMacro', component:DeleteMacroComponent},
+  {path: 'updateMacro', component:UpdateMacroComponent},
+  {path: 'readMacro', component:ReadMacroComponent},
+
   {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
 ];
 
