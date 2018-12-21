@@ -35,6 +35,6 @@ export class UpdateTrizConsultantComponent implements OnInit{
         this.field=f.value.fieldSelected;       ////variabile di scelta
         this.newValue=f.value.value;            ////modifica del campo
         this.utentiLocaliService.update(this.username,this.field,this.newValue).subscribe((response) => {
-            this.router.navigateByUrl("/gestioneCustomer");
+            this.router.navigateByUrl("/superuser");
         });
     }}
