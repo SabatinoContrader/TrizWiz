@@ -91,11 +91,12 @@ import { PopolaListinoComponent } from 'src/components/popolaListino/popolaListi
 import { PrezzoService } from '../services/prezzo.service';
 import { utentiLocaliService } from '../services/utentiLocali.service';
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
-import { GestioneMacroComponent } from 'src/components/gestioneMacro/gestioneMacro.component';
-import { DeleteMacroComponent } from 'src/components/deleteMacro/deleteMacro.component';
-import { InsertMacroComponent } from 'src/components/insertMacro/insertMacro.component';
-import { ReadMacroComponent } from 'src/components/readMacro/readMacro.component';
-import { UpdateMacroComponent } from 'src/components/updateMacro/updateMacro.component';
+import { GestioneMacroComponent } from '../components/gestioneMacro/gestioneMacro.component';
+import { DeleteMacroComponent } from '../components/deleteMacro/deleteMacro.component';
+import { InsertMacroComponent } from '../components/insertMacro/insertMacro.component';
+import { ReadMacroComponent } from '../components/readMacro/readMacro.component';
+import { UpdateMacroComponent } from '../components/updateMacro/updateMacro.component';
+import { macroService } from '../services/macro.service';
 
 @NgModule({
   declarations: [
@@ -215,7 +216,8 @@ import { UpdateMacroComponent } from 'src/components/updateMacro/updateMacro.com
     ListinoService,
     BuildingTreeManagerService,
     PrezzoService,
-    utentiLocaliService
+    utentiLocaliService,
+    macroService
 
   ],
   bootstrap: [AppComponent]

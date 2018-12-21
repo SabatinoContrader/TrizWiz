@@ -66,13 +66,13 @@ import { DeleteListinoComponent } from '../components/deleteListino/deleteListin
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
 import { PopolaListinoComponent } from '../components/popolaListino/popolaListino.component';
 
-import { GestioneMacroComponent } from '../components/gestioneMacro/gestioneMacro.component';
-import { UpdateMacroComponent } from '../components/updateMacro/updateMacro.component';
-import { ReadMacroComponent } from '../components/readMacro/readMacro.component';
-import { InsertMacroComponent } from '../components/insertMacro/insertMacro.component';
-import { DeleteMacroComponent } from '../components/deleteMacro/deleteMacro.component';
 
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
+import { GestioneMacroComponent } from 'src/components/gestioneMacro/gestioneMacro.component';
+import { InsertMacroComponent } from 'src/components/insertMacro/insertMacro.component';
+import { DeleteMacroComponent } from 'src/components/deleteMacro/deleteMacro.component';
+import { UpdateMacroComponent } from 'src/components/updateMacro/updateMacro.component';
+import { ReadMacroComponent } from 'src/components/readMacro/readMacro.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
