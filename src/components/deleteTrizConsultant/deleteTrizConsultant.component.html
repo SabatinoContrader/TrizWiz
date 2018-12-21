@@ -11,9 +11,10 @@
 		<div  class="idCustomer"><h2>
 			Id TrizConsultant: </h2>
             <div >
-                <select class="select" name="usernameSelected" ngModel="usernameSelected">
-                    <option *ngFor="let customer of customers" [attr.value]="customer.username">{{customer.username}}</option>
-              </select>
+                <select class="select" name="usernameSelected" ngModel="usernameSelected"><!-- usernameSelected -->
+					<option *ngFor="let utenteLocale of utenti" [value]="utenteLocale.nomeLogin">{{utenteLocale.nomeLogin}}</option>
+			  </select> <!-- mettere solo value perche se non selioziono nulla , anche se vedo il valore, non viene selezionato nulla
+			     -->
 			</div>
 		</div>
 

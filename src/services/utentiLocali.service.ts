@@ -97,7 +97,10 @@ export class utentiLocaliService{
         const params= new HttpParams().set('username',username).set('field',field).set('newValue',newValue);
        return this.http.post<NewUtenteLocale>('http://localhost:8080/UtentiLocali/update', params);
     }
-
+    delete(username:string):Observable<boolean>{
+        const params = new HttpParams().set('username', username);
+        return this.http.post<boolean>('http://localhost:8080/UtentiLocali/delete',params);
+    }
 
 
 

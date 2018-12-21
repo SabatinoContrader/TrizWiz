@@ -10,23 +10,23 @@
 <div class="modifyCustomer">
 <h2 >Seleziona l'username del TrizConsultant da modificare</h2>
 <form class="userForm" #f="ngForm">
-    <div class="idCustomer"><h3>Username TrizConsultant:</h3>
+    <div class="idutenteLocale"><h3>Username TrizConsultant:</h3>
         <div style="padding-left:2%">
-            <select class="select" name="usernameSelected" ngModel="usernameSelected">
-              <option *ngFor="let customer of customers" [attr.value]="customer.username">{{customer.username}}</option>
+            <select class="select" name="usernameSelected" ngModel="usernameSelected"><!-- usernameSelected -->
+              <option *ngFor="let utenteLocale of utenti" [attr.value]="utenteLocale.nomeLogin">{{utenteLocale.nomeLogin}}</option>
         </select>
         </div>
         
     </div>
     <div class="idCustomer"><h3>Cosa vuoi modificare?   </h3>&nbsp; 
-        <select class="select" name="fieldSelected" ngModel="fieldSelected">
+        <select class="select" name="fieldSelected" ngModel="fieldSelected"> <!-- Variabile di scelta -->
               <option value="1">Nome</option>
               <option value="2">Cognome</option>
               <option value="3">Username</option>
               <option value="4">Password</option> 
         </select>
         &nbsp;&nbsp;
-        <input type = "text" id = "value" name ="value" placeholder="Inserisci nuovo valore" ngModel>
+        <input type = "text" id = "value" name ="value" placeholder="Inserisci nuovo valore" ngModel>    <!--  La modifica del campo  -->
     </div>
     <button class="modifyButton" style="border-radius: 10%" type = "submit"(click)="update(f)"> Modifica</button>
     

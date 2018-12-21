@@ -3,6 +3,9 @@ import { CustomerService } from "src/services/customer.service";
 import { Router, ROUTER_CONFIGURATION } from "@angular/router";
 import { NewCustomer } from "src/models/NewCustomer";
 import { NgForm } from "@angular/forms";
+import { NewUtenteLocale } from "src/models/NewUtenteLocale";
+import { utentiLocaliService } from "src/services/utentiLocali.service";
+import { UtenteLocale } from "src/models/UtenteLocale";
 
 @Component({
     selector: 'app-deleteTrizConsultant',
@@ -10,17 +13,23 @@ import { NgForm } from "@angular/forms";
     styleUrls: ['./deleteTrizConsultant.component.css']
 })
 export class DeleteTrizConsultantComponent implements OnInit{
-    public customers: Array<NewCustomer>;
-    constructor(private customerService: CustomerService, private router: Router){}
-    ngOnInit(){ 
-        this.customerService.readAll().subscribe((response) => {
-        this.customers = response;
-    });
+    public utenti: Array<NewUtenteLocale>; //array di utenti selezionati nel ngOnInit
+    public utenteLocale: UtenteLocale;
+    public username : string;
+    constructor(private utentiLocaliService: utentiLocaliService, private router: Router){}
+        ngOnInit(){ 
+        this.utentiLocaliService.readAll().subscribe((response) => {
+            this.utenti = response;
+            //console.log("la size è "+ this.utenti.length);
+        });
 }
     delete(f:NgForm){
-        this.customerService.delete(f.value.usernameSelected).subscribe((response)=>{
+        this.username=f.value.usernameSelected;  ///<!-- usernameSelected -->
+        //console.log("la size del cazzo è "+ f.value.usernameSelected);
+        this.utentiLocaliService.delete(this.username).subscribe((response) => {
+        //this.utentiLocaliService.delete(f.value.usernameSelected).subscribe((response)=>{
             if (response != null) {
-                this.router.navigateByUrl("/gestioneCustomer");
+                this.router.navigateByUrl("/superuser");
               }
         });
     }

@@ -14,7 +14,7 @@ import { UtenteLocale } from "src/models/UtenteLocale";
     styleUrls: ['./updateTrizConsultant.component.css']
 })
 export class UpdateTrizConsultantComponent implements OnInit{
-    public utenti: Array<NewUtenteLocale>;
+    public utenti: Array<NewUtenteLocale>; //array di utenti selezionati nel ngOnInit
     public utenteLocale: UtenteLocale;
     public field : string;
     public username : string;
@@ -22,6 +22,7 @@ export class UpdateTrizConsultantComponent implements OnInit{
     constructor(private utentiLocaliService: utentiLocaliService, private router: Router){
         
     }
+    //esegue operazioni prima di caricare la pagina, azioni preliminari
     ngOnInit() {
         this.utentiLocaliService.readAll().subscribe((response) => {
             this.utenti = response;
@@ -30,9 +31,9 @@ export class UpdateTrizConsultantComponent implements OnInit{
     }
     update(f:NgForm){
         
-        this.username=f.value.usernameSelected;
-        this.field=f.value.fieldSelected;
-        this.newValue=f.value.value;
+        this.username=f.value.usernameSelected;  ///<!-- usernameSelected -->
+        this.field=f.value.fieldSelected;       ////variabile di scelta
+        this.newValue=f.value.value;            ////modifica del campo
         this.utentiLocaliService.update(this.username,this.field,this.newValue).subscribe((response) => {
             this.router.navigateByUrl("/gestioneCustomer");
         });
