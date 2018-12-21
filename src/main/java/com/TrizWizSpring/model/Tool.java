@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,6 +40,7 @@ public class Tool {
 	
 	@ManyToOne
 	@JoinColumn (name = "fase")
+	@OnDelete(action=OnDeleteAction.CASCADE)
     private Fase fase;
 
 }

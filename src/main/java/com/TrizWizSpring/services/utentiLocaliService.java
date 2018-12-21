@@ -90,15 +90,15 @@ public class utentiLocaliService {
 		return UtenteLocaleConverter.convertToDtoWithId(utentiLoginDAO.findByNomeLogin(username));
 	}
 	
-	/*public void deleteUtentiLocali(Long id) {
-		utentiLocali c = utentiLoginDAO.findOne(id);
+	public void deleteUtentiLocali(String string) {
+		utentiLocali c = utentiLoginDAO.findByNomeLogin(string);
 		utentiLoginDAO.delete(c);
-	}*/
-	
+	}
+	/*
 	public void deleteUtentiLocali(String username) {
 		utentiLocali c = utentiLoginDAO.findByNomeLogin(username);
 		utentiLoginDAO.delete(c);
-	}
+	}*/
 /*
 	public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();

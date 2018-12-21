@@ -25,6 +25,7 @@ import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
+import com.TrizWizSpring.model.utentiLocali;
 import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.CustomerService;
 import com.TrizWizSpring.services.utentiLocaliService;
@@ -105,7 +106,14 @@ public class UtentiLocaliController  {
 		}
 		return NewUtenteLocaleConverter.convertToUtenteWhitIdNewUtente(utentiLocaliService.updateUtente(utenteWithIdDTO));
 	}
-	
+	@CrossOrigin
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public boolean delete(
+			@RequestParam(value="username")String username
+			) {
+		utentiLocaliService.deleteUtentiLocali(UtenteLocaleConverter.convertToUtentiLocali(utentiLocaliService.findByNomeLogin(username)).getNomeLogin());
+		return true;
+	} 	
 	
 	
 	
