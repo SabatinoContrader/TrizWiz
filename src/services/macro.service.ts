@@ -20,10 +20,8 @@ export class macroService{
     }
 
     readAll(ses:string):Observable<Array<Macro>>{
-        const params = new HttpParams().set('username', ses);
-        return this.http.get<Array<Macro>>('http://localhost:8080/Macro/read',params).
-        pipe(tap((response) => console.log("Utente"), catchError(this.handleError("login error", {})))
-        );
+        //const params = new HttpParams().set('username', ses);
+        return this.http.get<Array<Macro>>('http://localhost:8080/Macro/read?ses='+ses);    
     }
 
 
