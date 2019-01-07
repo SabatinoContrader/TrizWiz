@@ -1,18 +1,33 @@
 import { Injectable } from "@angular/core";
-import { Customer } from "src/models/Customer";
-import { Observable } from "rxjs";
-import { HttpParams, HttpClient } from "@angular/common/http";
-import { Listino } from "src/models/Listino";
+import {Observable, of, BehaviorSubject} from 'rxjs';
+import { tap, catchError } from 'rxjs/operators'
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Macro } from "src/models/Macro";
 
 
-@Injectable({
-    providedIn: 'root'
-})
-
+@Injectable({providedIn: 'root'})
 export class macroService{
 
     constructor(private http : HttpClient){}
 
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+            console.log(result);
+            console.error(error);
+            console.log('${operation} failed: ${error.message}');
+            return of(result as T);
+        };
+    }
+
+    readAll(ses:string):Observable<Array<Macro>>{
+        const params = new HttpParams().set('username', ses);
+        return this.http.get<Array<Macro>>('http://localhost:8080/Macro/read',params).
+        pipe(tap((response) => console.log("Utente"), catchError(this.handleError("login error", {})))
+        );
+    }
+
+
+    /*
     newListino(nomeListino:string, anno:string, idManufacturer:string):Observable<Listino>{
         const params = new HttpParams().set("nomeListino",nomeListino).set("anno",anno).set("idManufacturer",idManufacturer);
         console.log("anno ="+anno);
@@ -32,5 +47,5 @@ export class macroService{
         const params = new HttpParams().set("id",id).set("nomeListino",nomeListino).set("anno",anno);
         return this.http.post<Listino>("http://localhost:8080/Listino/edit", params)
     }
-   
+  */ 
 }

@@ -1,14 +1,14 @@
-import {Utente} from "./Utente"
+import {NewUtenteLocale} from "./NewUtenteLocale"
 export class Macro
 {
     idMacro: number; 
     tipologia: string;  
-    username:Utente;
+    username: NewUtenteLocale;
     
-    constructor(idMacro: number, tipologia: string, username:Utente)
+    constructor(idMacro: number, tipologia: string, username:NewUtenteLocale)
     {
         this.idMacro = idMacro;
         this.tipologia = tipologia;
-       this.username=username;
+        this.username = username;
     }
 }
