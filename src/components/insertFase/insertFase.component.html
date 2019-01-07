@@ -1,0 +1,29 @@
+<body>
+	<div class="select insertCustomer">
+            <img
+                src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
+                class="imgSuperUser">
+            <h1 >Inserisci Fase</h1>
+        </div>
+    <div class="login-form">
+            <form class="userForm" #f="ngForm">
+            <table class="insertTable">
+                <tr>
+                    <td><h2>Id Fase:</h2></td>
+                    <td><input type="text" class="form-control" id="idFase"
+                        name="idFase" placeholder="Inserisci Id Fase" ngModel></td>
+                </tr>
+                <tr>
+                    <td><h2>Tipologia:</h2></td>
+                    <td><input type="text" class="form-control" id="tipologia" name="tipologia"
+                        placeholder="Inserisci Tipologia" ngModel></td>
+                </tr>
+                
+            </table>
+            <button class="registerButton" type="submit" (click)="register(f)">Register</button>
+    
+        </form>
+        
+</div>
+    </body>
+    

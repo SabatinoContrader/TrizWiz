@@ -73,6 +73,13 @@ import { InsertMacroComponent } from 'src/components/insertMacro/insertMacro.com
 import { DeleteMacroComponent } from 'src/components/deleteMacro/deleteMacro.component';
 import { UpdateMacroComponent } from 'src/components/updateMacro/updateMacro.component';
 import { ReadMacroComponent } from 'src/components/readMacro/readMacro.component';
+import { GestioneFaseComponent } from 'src/components/gestioneFase/gestioneFase.component';
+import { InsertFaseComponent } from 'src/components/insertFase/insertFase.component';
+import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
+import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
+import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
+
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -147,6 +154,15 @@ const routes: Routes = [
   {path: 'deleteMacro', component:DeleteMacroComponent},
   {path: 'updateMacro', component:UpdateMacroComponent},
   {path: 'readMacro', component:ReadMacroComponent},
+
+  {path: 'gestioneFase', component:GestioneFaseComponent},
+  {path: 'insertFase', component:InsertFaseComponent},
+  {path: 'readFase', component:ReadFaseComponent},
+  {path: 'updateFase', component:UpdateFaseComponent},
+  {path: 'deleteFase', component:DeleteFaseComponent},
+
+
+
 
   {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
 ];

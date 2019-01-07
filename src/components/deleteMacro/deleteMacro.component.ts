@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SuperuserService } from "src/services/superuser.service";
 
 @Component({
-    selector: 'app-superuser',
+    selector: 'app-deleteMacro',
     templateUrl: './deleteMacro.component.html',
     styleUrls: ['./deleteMacro.component.css']
   })

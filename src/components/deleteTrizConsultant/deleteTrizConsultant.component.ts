@@ -33,4 +33,8 @@ export class DeleteTrizConsultantComponent implements OnInit{
               }
         });
     }
+
+    indietro(i:NgForm) {
+        this.router.navigateByUrl("/superuser");
+    }
 }

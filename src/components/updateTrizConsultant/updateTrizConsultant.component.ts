@@ -37,4 +37,7 @@ export class UpdateTrizConsultantComponent implements OnInit{
         this.utentiLocaliService.update(this.username,this.field,this.newValue).subscribe((response) => {
             this.router.navigateByUrl("/superuser");
         });
+    }
+    indietro(i:NgForm) {
+        this.router.navigateByUrl("/superuser");
     }}

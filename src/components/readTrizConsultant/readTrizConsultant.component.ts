@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CustomerService } from "src/services/customer.service";
 import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
 import { NewUtenteLocale } from "src/models/NewUtenteLocale";
 import { utentiLocaliService } from "src/services/utentiLocali.service";
 
@@ -20,5 +21,9 @@ export class ReadTrizConsultantComponent implements OnInit{
         this.utentiLocaliService.readAll().subscribe((response) => {
             this.utenti = response;
         });
+    }
+
+    indietro(i:NgForm) {
+        this.router.navigateByUrl("/superuser");
     }
 }

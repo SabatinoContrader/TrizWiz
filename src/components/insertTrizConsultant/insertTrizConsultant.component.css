@@ -36,6 +36,18 @@ body {
 	margin-right: 5%;
 	margin-left:21%;
 }
+
+.indietro{
+	background: #435261 none repeat scroll 0 0;
+    border-color: #fefefe;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 10%;
+    height: 5%;
+    margin-left: 2%;
+}
+
 .insertCustomer{
 	margin-left:25%; 
 	display: flex;

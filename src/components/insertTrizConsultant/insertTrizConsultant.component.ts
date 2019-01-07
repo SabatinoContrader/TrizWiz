@@ -27,4 +27,8 @@ import { utentiLocaliService } from "src/services/utentiLocali.service";
     });
   
     }
+
+    indietro(i:NgForm) {
+      this.router.navigateByUrl("/superuser");
+  }
   }

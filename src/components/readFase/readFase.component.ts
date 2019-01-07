@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { SuperuserService } from "src/services/superuser.service";
 
 @Component({
-    selector: 'app-insertMacro',
-    templateUrl: './insertMacro.component.html',
-    styleUrls: ['./insertMacro.component.css']
+    selector: 'app-readFase',
+    templateUrl: './readFase.component.html',
+    styleUrls: ['./readFase.component.css']
   })
-  export class InsertMacroComponent implements OnInit{
+  export class ReadFaseComponent implements OnInit{
     constructor(private superuserService: SuperuserService ){
 
     }

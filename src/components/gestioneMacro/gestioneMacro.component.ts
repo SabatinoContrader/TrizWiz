@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SuperuserService } from "src/services/superuser.service";
 
 @Component({
-    selector: 'app-superuser',
+    selector: 'app-gestioneMacro',
     templateUrl: './gestioneMacro.component.html',
     styleUrls: ['./gestioneMacro.component.css']
   })

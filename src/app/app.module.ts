@@ -97,6 +97,11 @@ import { InsertMacroComponent } from '../components/insertMacro/insertMacro.comp
 import { ReadMacroComponent } from '../components/readMacro/readMacro.component';
 import { UpdateMacroComponent } from '../components/updateMacro/updateMacro.component';
 import { macroService } from '../services/macro.service';
+import { GestioneFaseComponent } from 'src/components/gestioneFase/gestioneFase.component';
+import { InsertFaseComponent } from 'src/components/insertFase/insertFase.component';
+import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
+import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
+import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
 
 @NgModule({
   declarations: [
@@ -171,7 +176,13 @@ import { macroService } from '../services/macro.service';
     DeleteMacroComponent,
     InsertMacroComponent,
     ReadMacroComponent,
-    UpdateMacroComponent
+    UpdateMacroComponent,
+    GestioneFaseComponent,
+    InsertFaseComponent,
+    ReadFaseComponent,
+    UpdateFaseComponent,
+    DeleteFaseComponent,
+
   ],
   imports: [
     BrowserModule,
