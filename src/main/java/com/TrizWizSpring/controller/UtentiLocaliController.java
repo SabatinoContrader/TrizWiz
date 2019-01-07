@@ -73,7 +73,7 @@ public class UtentiLocaliController  {
 	
 	@CrossOrigin
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
-	public List<NewUtenteLocaleDTO> readAll(){
+	public List<NewUtenteLocaleDTO> getAll(){
 		List<NewUtenteLocaleDTO> utente = utentiLocaliService.readAll();
 		return utente;
 	}

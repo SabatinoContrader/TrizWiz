@@ -57,6 +57,7 @@ public class MacroService {
 		List<Macro> macro = new ArrayList<>();
 		List<MacroDTO> toReturn = new ArrayList<>();
 		utentiLocali usernameo = this.utentiLoginDAO.findByNomeLogin(username);
+		System.out.println("Utente "+usernameo.getNomeLogin());
 		macro = macroDAO.findByUsername(usernameo);
 		macro.forEach(m -> toReturn.add(MacroConverter.convertToDto(m)));
 		System.out.println("----------------------------------->" + macro.size());
