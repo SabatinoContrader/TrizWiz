@@ -33,6 +33,13 @@ export class macroService{
     }
 
 
+    delete(username:string, ses:string):Observable<boolean>{
+        const params = new HttpParams().set('username', username).set('ses',ses); //passo idMacro->username
+        console.log("anche qui");                                                 //sessione->ses
+        return this.http.post<boolean>('http://localhost:8080/Macro/delete',params);
+    }
+
+
     /*
     newListino(nomeListino:string, anno:string, idManufacturer:string):Observable<Listino>{
         const params = new HttpParams().set("nomeListino",nomeListino).set("anno",anno).set("idManufacturer",idManufacturer);

@@ -6,20 +6,17 @@
 		<h1>Elimina Listino</h1>
     </div>
 <div class="delete">
-	<h2>Seleziona l'id del listino da eliminare</h2>
+	<h2>Seleziona l'id della macro fase da eliminare</h2>
 	<form #f="ngForm">
 		<div  class="idCustomer"><h2>
-			Id listino: </h2>
+			Id Macro: </h2>
             <div >
                 <select class="select" name="idSelected" ngModel="idSelected">
-                    <option *ngFor="let lista of listino" [attr.value]="lista.id">{{lista.id}}</option>
+                    <option *ngFor="let macro of macro" [value]="macro.idMacro">{{macro.idMacro}}</option>
               </select>
 			</div>
 		</div>
-
-      
         <button class="deleteButton" style="border-radius: 10%" type = "submit"(click)="delete(f)"> Elimina</button>
-    
 	</form>
 	</div>
 </body>
