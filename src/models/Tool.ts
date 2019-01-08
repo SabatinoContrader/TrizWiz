@@ -1,14 +1,12 @@
-import {Macro} from "./Macro"
-export class Fase
-{
+
+export class Tool{
     id: number; 
     tipologia: string;  
-    idFase:Fase;
     
-    constructor(id: number, tipologia: string, idFase:Fase)
+    constructor(id: number, tipologia: string)
     {
         this.id = id;
         this.tipologia = tipologia;
-       this.idFase=idFase;
+
     }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { toolService } from "src/services/tool.service";
+import { Tool } from "src/models/Tool";
+import { jsonpCallbackContext } from "@angular/common/http/src/module";
+
 
 
 @Component({
@@ -9,15 +13,13 @@ import { Component, OnInit } from "@angular/core";
 
 
 export class ReadToolComponent implements OnInit{
-    toolService: any;
-    constructor( ){
+    
+    constructor( private toolService: toolService){
     }
-    public tool: Array<ReadToolComponent>;
+    public tool: Array<Tool>;
     
     ngOnInit(){
-        var ses=JSON.parse(sessionStorage.getItem('user')).nomeLogin;
-        console.log(ses);
-        this.toolService.readAll(ses).subscribe((response) => {
+        this.toolService.readAll().subscribe((response) => {
             this.tool = response;
             console.log(this.tool);
 

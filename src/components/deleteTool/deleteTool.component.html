@@ -12,14 +12,11 @@
 			Id tool: </h2>
             <div >
                 <select class="select" name="idSelected" ngModel="idSelected">
-                    <option *ngFor="let lista of tool" [attr.value]="lista.id">{{lista.id}}</option>
+                    <option *ngFor="let tool of tool" [value]="tool.idTool">{{tool.idTool}}</option>
               </select>
 			</div>
 		</div>
-
-      
         <button class="deleteButton" style="border-radius: 10%" type = "submit"(click)="delete(f)"> Elimina</button>
-    
 	</form>
 	</div>
 </body>

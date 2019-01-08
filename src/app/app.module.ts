@@ -87,7 +87,6 @@ import { UpdateManufacturerComponent } from '../components/updateManufacturer/up
 import { ReadListinoComponent } from '../components/readListino/readListino.component';
 import { DeleteListinoComponent } from '../components/deleteListino/deleteListino.component';
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
-import { PopolaListinoComponent } from 'src/components/popolaListino/popolaListino.component';
 import { PrezzoService } from '../services/prezzo.service';
 import { utentiLocaliService } from '../services/utentiLocali.service';
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
@@ -110,6 +109,11 @@ import { UpdateToolComponent } from 'src/components/updateTool/updateTool.compon
 import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
 import { toolService } from '../services/tool.service';
 import { faseService } from '../services/fase.service';
+import { SuperMenuService } from 'src/services/superMenu.service';
+import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component';
+import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
+import { ToolMenuService } from 'src/services/toolMenu.service';
+
 
 @NgModule({
   declarations: [
@@ -178,7 +182,6 @@ import { faseService } from '../services/fase.service';
     DeleteListinoComponent,
     UpdateListinoComponent,
     SelectManufacturerComponent,
-    PopolaListinoComponent,
     GestioneUtenteLocaleComponent,
     GestioneMacroComponent,
     DeleteMacroComponent,
@@ -195,7 +198,9 @@ import { faseService } from '../services/fase.service';
     ReadToolComponent,
     UpdateToolComponent,
     DeleteToolComponent,
-    DeleteFaseDueComponent
+    DeleteFaseDueComponent,
+    SuperMenuComponent,
+    ToolMenuComponent
     
 
   ],
@@ -245,7 +250,10 @@ import { faseService } from '../services/fase.service';
     utentiLocaliService,
     macroService,
     toolService,
-    faseService
+    faseService,
+    toolService, 
+    SuperMenuService,
+    ToolMenuService
 
   ],
   bootstrap: [AppComponent]

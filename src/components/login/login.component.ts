@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
         sessionStorage.setItem("user", JSON.stringify(this.utenteLocale));
        // this.router.navigateByUrl("/gestioneUtenteLocale");   
       if(response.ruolo==0)
-            this.router.navigateByUrl("/superuser");
+            this.router.navigateByUrl("/superMenu");
             else if(response.ruolo==1)
             this.router.navigateByUrl("/gestioneUtenteLocale");
             else if(response.ruolo<0||response.ruolo>1)

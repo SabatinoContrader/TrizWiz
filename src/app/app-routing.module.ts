@@ -64,7 +64,6 @@ import { UpdateManufacturerComponent } from '../components/updateManufacturer/up
 import { ReadListinoComponent } from '../components/readListino/readListino.component';
 import { DeleteListinoComponent } from '../components/deleteListino/deleteListino.component';
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
-import { PopolaListinoComponent } from '../components/popolaListino/popolaListino.component';
 
 
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
@@ -85,6 +84,8 @@ import { InsertToolComponent } from 'src/components/insertTool/insertTool.compon
 import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
 import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
 import { ReadToolComponent } from 'src/components/readTool/readTool.component';
+import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component';
+import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -152,7 +153,7 @@ const routes: Routes = [
   {path: 'deleteListino', component: DeleteListinoComponent},
   {path: 'updateListino', component: UpdateListinoComponent},
   {path: 'selectManufacturer/:buildingId', component: SelectManufacturerComponent},
-  {path: 'popolaListino', component:PopolaListinoComponent},
+  
 
   {path: 'gestioneMacro', component:GestioneMacroComponent},
   {path: 'insertMacro', component:InsertMacroComponent},
@@ -176,6 +177,8 @@ const routes: Routes = [
   {path: 'readTool', component:ReadToolComponent},
   {path: 'gestioneTool', component:GestioneToolComponent},
 
+  {path: 'superMenu', component:SuperMenuComponent},
+  {path: 'toolMenu', component:ToolMenuComponent},
   {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
 ];
 
