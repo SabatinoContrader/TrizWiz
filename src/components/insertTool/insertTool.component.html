@@ -1,0 +1,24 @@
+<body>
+	<div class="insertCustomer">
+            <img
+                src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
+                class="imgSuperUser">
+            <h1 >Inserisci il tool</h1>
+        </div>
+    <div class="login-form">
+            <form class="userForm" #f="ngForm">
+            <table class="insertTable">
+                <tr>
+                    <td><h2>Tipologia:</h2></td>
+                    <td><input type="text" class="form-control" id="tipologia"
+                        name="tipologia" placeholder="Inserisci Tipologia" ngModel></td>
+                </tr>
+                
+            </table>
+            <button class="registerButton" type="submit" (click)="register(f)">Register</button>
+    
+        </form>
+        
+</div>
+    </body>
+    

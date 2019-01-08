@@ -79,7 +79,11 @@ import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
 import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
 import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
 
-
+import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
+import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
+import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
+import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
+import { ReadToolComponent } from 'src/components/readTool/readTool.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -161,8 +165,11 @@ const routes: Routes = [
   {path: 'updateFase', component:UpdateFaseComponent},
   {path: 'deleteFase', component:DeleteFaseComponent},
 
-
-
+  {path: 'insertTool', component:InsertToolComponent},
+  {path: 'deleteTool', component:DeleteToolComponent},
+  {path: 'updateTool', component:UpdateToolComponent},
+  {path: 'readTool', component:ReadToolComponent},
+  {path: 'gestioneTool', component:GestioneToolComponent},
 
   {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
 ];

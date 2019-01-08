@@ -1,0 +1,24 @@
+<body>
+	<div class="readTrizConsultant">
+		<img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/user.png"
+			class="imgSuperUser">
+	<h1 style="text-align: center">Tool</h1>
+	</div>
+	<div class="readTable">
+		<table class="table">
+				<thead>
+					<tr>
+							<th>Id tool</th>
+                            <th>tipologia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let tool of tool">			
+							<td >{{tool.IdTool}}</td>
+                            <td >{{tool.tipologia}}</td>
+						</tr>
+				</tbody>
+		</table>
+		</div>
+		
+</body>

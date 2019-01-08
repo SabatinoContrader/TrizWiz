@@ -102,6 +102,12 @@ import { InsertFaseComponent } from 'src/components/insertFase/insertFase.compon
 import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
 import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
 import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
+import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
+import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
+import { ReadToolComponent } from 'src/components/readTool/readTool.component';
+import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
+import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
+import { toolService } from '../services/tool.service';
 
 @NgModule({
   declarations: [
@@ -182,6 +188,12 @@ import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.compon
     ReadFaseComponent,
     UpdateFaseComponent,
     DeleteFaseComponent,
+    GestioneToolComponent,
+    InsertToolComponent,
+    ReadToolComponent,
+    UpdateToolComponent,
+    DeleteToolComponent,
+    
 
   ],
   imports: [
@@ -228,7 +240,8 @@ import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.compon
     BuildingTreeManagerService,
     PrezzoService,
     utentiLocaliService,
-    macroService
+    macroService,
+    toolService
 
   ],
   bootstrap: [AppComponent]
