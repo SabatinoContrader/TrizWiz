@@ -4,7 +4,6 @@ export class Macro
     idMacro: number; 
     tipologia: string;  
     username: NewUtenteLocale;
-
     
     constructor(idMacro: number, tipologia: string, username:NewUtenteLocale)
     {

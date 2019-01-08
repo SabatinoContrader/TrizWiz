@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 import {Observable, of, BehaviorSubject} from 'rxjs';
 import { tap, catchError } from 'rxjs/operators'
 import { HttpClient, HttpParams } from "@angular/common/http";
+import { Customer } from "src/models/Customer";
+import { Listino } from "src/models/Listino";
+
 import { Macro } from "src/models/Macro";
 
 
@@ -9,7 +12,6 @@ import { Macro } from "src/models/Macro";
 export class macroService{
 
     constructor(private http : HttpClient){}
-
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
             console.log(result);
@@ -45,20 +47,29 @@ export class macroService{
         const params = new HttpParams().set("nomeListino",nomeListino).set("anno",anno).set("idManufacturer",idManufacturer);
         console.log("anno ="+anno);
         return this.http.post<Listino>("http://localhost:8080/Listino/insert", params)
+    newMacro(tipologia:string,nomeLogin:string):Observable<Macro>{
+        const params = new HttpParams().set("tipologia",tipologia).set("username",nomeLogin);
+        console.log("tipologia ="+tipologia);
+       // return this.http.post<Macro>("http://localhost:8080/Macro/insert", params)
+       return this.http.post<Macro>("http://localhost:8080/Macro/insert?tipologia="+tipologia+"&username="+nomeLogin, "");
+        
+    }
+     //   return this.http.post<Macro>("http://localhost:8080/Macro/insert?tipologia="+tipologia+"&username="+nomeLogin, "");
+    
+/*
+    readMacro():Observable<Array<Macro>>{
+        return this.http.get<Array<Macro>>("http://localhost:8080/Macro/read")
     }
 
-    readListino():Observable<Array<Listino>>{
-        return this.http.get<Array<Listino>>("http://localhost:8080/Listino/read")
+    delete(idMacro:number):Observable<boolean>{
+        const params = new HttpParams().set("idMacro",idMacro);
+        return this.http.post<boolean>("http://localhost:8080/Macro/delete",params)
     }
 
-    delete(id:string):Observable<boolean>{
-        const params = new HttpParams().set("id",id);
-        return this.http.post<boolean>("http://localhost:8080/Listino/delete",params)
+    edit(idMacro:string ,tipologia:string, username:string):Observable<Listino>{
+        const params = new HttpParams().set("idMacro",idMacro).set("tipologia",tipologia).set("username",username);
+        return this.http.post<Macro>("http://localhost:8080/Macro/edit", params)
     }
 
-    edit(id:string ,nomeListino:string, anno:string):Observable<Listino>{
-        const params = new HttpParams().set("id",id).set("nomeListino",nomeListino).set("anno",anno);
-        return this.http.post<Listino>("http://localhost:8080/Listino/edit", params)
-    }
   */ 
 }
