@@ -20,6 +20,7 @@ public interface MacroDAO extends CrudRepository<Macro, Long> {
 	public Macro findByTipologiaAndUsername(String tipologia, String username);
 
 	 public Macro findBytipologia(Macro macro);
+	 public Macro findByIdMacro(Macro macro);
 	 
 	 public List<Macro> findByUsername(utentiLocali username);
 	//public Macro findByTipologiaAndUsername(String tipologia, String username);

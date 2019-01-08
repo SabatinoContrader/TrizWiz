@@ -7,9 +7,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.TrizWizSpring.converter.MacroConverter;
 import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
 import com.TrizWizSpring.dao.utentiLoginDAO;
+import com.TrizWizSpring.dto.MacroDTO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
@@ -35,6 +37,9 @@ public class utentiLocaliService {
 		}
 		return -1;
 	}*/
+	public utentiLocaliDTO findByPrimaryKey(String nomeLogin) {
+		return UtenteLocaleConverter.convertToDto(utentiLoginDAO.findByNomeLogin(nomeLogin));
+	}
 	
 	public utentiLocaliDTO login(String username, String password) {
 		utentiLocali c = utentiLoginDAO.findByNomeLoginAndPasswordLogin(username, password);

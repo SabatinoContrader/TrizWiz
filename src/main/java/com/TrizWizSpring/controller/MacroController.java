@@ -19,11 +19,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TrizWizSpring.converter.MacroConverter;
+import com.TrizWizSpring.dto.LabelDTO;
 import com.TrizWizSpring.dto.MacroDTO;
+
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Macro;
 import com.TrizWizSpring.services.MacroService;
+
+import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
+import com.TrizWizSpring.dto.utentiLocaliDTO;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.model.utentiLocali;
 import com.TrizWizSpring.services.utentiLocaliService;
 
 @RestController
@@ -33,21 +42,42 @@ public class MacroController {
 
 	@Autowired
 	private MacroService MacroService;
-	
-	@Autowired
 	private utentiLocaliService utentiLocaliService;
 	
+	
+	
 	@Autowired
-	public MacroController(MacroService MacroService) {
+	public MacroController(MacroService MacroService,utentiLocaliService utentiLocaliService ) {
 	   this.MacroService=MacroService;
+	   this.utentiLocaliService=utentiLocaliService;
 	}
+	
 	
 	@CrossOrigin
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public List<MacroDTO> readAll(@RequestParam(value="ses")String username){
-		System.out.print("siamo nel back-end");
 		List<MacroDTO> macro = MacroService.getAll(username);
 		return macro;
+	}
+	@CrossOrigin
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public boolean delete(
+			@RequestParam(value="username", required=true) long username,
+			@RequestParam(value="ses", required=true) String ses
+	) {
+		/*Primo modo*/
+		System.out.println("back endddddd");
+		utentiLocaliDTO UtenteDTO=utentiLocaliService.findByPrimaryKey(ses);
+		MacroDTO MacroDTO = new MacroDTO();
+		MacroDTO= MacroService.findByPrimaryKey(username);
+		MacroDTO.setUsername(UtenteDTO);
+		MacroService.delete(MacroDTO);
+		
+		/* Secondo modo
+		MacroDTO MacroDTO = new MacroDTO();
+		MacroDTO= MacroService.findByPrimaryKey(username);
+		MacroService.DeleteD(MacroDTO, ses);*/
+		return true;
 	}
 	
 	@CrossOrigin

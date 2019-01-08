@@ -87,6 +87,14 @@ public class MacroService {
 	public MacroDTO findByPrimaryKey(long IdMacro) {
 		return MacroConverter.convertToDto(macroDAO.findOne(IdMacro));
 	}
+	public void DeleteD(MacroDTO Macro, String nomeLogin) {
+		System.out.println("nomeLogin = "+nomeLogin);
+		utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
+		Macro.setUsername(p);
+		//return macroDAO.save(MacroConverter.convertToMacro(Macro));
+		Macro b = MacroConverter.convertToMacro(Macro);
+		macroDAO.delete(b);
+	}
 
 
    public void update(MacroDTO newValues, String nomeLogin) {
