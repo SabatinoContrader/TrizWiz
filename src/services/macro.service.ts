@@ -4,6 +4,7 @@ import { tap, catchError } from 'rxjs/operators'
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Customer } from "src/models/Customer";
 import { Listino } from "src/models/Listino";
+import { Macro } from "src/models/Macro";
 
 import { Macro } from "src/models/Macro";
 
@@ -47,6 +48,7 @@ export class macroService{
         const params = new HttpParams().set("nomeListino",nomeListino).set("anno",anno).set("idManufacturer",idManufacturer);
         console.log("anno ="+anno);
         return this.http.post<Listino>("http://localhost:8080/Listino/insert", params)
+*/
     newMacro(tipologia:string,nomeLogin:string):Observable<Macro>{
         const params = new HttpParams().set("tipologia",tipologia).set("username",nomeLogin);
         console.log("tipologia ="+tipologia);
