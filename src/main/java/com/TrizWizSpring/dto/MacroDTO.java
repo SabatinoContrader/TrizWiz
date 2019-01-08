@@ -38,7 +38,7 @@ public class MacroDTO {
 		return username;
 	}
 
-	public void setUsername(utentiLocaliDTO Username) {
+	public void setUsername(utentiLocaliDTO username) {
 		this.username = username;
 	}
 

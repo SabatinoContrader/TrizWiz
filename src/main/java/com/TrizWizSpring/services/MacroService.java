@@ -108,6 +108,13 @@ public class MacroService {
 		//this.trizCustomerDAO.save(b);
 		macroDAO.delete(b);
 }
+  
+  public MacroDTO edit(MacroDTO macroDTO) {
+		Macro macro = MacroConverter.convertToMacro(macroDTO);
+		macroDAO.save(macro);
+		return MacroConverter.convertToDto(macroDAO.save(macro));
+	}
+
 
 		//List<trizcustomer> trizcustomer1=trizCustomerDAO.findByUsername(b);
 	/*	List<utentiLocali> utenteLocale = utentiLoginDAO.findByNomeLogin(b);
