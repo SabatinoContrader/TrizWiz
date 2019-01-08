@@ -24,6 +24,14 @@ export class macroService{
         return this.http.get<Array<Macro>>('http://localhost:8080/Macro/read?ses='+ses);    
     }
 
+    edit(idMacro:string ,tipologia:string, ses:string):Observable<Macro>{
+        console.log("MacroID2:"+idMacro);
+
+        const param = new HttpParams().set("idMacro",idMacro).set("tipologia",tipologia).set("nome", ses);
+       // return this.http.post<Macro>("http://localhost:8080/Macro/edit?idMacro="+idMacro+"&tipologia="+tipologia+"&nome="+ses);
+        return this.http.post<Macro>("http://localhost:8080/Macro/edit", param);
+    }
+
 
     /*
     newListino(nomeListino:string, anno:string, idManufacturer:string):Observable<Listino>{

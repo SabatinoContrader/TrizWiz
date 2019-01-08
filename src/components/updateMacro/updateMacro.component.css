@@ -9,7 +9,7 @@ body {
 	padding:10px;
 }
 
-.deleteCustomer{
+.deleteMacro{
     padding-left:30%; 
    display: flex;
    align-items: center;
@@ -46,7 +46,7 @@ margin-top:4%;
 margin-left: 20%;
 }
 
-.readCustomer{
+.readMacro{
 	padding-left:37%; 
 	display: flex;
 	align-items: center;

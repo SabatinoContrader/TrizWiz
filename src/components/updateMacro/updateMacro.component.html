@@ -1,21 +1,16 @@
 <body>
-    <div class="deleteCustomer">
-		<img src="https://image.flaticon.com/icons/png/512/1155/1155556.png"
-			class="imgSuperUser">
-		<h1>Modifica il tuo listino</h1>
+    <div class="deleteMacro">
+		<h1>Elenco Macrofase da modificare</h1>
     </div>
     <div>
     	<div class="thingDiv" style="margin-top: -3%">
-			<table class="readCustomer">
+			<table class="readMacro">
 			<tr>
-				<th>id</th>
-				<th>nome listino</th>
-				<th>anno</th>
+                
+               <th> </th>
 			</tr>
-            	<tr *ngFor= "let lista of listino">
-				<td>{{lista.id}}</td>
-				<td>{{lista.nomeListino}}</td>
-				<td>{{lista.anno}}</td>
+            	<tr *ngFor= "let macroFase of macro">
+				<th>Id Macro Fase: {{macroFase.idMacro}} and Tipologia: {{macroFase.tipologia}}</th>
 			</tr>
             </table>     
     </div>   
@@ -24,20 +19,15 @@
                     <form #f=ngForm >
                         <table>
                             <tr>
-                                <td><h2>Id Listino:</h2></td>
-                                <td><select name="idselected" ngModel="idselected">
-                                        <option *ngFor="let lista of listino" [attr.value]="lista.id">{{lista.id}}</option>
+                                <td><h2>Id Macrofase da Modificare:</h2></td>
+                                <td><select name="idMacro" ngModel="idMacro">
+                                        <option *ngFor="let macroFase of macro" [attr.value]="macroFase.idMacro">{{macroFase.idMacro}}</option>
                                 </select></td>
                             </tr>
                             <tr>
-                                <td><h2>Inserire nome listino:</h2></td>
-                                <td><input type="text" name="newNomeListino"
-                                    placeholder="inserire nome listino" ngModel></td>
-                            </tr>
-                            <tr>
-                                <td><h2>Inserire anno:</h2></td>
-                                <td><input type="text" name="newAnno"
-                                    placeholder="inserire anno" ngModel></td>
+                                <td><h2>Modifica Tipologia</h2></td>
+                                <td><input type="text" name="newTipologia"
+                                    placeholder="inserire Tipologia" ngModel></td>
                             </tr>
                                 
                         </table>
