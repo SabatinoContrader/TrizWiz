@@ -6,7 +6,6 @@ import { Customer } from "src/models/Customer";
 import { Listino } from "src/models/Listino";
 import { Macro } from "src/models/Macro";
 
-import { Macro } from "src/models/Macro";
 
 
 @Injectable({providedIn: 'root'})
