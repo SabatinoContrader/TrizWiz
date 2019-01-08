@@ -34,4 +34,4 @@ import { Router, ROUTER_CONFIGURATION } from "@angular/router";
     });
   }
 
-  
+}
