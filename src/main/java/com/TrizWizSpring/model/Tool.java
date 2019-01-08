@@ -37,10 +37,10 @@ public class Tool {
 	@Column (length = 45)
 	@NotNull
 	private String tipologia;
-	
+/*	
 	@ManyToOne
 	@JoinColumn (name = "fase")
 	@OnDelete(action=OnDeleteAction.CASCADE)
     private Fase fase;
-
+*/
 }

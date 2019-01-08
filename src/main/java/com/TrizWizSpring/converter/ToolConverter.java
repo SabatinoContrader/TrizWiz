@@ -10,7 +10,6 @@ public class ToolConverter {
 		ToolDTO toolDTO= new ToolDTO();
 		toolDTO.setIdTool(t.getIdTool());
 		toolDTO.setTipologia(t.getTipologia());
-		toolDTO.setFase(FaseConverter.convertToDto(t.getFase()));
 		return toolDTO;
 			}
 	
@@ -18,7 +17,7 @@ public class ToolConverter {
 		Tool tool= new Tool();
 		tool.setIdTool(t.getIdTool());
 		tool.setTipologia(t.getTipologia());
-		tool.setFase(FaseConverter.convertToFase(t.getFase()));
+		//tool.setFase(FaseConverter.convertToFase(t.getFase()));
 		return tool;
 	}
 }

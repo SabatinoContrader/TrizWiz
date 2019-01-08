@@ -67,7 +67,7 @@ public class MacroService {
 
 	}
 	
-	public MacroDTO insert(MacroDTO macroDTO) { 		// ListinoDTO1 è il return al Controller, ListinoDTO2 è quello che il controller passa
+	public MacroDTO insert(MacroDTO macroDTO) { 	
 		Macro macro = MacroConverter.convertToMacro(macroDTO);
 		macroDAO.save(macro);
 		return MacroConverter.convertToDto(macroDAO.save(macro));

@@ -28,7 +28,6 @@ public interface ToolDAO extends CrudRepository<Tool, Long> {
 //	 public List<Label> findByUsername(Item item);
 	// public Label findByNome(Item item);
 
-	public List<Tool> findByFase(Fase fase);
 
 }
 
