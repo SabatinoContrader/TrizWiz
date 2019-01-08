@@ -12,7 +12,7 @@ public interface FaseDAO extends CrudRepository<Fase, Long> {
 	
 	public FaseDAO findByTipologia(String tipologia);
 
-	public List<Fase> findByMacro(Macro Macro);
+	public List<Fase> findByMacro(Macro macro);
 	public List<Fase> findAll();
 	
    public Fase findByIdFase(long idFase);
