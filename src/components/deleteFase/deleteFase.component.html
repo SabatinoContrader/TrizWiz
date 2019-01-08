@@ -1,25 +1,38 @@
 <body>
-	<div class="deleteCustomer">
+	<div class="deleteFase">
 		<img
 			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
 			class="imgSuperUser">
-		<h1>Elimina Listino</h1>
+		<h1>Elimina Fase</h1>
     </div>
 <div class="delete">
-	<h2>Seleziona l'id del listino da eliminare</h2>
+	<h2>Seleziona l'id della della Macrofase per scegliere la fase da eliminare</h2>
 	<form #f="ngForm">
-		<div  class="idCustomer"><h2>
-			Id listino: </h2>
+		<div  class="idFase"><h2>
+			Id Macro Fase: </h2>
             <div >
-                <select class="select" name="idSelected" ngModel="idSelected">
-                    <option *ngFor="let lista of listino" [attr.value]="lista.id">{{lista.id}}</option>
+                <select class="select" name="idMacroFase" ngModel="idMacroFase">
+                    <option *ngFor="let macroFase of macro" [value]="macroFase.idMacro">{{macroFase.idMacro}}</option>
               </select>
 			</div>
 		</div>
 
       
-        <button class="deleteButton" style="border-radius: 10%" type = "submit"(click)="delete(f)"> Elimina</button>
+        <button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="delete(f)"> Seleziona</button>
     
 	</form>
 	</div>
+
+	
+    	<div class="thingDiv" style="margin-top: -3%">
+			<table class="readMacro">
+			<tr>
+                
+               <th> </th>
+			</tr>
+            	<tr *ngFor= "let macroFase of macro">
+				<th>Id Macro Fase: {{macroFase.idMacro}} and Tipologia: {{macroFase.tipologia}}</th>
+			</tr>
+            </table>     
+      </div>
 </body>

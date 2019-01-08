@@ -78,6 +78,7 @@ import { InsertFaseComponent } from 'src/components/insertFase/insertFase.compon
 import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
 import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
 import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
+import { DeleteFaseDueComponent } from 'src/components/deleteFaseDue/deleteFaseDue.component';
 
 import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
 import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
@@ -164,7 +165,11 @@ const routes: Routes = [
   {path: 'readFase', component:ReadFaseComponent},
   {path: 'updateFase', component:UpdateFaseComponent},
   {path: 'deleteFase', component:DeleteFaseComponent},
-
+  {path: 'deleteFaseDue', component:DeleteFaseDueComponent},
+  {path: 'deleteFase/delete/:idFase', component: DeleteFaseComponent},
+  //nomeComponent/nomeMetodoComponent/:nomeVariabileGlobale
+  {path: 'deleteFaseDue/:idFase', component: DeleteFaseDueComponent},
+  //nomeComponent/:nomeVariabileGlobale
   {path: 'insertTool', component:InsertToolComponent},
   {path: 'deleteTool', component:DeleteToolComponent},
   {path: 'updateTool', component:UpdateToolComponent},

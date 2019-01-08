@@ -1,0 +1,38 @@
+<body>
+	<div class="deleteFase">
+		<img
+			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
+			class="imgSuperUser">
+		<h1>Elimina Fase</h1>
+    </div>
+<div class="delete">
+	<h2>Seleziona l'id della della Fase da eliminare</h2>
+	<form #f="ngForm">
+		<div  class="idFase"><h2>
+			Id Fase: </h2>
+            <div >
+                <select class="select" name="idFase" ngModel="idFase">
+                    <option *ngFor="let fase of fase" [value]="fase.idFase">{{fase.idFase}}</option>
+              </select>
+			</div>
+		</div>
+
+      
+        <button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="delete(f)"> Elimina</button>
+    
+	</form>
+	</div>
+
+	
+    	<div class="thingDiv" style="margin-top: -3%">
+			<table class="readMacro">
+			<tr>
+                
+               <th> </th>
+			</tr>
+            	<tr *ngFor= "let fase of fase">
+				<th>Id Fase: {{fase.idFase}} and Tipologia: {{fase.tipologia}}</th>
+			</tr>
+            </table>     
+      </div>
+</body>
