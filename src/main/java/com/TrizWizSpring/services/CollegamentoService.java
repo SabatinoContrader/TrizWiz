@@ -18,7 +18,7 @@ import com.TrizWizSpring.model.Tool;
 
 
 public class CollegamentoService {
-	
+/*	
 	private static final String FaseService = null;
 	private static final String ToolService = null;
 	@Autowired
@@ -59,6 +59,7 @@ public class CollegamentoService {
 	public List<LabelDTO> getAll(long attribute) {
 		return (List<LabelDTO>) LabelConverter.convertToDto(labelDAO.findByIdLabels(attribute));
 	}*/
+	/*
 	
 	public List<CollegamentoDTO> readFase(long idFase) {
 		List<Collegamento> collegamento = new ArrayList<>();
@@ -125,5 +126,5 @@ public class CollegamentoService {
 	}
 	
 	
-
+*/
 }

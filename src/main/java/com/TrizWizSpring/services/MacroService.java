@@ -11,6 +11,7 @@ import com.TrizWizSpring.controller.TrizCustomerController;
 import com.TrizWizSpring.converter.BuildingConverter;
 import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.MacroConverter;
+import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 //import com.TrizWizSpring.converter.MacroConverter;
 import com.TrizWizSpring.converter.TrizCustomerConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
@@ -21,6 +22,7 @@ import com.TrizWizSpring.dao.utentiLoginDAO;
 import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.CustomerDTO;
 import com.TrizWizSpring.dto.MacroDTO;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
@@ -65,25 +67,31 @@ public class MacroService {
 
 	}
 	
-	public void insertMacro(MacroDTO Macro) {
-		System.out.println(Macro.getIdMacro() + Macro.getTipologia() );
-		macroDAO.save(MacroConverter.convertToMacro(Macro));
+	public MacroDTO insert(MacroDTO macroDTO) { 		// ListinoDTO1 è il return al Controller, ListinoDTO2 è quello che il controller passa
+		Macro macro = MacroConverter.convertToMacro(macroDTO);
+		macroDAO.save(macro);
+		return MacroConverter.convertToDto(macroDAO.save(macro));
+	}
 	
-}
+	public MacroDTO insertMacro (MacroDTO macro) {
+		return MacroConverter.convertToDto(macroDAO.save(MacroConverter.convertToMacro(macro)));
+	}
 	
-	public Macro create(MacroDTO Macro, String nomeLogin) {
-		System.out.println("nomeLogin = "+nomeLogin);
-		//utentiLocali c = this.utentiLoginDAO.findByNomeLogin(nomeLogin);
+	/*
+	public Macro create(MacroDTO macro, String nomeLogin) {
+		//System.out.println("nomeLogin = "+nomeLogin);
+		utentiLocali c = this.utentiLoginDAO.findByNomeLogin(nomeLogin);
 		//System.out.println("c = "+c.getNomeLogin()+ ""+c.getPasswordLogin()+""+c.getRuolo());
-		//trizcustomer.setUsername(UtenteLocaleConverter.convertToDto(c));
+		macro.setUsername(UtenteLocaleConverter.convertToutentiLocali(c));
 		//utentiLocaliDTO p=UtenteLocaleConverter.convertToDto(c);
 		//System.out.println("p = "+p.getnomeLogin());
-		utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
-		System.out.println("utenteDTO= "+p.getNomeLogin()+ ""+p.getNome()+ ""+p.getCognome());
-		Macro.setUsername(p);
-		return macroDAO.save(MacroConverter.convertToMacro(Macro));
+		//utentiLocaliDTO p= this.utentiLocaliService.searchUtentiLocali(nomeLogin);
+		//System.out.println("utenteDTO= "+p.getNomeLogin()+ ""+p.getNome()+ ""+p.getCognome());
+		//Macro.setUsername(p);
+		return macroDAO.save(MacroConverter.convertToMacro(macro));
 
-	}
+	}*/
+	
 	public MacroDTO findByPrimaryKey(long IdMacro) {
 		return MacroConverter.convertToDto(macroDAO.findOne(IdMacro));
 	}

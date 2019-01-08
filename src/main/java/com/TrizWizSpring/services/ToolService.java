@@ -36,6 +36,7 @@ import com.TrizWizSpring.model.Tool;
 
 
 public class ToolService {
+	/*
 	
 	private static final String FaseService = null;
 	
@@ -73,7 +74,7 @@ public class ToolService {
 	public List<LabelDTO> getAll(long attribute) {
 		return (List<LabelDTO>) LabelConverter.convertToDto(labelDAO.findByIdLabels(attribute));
 	}*/
-	
+	/*
 	public List<ToolDTO> readToolFase(long idFase) {
 		List<Tool> tool = new ArrayList<>();
 		List<ToolDTO> toReturn = new ArrayList<>();
@@ -121,6 +122,6 @@ public class ToolService {
 		return ToolConverter.convertToDto(toolDAO.findByIdTool(idTool));
 	}
 
-	
+	*/
 
 }

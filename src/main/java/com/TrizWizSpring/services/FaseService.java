@@ -53,7 +53,7 @@ public class FaseService {
 		}
 		return -1;
 	} */
-
+/*
 	public void insertItem(FaseDTO fase, long idMacro) {
 
 		MacroDTO p= this.MacroService.findByPrimaryKey(idMacro);

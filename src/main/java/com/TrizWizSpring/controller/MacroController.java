@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.hibernate.type.LongType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,18 +20,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.TrizWizSpring.converter.MacroConverter;
 import com.TrizWizSpring.dto.LabelDTO;
 import com.TrizWizSpring.dto.MacroDTO;
-
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Macro;
 import com.TrizWizSpring.services.MacroService;
-
 import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.model.utentiLocali;
+import com.TrizWizSpring.dto.MacroDTO;
+import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
+import com.TrizWizSpring.dto.utentiLocaliDTO;
+import com.TrizWizSpring.model.Macro;
+import com.TrizWizSpring.model.utentiLocali;
+import com.TrizWizSpring.services.MacroService;
 import com.TrizWizSpring.services.utentiLocaliService;
 
 @RestController
@@ -43,8 +46,6 @@ public class MacroController {
 	@Autowired
 	private MacroService MacroService;
 	private utentiLocaliService utentiLocaliService;
-	
-	
 	
 	@Autowired
 	public MacroController(MacroService MacroService,utentiLocaliService utentiLocaliService ) {
@@ -92,13 +93,32 @@ public class MacroController {
 		macroDTO.setTipologia(tipologia);
 		utentiLocaliDTO user= this.utentiLocaliService.searchUtentiLocali(username);
 		macroDTO.setUsername(user);
-		
 		System.out.println("ciaoooooooooooo"+macroDTO.getUsername().getNomeLogin());
 		MacroService.edit(macroDTO);
 		//System.out.println("ciaoooooooooooo");
-
 		return macroDTO;
-	}
+		}
+	
+	
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	@CrossOrigin
+	public MacroDTO newMacro (
+			@RequestParam( "tipologia") String tipologia,
+			@RequestParam( "username") String username, Model model
+			) 
+			
+	{
+		//System.out.println("tipolo "+ tipologia);
+
+		//int newAnno= Integer.parseInt(anno);
+		
+		MacroDTO myMacroDTO = new MacroDTO();
+		myMacroDTO.setTipologia(tipologia);
+		utentiLocaliDTO user=this.utentiLocaliService.searchUtentiLocali(username);
+		//System.out.println("tipoloooooooo "+ user.getNomeLogin());
+	    myMacroDTO.setUsername(user);
+       return MacroService.insert(myMacroDTO);
+}
 
 	
 }

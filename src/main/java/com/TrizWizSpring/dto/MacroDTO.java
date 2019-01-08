@@ -1,5 +1,6 @@
 package com.TrizWizSpring.dto;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
+import com.TrizWizSpring.model.utentiLocali;
 
 public class MacroDTO {
 	
@@ -44,7 +45,7 @@ public class MacroDTO {
 
 	@Override
 	public String toString() {
-		return "MacroDTO [idMacro=" + idMacro + ", tipologia=" + tipologia + ", username=" + username + "]";
+		return "MacroDTO [idMacro=" + idMacro + ", tipologia=" + tipologia + "username=" +username + "]";
 	}
 	
 }
