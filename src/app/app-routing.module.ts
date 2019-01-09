@@ -64,8 +64,6 @@ import { UpdateManufacturerComponent } from '../components/updateManufacturer/up
 import { ReadListinoComponent } from '../components/readListino/readListino.component';
 import { DeleteListinoComponent } from '../components/deleteListino/deleteListino.component';
 import { UpdateListinoComponent } from '../components/updateListino/updateListino.component';
-
-
 import { GestioneUtenteLocaleComponent } from '../components/gestioneUtenteLocale/gestioneUtenteLocale.component';
 import { GestioneMacroComponent } from 'src/components/gestioneMacro/gestioneMacro.component';
 import { InsertMacroComponent } from 'src/components/insertMacro/insertMacro.component';
@@ -78,14 +76,13 @@ import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
 import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
 import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
 import { DeleteFaseDueComponent } from 'src/components/deleteFaseDue/deleteFaseDue.component';
-
 import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
 import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
-import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
 import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
 import { ReadToolComponent } from 'src/components/readTool/readTool.component';
 import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component';
 import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
+import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -153,14 +150,11 @@ const routes: Routes = [
   {path: 'deleteListino', component: DeleteListinoComponent},
   {path: 'updateListino', component: UpdateListinoComponent},
   {path: 'selectManufacturer/:buildingId', component: SelectManufacturerComponent},
-  
-
   {path: 'gestioneMacro', component:GestioneMacroComponent},
   {path: 'insertMacro', component:InsertMacroComponent},
   {path: 'deleteMacro', component:DeleteMacroComponent},
   {path: 'updateMacro', component:UpdateMacroComponent},
   {path: 'readMacro', component:ReadMacroComponent},
-
   {path: 'gestioneFase', component:GestioneFaseComponent},
   {path: 'insertFase', component:InsertFaseComponent},
   {path: 'readFase', component:ReadFaseComponent},
@@ -173,13 +167,12 @@ const routes: Routes = [
   //nomeComponent/:nomeVariabileGlobale
   {path: 'insertTool', component:InsertToolComponent},
   {path: 'deleteTool', component:DeleteToolComponent},
-  {path: 'updateTool', component:UpdateToolComponent},
   {path: 'readTool', component:ReadToolComponent},
   {path: 'gestioneTool', component:GestioneToolComponent},
-
   {path: 'superMenu', component:SuperMenuComponent},
   {path: 'toolMenu', component:ToolMenuComponent},
-  {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent}
+  {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent},
+  {path: 'updateTool', component:UpdateToolComponent}, /////update tool
 ];
 
 @NgModule({

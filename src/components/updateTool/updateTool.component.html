@@ -2,21 +2,19 @@
     <div class="deleteCustomer">
 		<img src="https://image.flaticon.com/icons/png/512/1155/1155556.png"
 			class="imgSuperUser">
-		<h1>Modifica il tuo listino</h1>
+		<h1>Modifica la tua tipologia</h1>
     </div>
     <div>
     	<div class="thingDiv" style="margin-top: -3%">
 			<table class="readCustomer">
 			<tr>
-				<th>id</th>
-				<th>nome listino</th>
-				<th>anno</th>
+				<th>id Tool</th>
+				<th>Tipologia</th>
 			</tr>
-            	<tr *ngFor= "let lista of listino">
-				<td>{{lista.id}}</td>
-				<td>{{lista.nomeListino}}</td>
-				<td>{{lista.anno}}</td>
-			</tr>
+            	<tr *ngFor= "let tool of tool">
+				<td>{{tool.idTool}}</td>
+				<td>{{tool.tipologia}}</td>
+		    </tr>
             </table>     
     </div>   
                    
@@ -24,22 +22,16 @@
                     <form #f=ngForm >
                         <table>
                             <tr>
-                                <td><h2>Id Listino:</h2></td>
+                                <td><h2>Id Tool:</h2></td>
                                 <td><select name="idselected" ngModel="idselected">
-                                        <option *ngFor="let lista of listino" [attr.value]="lista.id">{{lista.id}}</option>
+                                        <option *ngFor="let tool of tool" [value]="tool.idTool">{{tool.idTool}}</option>
                                 </select></td>
                             </tr>
                             <tr>
-                                <td><h2>Inserire nome listino:</h2></td>
-                                <td><input type="text" name="newNomeListino"
-                                    placeholder="inserire nome listino" ngModel></td>
+                                <td><h2>Inserire nuova tipologia:</h2></td>
+                                <td><input type="text" name="newTipologia"
+                                    placeholder="inserire nome tipologia" ngModel></td>
                             </tr>
-                            <tr>
-                                <td><h2>Inserire anno:</h2></td>
-                                <td><input type="text" name="newAnno"
-                                    placeholder="inserire anno" ngModel></td>
-                            </tr>
-                                
                         </table>
                         <button class="deleteButton" type="submit" (click)="update(f)">Modifica</button>
                     </form>

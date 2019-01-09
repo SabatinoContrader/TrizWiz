@@ -105,7 +105,6 @@ import { DeleteFaseDueComponent } from 'src/components/deleteFaseDue/deleteFaseD
 import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
 import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
 import { ReadToolComponent } from 'src/components/readTool/readTool.component';
-import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
 import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
 import { toolService } from '../services/tool.service';
 import { faseService } from '../services/fase.service';
@@ -113,6 +112,7 @@ import { SuperMenuService } from 'src/services/superMenu.service';
 import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component';
 import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
 import { ToolMenuService } from 'src/services/toolMenu.service';
+import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
 
 
 @NgModule({
@@ -196,11 +196,12 @@ import { ToolMenuService } from 'src/services/toolMenu.service';
     GestioneToolComponent,
     InsertToolComponent,
     ReadToolComponent,
-    UpdateToolComponent,
     DeleteToolComponent,
     DeleteFaseDueComponent,
     SuperMenuComponent,
-    ToolMenuComponent
+    ToolMenuComponent,
+    UpdateToolComponent
+  
     
 
   ],
@@ -253,7 +254,7 @@ import { ToolMenuService } from 'src/services/toolMenu.service';
     faseService,
     toolService, 
     SuperMenuService,
-    ToolMenuService
+    ToolMenuService,
 
   ],
   bootstrap: [AppComponent]
