@@ -119,6 +119,7 @@ import { InsertCollegamentoComponent } from 'src/components/insertCollegamento/i
 import { DeleteCollegamentoComponent } from 'src/components/deleteCollegamento/deleteCollegamento.component';
 
 import { UpdateFaseDueComponent } from 'src/components/updateFaseDue/updateFaseDue.component';
+import { collegamentoService } from 'src/services/collegamento.service';
 
 
 
@@ -269,6 +270,7 @@ import { UpdateFaseDueComponent } from 'src/components/updateFaseDue/updateFaseD
     toolService, 
     SuperMenuService,
     ToolMenuService,
+    collegamentoService
 
   ],
   bootstrap: [AppComponent]

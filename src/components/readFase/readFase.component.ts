@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Fase } from "src/models/Fase";
-import { Macro } from "src/models/Macro";import { faseService } from "src/services/fase.service";
+import { Macro } from "src/models/Macro";
+import { faseService } from "src/services/fase.service";
 import { macroService } from "src/services/macro.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
