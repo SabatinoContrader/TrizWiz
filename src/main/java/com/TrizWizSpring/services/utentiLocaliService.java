@@ -16,12 +16,23 @@ import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.utentiLocali;
+import com.TrizWizSpring.model.Fase;
+import com.TrizWizSpring.model.Macro;
+import com.TrizWizSpring.dao.MacroDAO;
+import com.TrizWizSpring.converter.MacroConverter;
+import com.TrizWizSpring.model.Fase;
+import com.TrizWizSpring.dao.FaseDAO;
 
 @Service
 public class utentiLocaliService {
 	//@Autowired
 	
 	private utentiLoginDAO utentiLoginDAO;
+	
+	@Autowired
+	private MacroDAO macroDAO;
+	@Autowired
+	private FaseDAO faseDAO;
 
 	@Autowired
 	public utentiLocaliService(utentiLoginDAO utentiLoginDAO) {
@@ -97,6 +108,20 @@ public class utentiLocaliService {
 	
 	public void deleteUtentiLocali(String string) {
 		utentiLocali c = utentiLoginDAO.findByNomeLogin(string);
+		List <Macro> listaMacro= macroDAO.findByUsername(c);
+		for( Macro macro : listaMacro) {
+			Macro macroDelete= macro;
+			List <Fase> fasi= faseDAO.findByMacro(macroDelete);
+			for (Fase fase : fasi) {
+				fase.setMacro(null);
+				faseDAO.save(fase);
+				faseDAO.delete(fase);
+			}
+			macroDelete=null;
+			macro.setUsername(null);
+			macroDAO.save(macro);
+			macroDAO.delete(macro);
+		}
 		utentiLoginDAO.delete(c);
 	}
 	/*

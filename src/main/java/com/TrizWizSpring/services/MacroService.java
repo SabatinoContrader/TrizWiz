@@ -30,6 +30,8 @@ import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Macro;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
+import com.TrizWizSpring.model.Fase;
+import com.TrizWizSpring.dao.FaseDAO;
 
 
 @Service
@@ -41,6 +43,9 @@ public class MacroService {
     private utentiLoginDAO utentiLoginDAO;
 	@Autowired
 	private utentiLocaliService utentiLocaliService;
+	
+	@Autowired
+	private FaseDAO faseDAO;
     
 	public MacroService() {
 	}
@@ -120,6 +125,12 @@ public class MacroService {
 
   public void delete(MacroDTO toDestroy) {
 		Macro b = MacroConverter.convertToMacro(toDestroy);
+		List <Fase> fasi= faseDAO.findByMacro(b);
+		for (Fase fase : fasi) {
+			fase.setMacro(null);
+			faseDAO.save(fase);
+			faseDAO.delete(fase);
+		}
 		//b.setUsername(null);  	//metto a null la chiave esterna
 		//this.trizCustomerDAO.save(b);
 		macroDAO.delete(b);
