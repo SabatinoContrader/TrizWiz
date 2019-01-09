@@ -1,6 +1,6 @@
 package com.TrizWizSpring.dto;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
-import com.TrizWizSpring.model.utentiLocali;
+
 
 public class MacroDTO {
 	

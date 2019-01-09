@@ -46,6 +46,7 @@ public class FaseService {
 		this.faseDAO = faseDAO;
 	}
 	
+
 	
 	// INSERT
 	
@@ -59,6 +60,30 @@ public class FaseService {
 		return FaseConverter.convertToDto(faseDAO.save(FaseConverter.convertToFase(fase)));
 	}
 	
+
+	public List<FaseDTO> readFase(long idMacro) {
+		List<Fase> fase = new ArrayList<>();
+		List<FaseDTO> faseDTO = new ArrayList<>();
+		Macro macroId = this.MacroDAO.findOne(idMacro);
+		fase= faseDAO.findByMacro(macroId);
+		
+		fase.forEach(f -> faseDTO.add(FaseConverter.convertToDto(f)));
+		System.out.println("----------------------------------->" + fase.size());
+		return faseDTO;
+		
+	}
+	
+	public FaseDTO findByPrimaryKey(long idFase) {
+		return FaseConverter.convertToDto(faseDAO.findByIdFase(idFase));
+	}
+
+	public void delete(FaseDTO toDestroy) {
+		Fase b = FaseConverter.convertToFase(toDestroy);
+		//b.setUsername(null);  	//metto a null la chiave esterna
+		//this.trizCustomerDAO.save(b);
+		faseDAO.delete(b);
+}
+
 
 	/* public long login(String username, String password) {
 		Customer c = customerDAO.findByUsernameAndPassword(username, password);
@@ -96,25 +121,12 @@ public class FaseService {
 	public void deleteFase(Long idFase) {
 		Fase i = faseDAO.findOne(idFase);
 		faseDAO.delete(i);
-	}
-
-	public FaseDTO findByPrimaryKey(long idFase) {
-		return FaseConverter.convertToDto(faseDAO.findByIdFase(idFase));
-	}
+	}*/
 
 	
-	/*public List<FaseDTO> readFase(long idMacro) {
-		List<Fase> fase = new ArrayList<>();
-		List<FaseDTO> faseDTO = new ArrayList<>();
-		Macro macroId = this.MacroDAO.findOne(idMacro);
-		fase= faseDAO.findByIdFase(macroId);
-		
-		fase.forEach(f -> faseDTO.add(FaseConverter.convertToDto(f)));
-		System.out.println("----------------------------------->" + fase.size());
-		return faseDTO;
-		
-	}
-*/
+	
+	
+
 	/*public List<CustomerDTO> readInstallers() {
 		List<CustomerDTO> installers = new ArrayList<>();
 		customerDAO.findByUserRole(3).forEach(i -> installers.add(CustomerConverter.convertToDto(i)));

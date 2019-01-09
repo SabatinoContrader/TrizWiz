@@ -27,7 +27,7 @@ public class FaseController {
 	
 	
 	@Autowired
-	public FaseController(FaseService faseService,MacroService macroService ) {
+	public FaseController(FaseService faseService, MacroService macroService ) {
 	   this.faseService=faseService;
 	   this.macroService=macroService;
 	}
@@ -49,5 +49,28 @@ public class FaseController {
 }
 	
 
+	@CrossOrigin
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public List<FaseDTO> readAll(@RequestParam(value="ses")String ses){
+		
+		long idMacro=Long.parseLong(ses);
+		List<FaseDTO> fase = faseService.readFase(idMacro);
+		return fase;
 	}
+	
+	@CrossOrigin
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public boolean delete(
+			@RequestParam(value="idMacro", required=true) long idMacro,
+			@RequestParam(value="idFase", required=true) long idFase
+	) {
+		/*Primo modo*/
+		MacroDTO macroDTO=macroService.findByPrimaryKey(idMacro);
+		FaseDTO faseDTO = new FaseDTO();
+		faseDTO= faseService.findByPrimaryKey(idFase);
+		faseDTO.setMacro(macroDTO);
+		faseService.delete(faseDTO);
+		return true;
+	}
+}
 
