@@ -59,28 +59,22 @@ public class ToolController {
 		return true;
 	}
 	
-	/*
-	
 	
 	@CrossOrigin
 	@RequestMapping(value= "/edit", method = RequestMethod.POST)
-	public MacroDTO updateMacro(
-			@RequestParam(value = "idMacro")String idMacro,
-			@RequestParam(value = "tipologia")String tipologia,
-			@RequestParam(value = "nome")String username)
+	public ToolDTO updateTool(
+			@RequestParam(value = "id")String id,
+			@RequestParam(value = "tipologia")String tipologia)
 			{
-		long id= Long.parseLong(idMacro);
-		MacroDTO macroDTO = MacroService.findByPrimaryKey(id);
-		macroDTO.setTipologia(tipologia);
-		utentiLocaliDTO user= this.utentiLocaliService.searchUtentiLocali(username);
-		macroDTO.setUsername(user);
-		System.out.println("ciaoooooooooooo"+macroDTO.getUsername().getNomeLogin());
-		MacroService.edit(macroDTO);
-		//System.out.println("ciaoooooooooooo");
-		return macroDTO;
+
+		System.out.println("backkkkkkkkkkkkkk");
+		System.out.println(id+" er "+tipologia);
+		
+		long id1= Long.parseLong(id);
+		System.out.println(tipologia);
+		ToolDTO toolDTO = ToolService.findByPrimaryKey(id1); 	// ricerco il tool tramite l'id e lo metto in un dto e poi gli setto la nuova tipologia
+		toolDTO.setTipologia(tipologia);
+		ToolService.updateTool(toolDTO);
+		return toolDTO;
 		}
-	
-	
-	
-	*/
 }
