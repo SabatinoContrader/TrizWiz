@@ -39,6 +39,9 @@ import { ActivatedRoute, Router } from "@angular/router";
             }
       });
   }
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/deleteFase");
+}
   }
 
   

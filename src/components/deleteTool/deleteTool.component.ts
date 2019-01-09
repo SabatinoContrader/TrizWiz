@@ -34,4 +34,8 @@ import { Router, ROUTER_CONFIGURATION } from "@angular/router";
     });
   }
 
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/toolMenu");
+}
+
 }

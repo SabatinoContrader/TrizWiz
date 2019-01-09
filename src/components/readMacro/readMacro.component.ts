@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { macroService } from "src/services/macro.service";
 import { Macro } from "src/models/Macro";
+import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 import { jsonpCallbackContext } from "@angular/common/http/src/module";
 
 @Component({
@@ -11,7 +13,7 @@ import { jsonpCallbackContext } from "@angular/common/http/src/module";
 
 
 export class ReadMacroComponent implements OnInit{
-    constructor(private macroService: macroService ){
+    constructor(private macroService: macroService, private router:  Router){
     }
     public macro: Array<Macro>;
     
@@ -22,6 +24,10 @@ export class ReadMacroComponent implements OnInit{
             this.macro = response;
             console.log(this.macro);
         });  
+    }
+
+    indietro(i:NgForm) {
+        this.router.navigateByUrl("/gestioneMacro");
     }
 }
   

@@ -34,4 +34,8 @@ import {Macro} from "src/models/Macro"
           }
       })
   }
+
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/gestioneMacro");
+}
 }

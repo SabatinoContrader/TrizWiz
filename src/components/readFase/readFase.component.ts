@@ -4,12 +4,14 @@ import { Macro } from "src/models/Macro";import { faseService } from "src/servic
 import { macroService } from "src/services/macro.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
+
 @Component({
     selector: 'app-readFase',
     templateUrl: './readFase.component.html',
     styleUrls: ['./readFase.component.css']
 })
 export class ReadFaseComponent implements OnInit {
+
 
     public macro: Array<Macro>;
     public fase: Array<Fase>;
@@ -26,9 +28,15 @@ export class ReadFaseComponent implements OnInit {
         });
     }
 
+
     read (f:NgForm){
       this.idMacro= f.value.idMacroFase;
       this.faseService.readAll(this.idMacro).subscribe((response) => {
         this.fase= response; })         
    }
-}
+
+
+    indietro(i:NgForm) {
+      this.router.navigateByUrl("/gestioneFase");
+  }
+  }

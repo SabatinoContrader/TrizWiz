@@ -10,7 +10,7 @@ import { Router, ROUTER_CONFIGURATION } from "@angular/router";
     styleUrls: ['./deleteMacro.component.css']
   })
   export class DeleteMacroComponent implements OnInit{
-      constructor(private macroService: macroService, private router:  Router ){
+      constructor(private macroService: macroService, private router:  Router){
       }
       public macro: Array<Macro>;
       public Macro: Macro;
@@ -33,6 +33,10 @@ import { Router, ROUTER_CONFIGURATION } from "@angular/router";
                 this.router.navigateByUrl("/gestioneMacro");
               }
         });
+    }
+
+    indietro(i:NgForm) {
+        this.router.navigateByUrl("/gestioneMacro");
     }
   }
   

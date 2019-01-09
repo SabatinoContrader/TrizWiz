@@ -36,4 +36,7 @@ export class InsertFaseComponent implements OnInit {
             }
         })          
    }
+   indietro(i:NgForm) {
+    this.router.navigateByUrl("/gestioneFase");
+}
 }

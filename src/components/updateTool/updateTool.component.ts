@@ -5,11 +5,13 @@ import { jsonpCallbackContext } from "@angular/common/http/src/module";
 import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
+
 @Component({
     selector: 'app-updateTool',
     templateUrl: './updateTool.component.html',
     styleUrls: ['./updateTool.component.css']
 })
+
 
 
 export class UpdateToolComponent implements OnInit{    
@@ -38,7 +40,11 @@ export class UpdateToolComponent implements OnInit{
            }
        })
      }
-}
-  
 //definisco la classe come java per utilizzare i vari costrutti come this
 //simboleggia la classe in java
+    indietro(i:NgForm) {
+      this.router.navigateByUrl("/toolMenu");
+  }
+  }
+
+  

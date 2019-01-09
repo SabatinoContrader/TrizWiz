@@ -30,5 +30,9 @@ import { ConnectableObservable } from "rxjs";
           }
       })
   }
+
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/toolMenu");
+}
   }
   

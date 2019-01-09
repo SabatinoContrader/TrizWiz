@@ -21,7 +21,7 @@ import { NgForm } from "@angular/forms";
     public tipologia : string;
     public macro: Array<Macro>;
 
-    constructor(private macroService: macroService, private router:Router ){
+    constructor(private macroService: macroService, private router:Router){
     }
     
     ngOnInit(){
@@ -50,6 +50,10 @@ import { NgForm } from "@angular/forms";
           
       })
   
-    }
+  }
+
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/gestioneMacro");
+}
   }
   
