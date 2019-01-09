@@ -83,6 +83,13 @@ public class FaseService {
 		//this.trizCustomerDAO.save(b);
 		faseDAO.delete(b);
 }
+	
+	 public FaseDTO edit(FaseDTO faseDTO) {
+			Fase fase = FaseConverter.convertToFase(faseDTO);
+			faseDAO.save(fase);
+			return FaseConverter.convertToDto(faseDAO.save(fase));
+		}
+
 
 
 	/* public long login(String username, String password) {

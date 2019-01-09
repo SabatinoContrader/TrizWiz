@@ -47,7 +47,45 @@ public class FaseController {
 	    fDTO.setMacro(macroDTO); // faccio il set dell oggetto creato
         return faseService.insert(fDTO); // restituisce la funzione insert
 }
+
+/*
+      @CrossOrigin
+      @RequestMapping(value= "/edit", method = RequestMethod.POST)
+      public FaseDTO updateFase(
+    		  @RequestParam( "tipologia") String tipologia,
+  			  @RequestParam( "idFase") long idFase,
+              @RequestParam( "idMacro") long idMacro)
+		
+		{
 	
+	FaseDTO faseDTO =new FaseDTO();
+	faseDTO.setTipologia(tipologia);
+	
+	MacroDTO macroDTO = this.macroService.findByPrimaryKey(idMacro);
+	faseDTO.setMacro(macroDTO);
+	System.out.println("ciaoooooooooooo"+macroDTO.getUsername().getNomeLogin());
+	faseService.edit(faseDTO);
+	//System.out.println("ciaoooooooooooo");
+	return faseDTO;
+	}
+*/
+  	//update
+  	@CrossOrigin
+  	@RequestMapping(value="/edit", method = RequestMethod.POST)
+  	public FaseDTO updateFase(
+  			 @RequestParam( "tipologia") String tipologia,
+ 			  @RequestParam( "idFase") long idFase,
+             @RequestParam( "idMacro") long idMacro)
+  			{
+  		FaseDTO faseDTO = faseService.findByPrimaryKey(idFase);
+  		faseDTO.setIdFase(idFase);
+  		
+  		MacroDTO macroDTO = this.macroService.findByPrimaryKey(idMacro);
+       faseDTO.setMacro(macroDTO);
+  		faseDTO.setTipologia(tipologia);
+  		faseService.edit(faseDTO);
+  		return faseDTO;
+  	}
 
 	@CrossOrigin
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
