@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { macroService } from "src/services/macro.service";
+import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-gestioneMacro',
@@ -7,11 +9,15 @@ import { macroService } from "src/services/macro.service";
     styleUrls: ['./gestioneMacro.component.css']
   })
   export class GestioneMacroComponent implements OnInit{
-    constructor(private macroService: macroService ){
+    constructor(private macroService: macroService, private router: Router){
 
     }
     ngOnInit(){
 
     }
+
+    indietro(i:NgForm) {
+      this.router.navigateByUrl("/gestioneUtenteLocale");
+  }
   }
   

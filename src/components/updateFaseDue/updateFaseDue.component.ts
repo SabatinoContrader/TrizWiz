@@ -50,6 +50,10 @@ import { NgForm } from "@angular/forms";
       })
   
   }
+
+  indietro(i:NgForm) {
+    this.router.navigateByUrl("/updateFase");
+}
   }
   
 
