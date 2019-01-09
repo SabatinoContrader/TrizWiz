@@ -16,6 +16,7 @@ import { ActivatedRoute, Router } from "@angular/router";
     //public macro: Array<Macro>;
     public fase: Array<Fase>;
            idFase: string;
+           idFaseDel: string;
 
     constructor(private faseService: faseService, private route: ActivatedRoute, private router:Router ){
 
@@ -29,20 +30,15 @@ import { ActivatedRoute, Router } from "@angular/router";
       this.fase= response; })
     }
 
-   /* delete(f:NgForm){
-     // this.username=JSON.parse(sessionStorage.getItem('user')).nomeLogin;
-     // this.newIdMacro= f.value.idMacro;
-     // console.log("MacroID:"+this.newIdMacro);
-     //  console.log(this.username);
-     //  this.tipologia= f.value.newTipologia;
-       this.faseService.readAll(f.value.idMacroFase).subscribe((response) => {
-          //this.fase= response;
-               this.router.navigateByUrl("/gestioneMacro");
- 
-           
-       })
-   
-   }*/
+    delete(f:NgForm){
+     
+      this.idFaseDel=f.value.idFaseCanc;  ///<!-- usernameSelected -->
+      this.faseService.delete(this.idFase,this.idFaseDel).subscribe((response) => {
+          if (response != null) {
+              this.router.navigateByUrl("/gestioneFase");
+            }
+      });
+  }
   }
 
   

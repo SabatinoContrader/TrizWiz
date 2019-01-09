@@ -19,9 +19,15 @@ export class faseService{
         };
     }
 
-    readAll(idMacro:string):Observable<Array<Fase>>{
+    readAll(idFase:string):Observable<Array<Fase>>{
         //const params = new HttpParams().set('username', ses);
-        return this.http.get<Array<Fase>>('http://localhost:8080/Macro/read?ses='+idMacro);    
+        return this.http.get<Array<Fase>>('http://localhost:8080/Fase/read?ses='+idFase);    
+    }
+
+    delete(idMacro:string, idFase:string):Observable<boolean>{
+        const params = new HttpParams().set('idMacro', idMacro).set('idFase',idFase); //passo idMacro
+        console.log("anche qui");                                                 //idFase
+        return this.http.post<boolean>('http://localhost:8080/Fase/delete',params);
     }
 
     newFase(tipologia:string,idMacro:string):Observable<Fase>{
