@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.TrizWizSpring.converter.CustomerConverter;
 import com.TrizWizSpring.converter.FaseConverter;
 import com.TrizWizSpring.converter.ItemConverter;
+import com.TrizWizSpring.converter.MacroConverter;
 import com.TrizWizSpring.converter.TrizCustomerConverter;
 import com.TrizWizSpring.dao.CustomerDAO;
 import com.TrizWizSpring.dao.FaseDAO;
@@ -36,7 +37,7 @@ public class FaseService {
 	@Autowired
     private MacroDAO MacroDAO;
 	@Autowired
-	                            private MacroService MacroService;
+	private MacroService MacroService;
 	private CustomerDAO customerDAO;
 	private FaseDAO faseDAO;
 
@@ -44,6 +45,20 @@ public class FaseService {
 	public FaseService(FaseDAO faseDAO) {
 		this.faseDAO = faseDAO;
 	}
+	
+	
+	// INSERT
+	
+	public FaseDTO insert(FaseDTO faseDTO) { 	
+		Fase fase = FaseConverter.convertToFase(faseDTO);
+		faseDAO.save(fase);
+		return FaseConverter.convertToDto(faseDAO.save(fase));
+	}
+	
+	public FaseDTO insertFase (FaseDTO fase) {
+		return FaseConverter.convertToDto(faseDAO.save(FaseConverter.convertToFase(fase)));
+	}
+	
 
 	/* public long login(String username, String password) {
 		Customer c = customerDAO.findByUsernameAndPassword(username, password);
