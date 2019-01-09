@@ -76,6 +76,9 @@ import { ReadFaseComponent } from 'src/components/readFase/readFase.component';
 import { UpdateFaseComponent } from 'src/components/updateFase/updateFase.component';
 import { DeleteFaseComponent } from 'src/components/deleteFase/deleteFase.component';
 import { DeleteFaseDueComponent } from 'src/components/deleteFaseDue/deleteFaseDue.component';
+
+import { UpdateFaseDueComponent } from 'src/components/updateFaseDue/updateFaseDue.component';
+
 import { DeleteToolComponent } from 'src/components/deleteTool/deleteTool.component';
 import { InsertToolComponent } from 'src/components/insertTool/insertTool.component';
 import { GestioneToolComponent } from 'src/components/gestioneTool/gestioneTool.component';
@@ -163,11 +166,16 @@ const routes: Routes = [
   {path: 'insertFase', component:InsertFaseComponent},
   {path: 'readFase', component:ReadFaseComponent},
   {path: 'updateFase', component:UpdateFaseComponent},
+  {path: 'updateFaseDue', component:UpdateFaseDueComponent},
   {path: 'deleteFase', component:DeleteFaseComponent},
   {path: 'deleteFaseDue', component:DeleteFaseDueComponent},
   {path: 'deleteFase/delete/:idFase', component: DeleteFaseComponent},
   //nomeComponent/nomeMetodoComponent/:nomeVariabileGlobale
   {path: 'deleteFaseDue/:idFase', component: DeleteFaseDueComponent},
+  //nomeComponent/:nomeVariabileGlobale
+  {path: 'updateFase/update/:idFase', component:UpdateFaseComponent},
+  //nomeComponent/nomeMetodoComponent/:nomeVariabileGlobale
+  {path: 'updateFaseDue/:idFase', component: UpdateFaseDueComponent},
   //nomeComponent/:nomeVariabileGlobale
   {path: 'insertTool', component:InsertToolComponent},
   {path: 'deleteTool', component:DeleteToolComponent},

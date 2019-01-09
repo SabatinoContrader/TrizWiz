@@ -1,0 +1,40 @@
+<body>
+
+    <div class="deleteMacro">
+		<h1>Elenco fase da modificare</h1>
+    </div>
+    <div>
+    	<div class="thingDiv" style="margin-top: -3%">
+			<table class="readMacro">
+
+			<tr>
+                
+               <th> </th>
+			</tr>
+            	<tr *ngFor= "let macroFase of macro">
+				<th>Id Macro Fase: {{Fase.idFase}} and Tipologia: {{Fase.tipologia}}</th>
+			</tr>
+            </table>     
+    </div>   
+                   
+                <div class="updateThing">
+                    <form #f=ngForm >
+                        <table>
+                            <tr>
+                                <td><h2>Id Fase da Modificare:</h2></td>
+                                <td><select name="idFase" ngModel="idFase">
+                                        <option *ngFor="let Fase of fase" [value]="Fase.idFase">{{Fase.idFase}}</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td><h2>Modifica Tipologia</h2></td>
+                                <td><input type="text" name="newTipologia"
+                                    placeholder="inserire Tipologia" ngModel></td>
+                            </tr>
+                                
+                        </table>
+                        <button class="deleteButton" type="submit" (click)="update(f)">Modifica</button>
+                    </form>
+                </div>
+            </div>
+             </body>

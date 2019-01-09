@@ -38,6 +38,20 @@ export class faseService{
         
     }
 
+    updateFase(tipologia: string, idMacro: string): Observable<Fase> {
+        const params = new HttpParams().set("tipologia",tipologia).set("idMacro",idMacro);
+        console.log("tipologia ="+tipologia);
+        return this.http.post<Fase>('http://localhost:8080/Fase/edit', params);
+
+    }
+
+    edit(idFase:string ,tipologia:string,idMacro:string):Observable<Fase>{
+        
+
+        const param = new HttpParams().set("idFase",idFase).set("tipologia",tipologia).set("idMacro",idMacro);
+        return this.http.post<Fase>("http://localhost:8080/Fase/edit", param);
+    }
+
  /*   edit(idMacro:string ,tipologia:string, ses:string):Observable<Macro>{
         console.log("MacroID2:"+idMacro);
 

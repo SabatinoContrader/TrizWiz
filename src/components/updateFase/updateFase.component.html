@@ -1,48 +1,38 @@
 <body>
-    <div class="deleteCustomer">
-		<img src="https://image.flaticon.com/icons/png/512/1155/1155556.png"
+	<div class="deleteFase">
+		<img
+			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
 			class="imgSuperUser">
-		<h1>Modifica il tuo listino</h1>
+		<h1>Modifica Fase</h1>
     </div>
-    <div>
+<div class="delete">
+	<h2>Seleziona l'id della della Macrofase per scegliere la fase da modificare</h2>
+	<form #f="ngForm">
+		<div  class="idFase"><h2>
+			Id Macro Fase: </h2>
+            <div >
+                <select class="select" name="idMacroFase" ngModel="idMacroFase">
+                    <option *ngFor="let macroFase of macro" [value]="macroFase.idMacro">{{macroFase.idMacro}}</option>
+              </select>
+			</div>
+		</div>
+
+      
+        <button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="update(f)"> Seleziona</button>
+    
+	</form>
+	</div>
+
+	
     	<div class="thingDiv" style="margin-top: -3%">
-			<table class="readCustomer">
+			<table class="readMacro">
 			<tr>
-				<th>id</th>
-				<th>nome listino</th>
-				<th>anno</th>
+                
+               <th> </th>
 			</tr>
-            	<tr *ngFor= "let lista of listino">
-				<td>{{lista.id}}</td>
-				<td>{{lista.nomeListino}}</td>
-				<td>{{lista.anno}}</td>
+            	<tr *ngFor= "let macroFase of macro">
+				<th>Id Macro Fase: {{macroFase.idMacro}} and Tipologia: {{macroFase.tipologia}}</th>
 			</tr>
             </table>     
-    </div>   
-                   
-                <div class="updateThing">
-                    <form #f=ngForm >
-                        <table>
-                            <tr>
-                                <td><h2>Id Listino:</h2></td>
-                                <td><select name="idselected" ngModel="idselected">
-                                        <option *ngFor="let lista of listino" [attr.value]="lista.id">{{lista.id}}</option>
-                                </select></td>
-                            </tr>
-                            <tr>
-                                <td><h2>Inserire nome listino:</h2></td>
-                                <td><input type="text" name="newNomeListino"
-                                    placeholder="inserire nome listino" ngModel></td>
-                            </tr>
-                            <tr>
-                                <td><h2>Inserire anno:</h2></td>
-                                <td><input type="text" name="newAnno"
-                                    placeholder="inserire anno" ngModel></td>
-                            </tr>
-                                
-                        </table>
-                        <button class="deleteButton" type="submit" (click)="update(f)">Modifica</button>
-                    </form>
-                </div>
-            </div>
-             </body>
+      </div>
+</body>
