@@ -1,29 +1,30 @@
 <body>
-	<div class="select insertCustomer">
-            <img
-                src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png"
-                class="imgSuperUser">
-            <h1 >Inserisci Fase</h1>
-        </div>
-    <div class="login-form">
-            <form class="userForm" #f="ngForm">
-            <table class="insertTable">
+	<div class="insertFase">
+		<img
+			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
+			class="imgSuperUser">
+		<h1>Inserisci Fase</h1>
+    </div>
+<div class="insert">
+	<form #f="ngForm">
+		<div class="idFase">
+            <h2>Seleziona l'id della Macrofase per scegliere la fase da inserire</h2>
+            <table>
                 <tr>
-                    <td><h2>Id Fase:</h2></td>
-                    <td><input type="text" class="form-control" id="idFase"
-                        name="idFase" placeholder="Inserisci Id Fase" ngModel></td>
+                <h2>Id Macro Fase: </h2>
+                    <select name="idMacroFase" ngModel="idMacroFase">
+                        <option *ngFor="let macroFase of macro" [value]="macroFase.idMacro">{{macroFase.idMacro}}</option>
+                    </select>
                 </tr>
-                <tr>
-                    <td><h2>Tipologia:</h2></td>
-                    <td><input type="text" class="form-control" id="tipologia" name="tipologia"
-                        placeholder="Inserisci Tipologia" ngModel></td>
-                </tr>
-                
             </table>
-            <button class="registerButton" type="submit" (click)="register(f)">Register</button>
-    
-        </form>
-        
+            <table>
+                <tr>
+                    <td><h2>Inserire tipologia fase:</h2></td>
+                    <td><input type="text" name="tipologia"placeholder="inserire tipologia fase" ngModel></td>
+                </tr>
+            </table>
+            <button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="insert(f)"> Inserisci</button>
+        </div>
+	</form>
 </div>
-    </body>
-    
+</body>
