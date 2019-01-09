@@ -113,6 +113,9 @@ import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component
 import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
 import { ToolMenuService } from 'src/services/toolMenu.service';
 import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
+import { ReadCollegamentoComponent } from 'src/components/readCollegamento/readCollegamento.component';
+import { InsertCollegamentoComponent } from 'src/components/insertCollegamento/insertCollegamento.component';
+import { DeleteCollegamentoComponent } from 'src/components/deleteCollegamento/deleteCollegamento.component';
 
 
 @NgModule({
@@ -200,7 +203,11 @@ import { UpdateToolComponent } from 'src/components/updateTool/updateTool.compon
     DeleteFaseDueComponent,
     SuperMenuComponent,
     ToolMenuComponent,
-    UpdateToolComponent
+    UpdateToolComponent,
+    ReadToolComponent,
+    ReadCollegamentoComponent,
+    InsertCollegamentoComponent,
+    DeleteCollegamentoComponent
   
     
 

@@ -83,6 +83,10 @@ import { ReadToolComponent } from 'src/components/readTool/readTool.component';
 import { SuperMenuComponent } from 'src/components/superMenu/superMenu.component';
 import { ToolMenuComponent } from 'src/components/toolMenu/toolMenu.component';
 import { UpdateToolComponent } from 'src/components/updateTool/updateTool.component';
+import { ReadCollegamentoComponent } from 'src/components/readCollegamento/readCollegamento.component';
+import { InsertCollegamentoComponent } from 'src/components/insertCollegamento/insertCollegamento.component';
+import { DeleteCollegamentoComponent } from 'src/components/deleteCollegamento/deleteCollegamento.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -173,6 +177,10 @@ const routes: Routes = [
   {path: 'toolMenu', component:ToolMenuComponent},
   {path: 'gestioneUtenteLocale', component: GestioneUtenteLocaleComponent},
   {path: 'updateTool', component:UpdateToolComponent}, /////update tool
+  {path: 'readCollegamento', component:ReadCollegamentoComponent},
+  {path: 'insertCollegamento', component:InsertCollegamentoComponent},
+  {path: 'deleteCollegamento', component:DeleteCollegamentoComponent}
+
 ];
 
 @NgModule({
