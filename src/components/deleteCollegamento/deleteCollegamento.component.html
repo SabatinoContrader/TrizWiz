@@ -1,14 +1,15 @@
 <body>
+
 	<div class="readFase">
 		<img
 			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
 			class="imgSuperUser">
-		<h1>VISUALIZZA FASE</h1>
+		<h1>ELIMINA COLLEGAMENTO</h1>
     </div>
 <div class="insert">
 	<form #f="ngForm">
 		<div class="idFase">
-			<h2>Seleziona l'id della Macrofase per visualizzare le fasi associate</h2>
+			<h2>Seleziona l'id della Macrofase per visualizzare le Fasi associate</h2>
 		
             <table>
                 <tr>
@@ -42,6 +43,68 @@
 				</tbody>
 		</table>
 		</div>
+
+		
+		<form #g="ngForm">
+			<div class="idFase">
+				<h2>Seleziona l'id della Fase per selezionare il Collegamento da eliminare</h2>
+			
+				<table>
+					<tr>
+					<h2>Id Fase: </h2>
+						<select name="idFase" ngModel="idFase">
+							<option *ngFor="let fase of fase" [value]="fase.idFase">{{fase.idFase}}</option>
+						</select>
+					</tr>
+				</table>
+				<h1> </h1>
+				<h1> </h1>
+				<h1> </h1>
+				<h1> </h1>
+				<button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="readFase(g)"> Seleziona </button>
+			</div>
+		</form>
+
+		<div class="readTable">
+			<table class="table">
+					<thead>
+						<tr>
+								<th>Id Collegamento</th>
+								<th>Commento</th>
+								<th>Id Tool</th>
+								<th>Tipologia Tool</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let coll of collegamento">			
+								<td >{{coll.idCollegamento}}</td>
+								<td >{{coll.commento}}</td>
+								<td >{{coll.tool.idTool}}</td>
+								<td >{{coll.tool.tipologia}}</td>
+							</tr>
+					</tbody>
+			</table>
+			</div>
+			<form #h="ngForm">
+				<div class="idFase">
+					<h2>Seleziona l'id del Collegamento da eliminare</h2>
+				
+					<table>
+						<tr>
+						<h2>Id Collegamento: </h2>
+							<select name="idCollegamento" ngModel="idCollegamento">
+								<option *ngFor="let coll of collegamento" [value]="coll.idCollegamento">{{coll.idCollegamento}}</option>
+							</select>
+						</tr>
+					</table>
+					<h1> </h1>
+					<h1> </h1>
+					<h1> </h1>
+					<h1> </h1>
+					<button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="delete(h)"> Elimina </button>
+				</div>
+			</form>
 
 </div>
 </body>
