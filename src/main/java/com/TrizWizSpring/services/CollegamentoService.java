@@ -57,4 +57,17 @@ public class CollegamentoService {
 		return collegamentoDTO;
 		
 	}
+	
+	public void delete(CollegamentoDTO toDestroy) {
+		Collegamento b = CollegamentoConverter.convertToCollegamento(toDestroy);
+		//b.setUsername(null);  	//metto a null la chiave esterna
+		//this.trizCustomerDAO.save(b);
+		collegamentoDAO.delete(b);
+}
+	
+	public CollegamentoDTO findByIdCollegamento (long idCollegamento) {
+		Collegamento coll = collegamentoDAO.findOne(idCollegamento);
+		CollegamentoDTO collDTO = CollegamentoConverter.convertToDto(coll);
+		return collDTO;
+	}
 }

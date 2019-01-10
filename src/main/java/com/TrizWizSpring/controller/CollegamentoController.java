@@ -43,6 +43,17 @@ import com.TrizWizSpring.services.utentiLocaliService;
 			return collegamento;
 		}
 		
+		@CrossOrigin
+		@RequestMapping(value="/delete", method=RequestMethod.POST)
+		public boolean delete(
+				@RequestParam(value="idCollegamento", required=true) long idCollegamento
+		) {
+			/*Primo modo*/
+			CollegamentoDTO collDTO=collegamentoService.findByIdCollegamento(idCollegamento);
+			collegamentoService.delete(collDTO);
+			return true;
+		}
+		
 		
 		
 	}
