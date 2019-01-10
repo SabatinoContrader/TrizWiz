@@ -1,5 +1,4 @@
 import { OnInit, Component } from "@angular/core";
-import { CustomerService } from "src/services/customer.service";
 import { Router, ROUTER_CONFIGURATION } from "@angular/router";
 import { NewCustomer } from "src/models/NewCustomer";
 import { NgForm } from "@angular/forms";

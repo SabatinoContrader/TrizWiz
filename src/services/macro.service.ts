@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import {Observable, of, BehaviorSubject} from 'rxjs';
 import { tap, catchError } from 'rxjs/operators'
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Customer } from "src/models/Customer";
-import { Listino } from "src/models/Listino";
 import { Macro } from "src/models/Macro";
 
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { InsertTrizConsultantService } from "src/services/insertTrizConsultant.service";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { CustomerService } from "src/services/customer.service";
 import { utentiLocaliService } from "src/services/utentiLocali.service";
 
 @Component({

@@ -2,8 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "src/services/user.service";
 import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
-import { Customer } from "src/models/Customer";
-import { CustomerService } from "src/services/customer.service";
 import { utentiLocaliService } from "src/services/utentiLocali.service";
 import { UtenteLocale } from "src/models/UtenteLocale";
 
