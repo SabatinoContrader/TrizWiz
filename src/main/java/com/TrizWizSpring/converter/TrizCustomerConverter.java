@@ -28,10 +28,8 @@ public class TrizCustomerConverter {
 package com.TrizWizSpring.converter;
 
 import com.TrizWizSpring.dao.TrizCustomerDAO;
-import com.TrizWizSpring.dto.BuildingDTO;
 import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
-import com.TrizWizSpring.model.Building;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
 

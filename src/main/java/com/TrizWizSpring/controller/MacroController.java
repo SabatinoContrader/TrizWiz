@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.TrizWizSpring.converter.MacroConverter;
-import com.TrizWizSpring.dto.LabelDTO;
+
 import com.TrizWizSpring.dto.MacroDTO;
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;

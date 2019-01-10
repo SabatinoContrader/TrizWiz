@@ -7,20 +7,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.TrizWizSpring.controller.TrizCustomerController;
-import com.TrizWizSpring.converter.BuildingConverter;
-import com.TrizWizSpring.converter.CustomerConverter;
+
 import com.TrizWizSpring.converter.TrizCustomerConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
-import com.TrizWizSpring.dao.CustomerDAO;
+
 import com.TrizWizSpring.dao.TrizCustomerDAO;
 import com.TrizWizSpring.dao.utentiLoginDAO;
-import com.TrizWizSpring.dto.BuildingDTO;
-import com.TrizWizSpring.dto.CustomerDTO;
+
 import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
-import com.TrizWizSpring.model.Building;
-import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
 

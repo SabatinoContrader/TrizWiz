@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.TrizWizSpring.dto.CustomerDTO;
-import com.TrizWizSpring.dto.BuildingDTO;
+
 import com.TrizWizSpring.dto.utentiLocaliDTO;
-import com.TrizWizSpring.services.BuildingService;
 import com.TrizWizSpring.services.utentiLocaliService;
 import com.TrizWizSpring.services.TrizCustomerService;
 
@@ -25,14 +23,14 @@ import com.TrizWizSpring.services.TrizCustomerService;
 @RequestMapping("/utente")
 public class loginNewController {
 
-	private BuildingService buildingService;
+
 	private utentiLocaliService utentiLocaliService;
 	private TrizCustomerService TrizCustomerService ;
 
 	@Autowired
-	public loginNewController(utentiLocaliService cs, BuildingService bs,TrizCustomerService b) {
+	public loginNewController(utentiLocaliService cs, TrizCustomerService b) {
 		utentiLocaliService = cs;
-		buildingService = bs;
+		
 		TrizCustomerService=b;
 	}
 	

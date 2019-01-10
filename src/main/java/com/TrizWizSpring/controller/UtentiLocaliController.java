@@ -19,15 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.TrizWizSpring.converter.NewUtenteLocaleConverter;
 import com.TrizWizSpring.converter.UtenteLocaleConverter;
-import com.TrizWizSpring.dto.BuildingDTO;
-import com.TrizWizSpring.dto.CustomerDTO;
+
 import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.UtenteLocaleWithIdDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
-import com.TrizWizSpring.model.Building;
+
 import com.TrizWizSpring.model.utentiLocali;
-import com.TrizWizSpring.services.BuildingService;
-import com.TrizWizSpring.services.CustomerService;
+
 import com.TrizWizSpring.services.utentiLocaliService;
 
 @RestController

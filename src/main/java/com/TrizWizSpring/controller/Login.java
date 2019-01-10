@@ -9,15 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.TrizWizSpring.dto.BuildingDTO;
-import com.TrizWizSpring.dto.CustomerDTO;
-import com.TrizWizSpring.services.BuildingService;
-import com.TrizWizSpring.services.CustomerService;
+
 
 @Controller
 @RequestMapping("/CACCA")
 public class Login {
-
+/*
 	private BuildingService buildingService;
 	private CustomerService customerService;
 
@@ -57,5 +54,5 @@ public class Login {
 		}
 
 	}
-
+*/
 }
