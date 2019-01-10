@@ -10,13 +10,18 @@ import com.TrizWizSpring.converter.MacroConverter;
 import com.TrizWizSpring.converter.ToolConverter;
 import com.TrizWizSpring.dao.ToolDAO;
 import com.TrizWizSpring.dto.ToolDTO;
+import com.TrizWizSpring.model.Collegamento;
 import com.TrizWizSpring.model.Tool;
+import com.TrizWizSpring.model.Collegamento;
+import com.TrizWizSpring.dao.CollegamentoDAO;
 
 @Service
 public class ToolService {
 	
 	@Autowired
 	private ToolDAO toolDAO;
+	@Autowired
+	private CollegamentoDAO collegamentoDAO;
 	
 	public ToolDTO insert(ToolDTO ToolDTO) {
 		Tool Tool = ToolConverter.convertToTool(ToolDTO);
@@ -38,6 +43,13 @@ public class ToolService {
 	
 	public void delete(Long idTool) {
 		Tool l = toolDAO.findOne(idTool);
+		List<Collegamento> collegamenti=collegamentoDAO.findByTool(l);
+		for (Collegamento coll: collegamenti) {
+			coll.setFase(null);
+			coll.setTool(null);
+			collegamentoDAO.save(coll);
+			collegamentoDAO.delete(coll);
+		}
 		toolDAO.delete(l);
 	}
 	

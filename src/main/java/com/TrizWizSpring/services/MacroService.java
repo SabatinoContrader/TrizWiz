@@ -26,12 +26,15 @@ import com.TrizWizSpring.dto.NewUtenteLocaleDTO;
 import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
 import com.TrizWizSpring.model.Building;
+import com.TrizWizSpring.model.Collegamento;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Macro;
 import com.TrizWizSpring.model.trizcustomer;
 import com.TrizWizSpring.model.utentiLocali;
 import com.TrizWizSpring.model.Fase;
 import com.TrizWizSpring.dao.FaseDAO;
+import com.TrizWizSpring.model.Collegamento;
+import com.TrizWizSpring.dao.CollegamentoDAO;
 
 
 @Service
@@ -43,9 +46,10 @@ public class MacroService {
     private utentiLoginDAO utentiLoginDAO;
 	@Autowired
 	private utentiLocaliService utentiLocaliService;
-	
 	@Autowired
 	private FaseDAO faseDAO;
+	@Autowired
+	private CollegamentoDAO collegamentoDAO;
     
 	public MacroService() {
 	}
@@ -127,7 +131,15 @@ public class MacroService {
 		Macro b = MacroConverter.convertToMacro(toDestroy);
 		List <Fase> fasi= faseDAO.findByMacro(b);
 		for (Fase fase : fasi) {
-			fase.setMacro(null);
+			
+			List<Collegamento> collegamenti=collegamentoDAO.findByFase(fase);
+			for (Collegamento coll: collegamenti) {
+				coll.setFase(null);
+				coll.setTool(null);
+				collegamentoDAO.save(coll);
+				collegamentoDAO.delete(coll);
+			}
+			//fase.setMacro(null);
 			faseDAO.save(fase);
 			faseDAO.delete(fase);
 		}

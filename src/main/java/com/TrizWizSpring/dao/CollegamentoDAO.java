@@ -18,7 +18,7 @@ public interface CollegamentoDAO extends CrudRepository<Collegamento, Long> {
 	public List<Collegamento> findByTool(Tool tool);
 	public List<Collegamento> findAll();
 	
-   public Fase findByFase(long Fase);
+  //public Fase findByFase(long Fase);
 
     public Tool findByTool(long Tool);
 

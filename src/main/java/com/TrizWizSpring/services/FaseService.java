@@ -23,6 +23,7 @@ import com.TrizWizSpring.dto.ItemDTO;
 import com.TrizWizSpring.dto.MacroDTO;
 import com.TrizWizSpring.dto.TrizCustomerDTO;
 import com.TrizWizSpring.dto.utentiLocaliDTO;
+import com.TrizWizSpring.model.Collegamento;
 import com.TrizWizSpring.model.Customer;
 import com.TrizWizSpring.model.Fase;
 import com.TrizWizSpring.model.Item;
@@ -30,6 +31,7 @@ import com.TrizWizSpring.model.Macro;
 import com.TrizWizSpring.model.trizcustomer;
 
 import com.TrizWizSpring.model.utentiLocali;
+import com.TrizWizSpring.dao.CollegamentoDAO;
 
 @Service
 public class FaseService {
@@ -40,6 +42,8 @@ public class FaseService {
 	private MacroService MacroService;
 	private CustomerDAO customerDAO;
 	private FaseDAO faseDAO;
+	@Autowired
+	private CollegamentoDAO collegamentoDAO;
 
 	@Autowired
 	public FaseService(FaseDAO faseDAO) {
@@ -79,6 +83,17 @@ public class FaseService {
 
 	public void delete(FaseDTO toDestroy) {
 		Fase b = FaseConverter.convertToFase(toDestroy);
+		//System.out.println("Fase B"+b.getIdFase());
+		List<Collegamento> collegamenti=collegamentoDAO.findByFase(b);
+		for (Collegamento coll: collegamenti) {
+			//Collegamento collDel=coll;
+			//System.out.println("Collegamento B"+collDel.getIdCollegamento());
+			coll.setFase(null);
+			coll.setTool(null);
+			collegamentoDAO.save(coll);
+			collegamentoDAO.delete(coll);
+			//collDel=null;
+		}
 		//b.setUsername(null);  	//metto a null la chiave esterna
 		//this.trizCustomerDAO.save(b);
 		faseDAO.delete(b);
