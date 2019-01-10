@@ -3,6 +3,7 @@ import {Observable, of, BehaviorSubject} from 'rxjs';
 import { tap, catchError } from 'rxjs/operators'
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Fase } from "src/models/Fase";
+import { Collegamento } from "src/models/Collegamento";
 
 @Injectable({providedIn: 'root'})
 export class collegamentoService{
@@ -14,6 +15,11 @@ export class collegamentoService{
             console.log('${operation} failed: ${error.message}');
             return of(result as T);
         };
+    }
+    
+    readAll(idFase:string):Observable<Array<Collegamento>>{
+        //const params = new HttpParams().set('username', ses);
+        return this.http.get<Array<Collegamento>>('http://localhost:8080/Collegamento/read?idFase='+idFase);    
     }
 /*
     readAll(idFase:string):Observable<Array<Fase>>{

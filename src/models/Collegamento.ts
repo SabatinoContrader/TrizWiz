@@ -4,15 +4,15 @@ import { Tool } from "./Tool";
 export class Collegamento{
     idCollegamento: number; 
     commento: string;  
-    idFase:Fase;
-    idTool:Tool;
+    fase:Fase;
+    tool:Tool;
     
-    constructor(idCollegamento: number, commento: string, idFase:Fase, idTool:Tool)
+    constructor(idCollegamento: number, commento: string, fase:Fase, tool:Tool)
     {
         this.idCollegamento = idCollegamento;
         this.commento = commento;
-        this.idFase=idFase;
-        this.idTool=idTool;
+        this.fase=fase;
+        this.tool=tool;
 
     }
 }

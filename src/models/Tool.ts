@@ -1,11 +1,11 @@
 
 export class Tool{
-    id: number; 
+    idTool: number; 
     tipologia: string;  
     
-    constructor(id: number, tipologia: string)
+    constructor(idTool: number, tipologia: string)
     {
-        this.id = id;
+        this.idTool = idTool;
         this.tipologia = tipologia;
 
     }
