@@ -17,7 +17,8 @@ export class ReadFaseComponent implements OnInit {
     public macro: Array<Macro>;
     public fase: Array<Fase>;
     idMacro: string;
-    constructor(private faseService: faseService, private macroService: macroService, private route: ActivatedRoute, private router:Router) {
+    constructor(private faseService: faseService, private macroService: macroService, 
+        private route: ActivatedRoute, private router:Router) {
     }
     ngOnInit() {
 

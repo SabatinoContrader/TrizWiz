@@ -21,10 +21,19 @@ export class collegamentoService{
         //const params = new HttpParams().set('username', ses);
         return this.http.get<Array<Collegamento>>('http://localhost:8080/Collegamento/read?idFase='+idFase);    
     }
+
     delete(idCollegamento:string):Observable<boolean>{
         const params = new HttpParams().set('idCollegamento', idCollegamento); //passo idMacro
         console.log("anche qui");                                                 //idFase
         return this.http.post<boolean>('http://localhost:8080/Collegamento/delete',params);
+    }
+
+    newCollegamento(idFase:string,idTool:string,commento:string):Observable<Collegamento>{
+        const params = new HttpParams().set("fase",idFase).set("tool",idTool).set("commento",commento);
+        console.log("commento ="+commento);
+       // return this.http.post<Macro>("http://localhost:8080/Macro/insert", params)
+       return this.http.post<Collegamento>("http://localhost:8080/Collegamento/insert?idFase="+idFase+"&idTool="+idTool+"&commento="+commento,"");
+        
     }
 /*
     readAll(idFase:string):Observable<Array<Fase>>{

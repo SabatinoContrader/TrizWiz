@@ -1,10 +1,35 @@
 <body>
-	<div class="readFase">
-		<img
-			src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/delete-user.png"
-			class="imgSuperUser">
-		<h1>VISUALIZZA FASE</h1>
-    </div>
+		<div class="row">
+			<div class="col-sm-2">
+				<img src="https://i.postimg.cc/K81z1scJ/1063910-32.png" type = "submit"(click)="indietro(i)">
+			</div>
+			<div class="col-sm-8">
+				<h1>INSERISCI COLLEGAMENTO FASE-TOOL</h1>
+			</div>
+			</div>
+			<br><br>
+			
+			<div class="login-form">
+				<h2>Tabella Tool</h2>						<!-- Funziona -->
+				<div class="readTable">
+					<table class="table">
+					<thead>
+						<tr>
+							<th>Id tool</th>
+							<th>tipologia</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr *ngFor="let tool of tool">			
+							<td >{{tool.idTool}}</td>
+							<td >{{tool.tipologia}}</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+			
+		</div>		
 <div class="insert">
 	<form #f="ngForm">
 		<div class="idFase">
@@ -25,8 +50,11 @@
             <button class="selectionButton" style="border-radius: 10%" type = "submit"(click)="read(f)"> Seleziona </button>
         </div>
 	</form>
-
+		<div>
+			<h2 style="margin-left: 30%">Tabella Fasi</h2>
+		</div>
 	<div class="readTable">
+		
 		<table class="table">
 				<thead>
 					<tr>
@@ -43,5 +71,63 @@
 		</table>
 		</div>
 
+		
+		<div class="insert" style="border:2px solid green;">
+					<div class="idFase">
+						<h2 style="margin-left: 17%">Seleziona i campi per l'inserimento del collegamento</h2>
+						<br>
+						<form #t="ngForm">	
+						<div class="row">
+						<!--  primo sm, idFasi -->
+						
+							<div class="col-sm-4">
+								<div>
+									<div>
+										<table>
+											<tr>
+												<h2>Id Fase: </h2> 
+												<select name="idFase" ngModel="idFase">
+													<option *ngFor="let fase of fase" [value]="fase.idFase">{{fase.idFase}}</option>
+												</select>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+		
+							<!--  secondo sm, idTool -->
+							<div class="col-sm-4">
+								<div>
+									<div>
+										<table>
+											<tr>
+												<h2>Id Tool: </h2> 
+												<select name="idTool" ngModel="idTool">
+													<option *ngFor="let tool of tool" [value]="tool.idTool">{{tool.idTool}}</option>
+												</select>
+											</tr>
+										</table>
+									</div>
+								</div>
+									
+							</div>
+							
+							<!--  terzo sm, commento -->
+							<div class="col-sm-4">
+								<h2>Inserire Commento:</h2>
+								<input type="text" name="commento"placeholder="inserire commento" ngModel>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-4"></div>
+							<div class="col-sm-4">		<!--  bottone  -->
+								<button style="border-radius: 10%; width: 100px; height: 50px" type = "submit"(click)="insert(t)"> INSERISCI</button>
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+						</form>
+					</div>
+			</div>
 </div>
 </body>

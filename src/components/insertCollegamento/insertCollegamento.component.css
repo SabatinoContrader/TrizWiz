@@ -14,7 +14,8 @@ body {
 	background: #1d1d1d;
 	color: #fff;
 	background-image:url("http://www.ipvision.it/wp-content/uploads/2016/01/wallpaper-blu-scuro.jpg"); 
-	background-repeat:no-repeat;
+	background-repeat:repeat;
+	overflow: scroll;
 	background-position:center; 
     padding:10%;
     width: 100%;
