@@ -33,7 +33,13 @@ public class CollegamentoService {
 		this.collegamentoDAO = collegamentoDAO;
 	}
 	
-	
+	// INSERT
+		public CollegamentoDTO insert(CollegamentoDTO collegamentoDTO) { 	
+			Collegamento c = CollegamentoConverter.convertToCollegamento(collegamentoDTO);
+			collegamentoDAO.save(c);
+			return CollegamentoConverter.convertToDto(collegamentoDAO.save(c));
+		}
+		
 	
 
 	public List<CollegamentoDTO> readCollegamento(long idFase) {
